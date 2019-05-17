@@ -6,7 +6,7 @@
   height: 1334rpx;
   width: 750rpx;
 }
-.rerurn{
+.return{
   position: absolute;
   left: 60rpx;
   bottom: 60rpx;
