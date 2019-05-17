@@ -1,19 +1,19 @@
 /**app.wxss**/
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-} 
-
-button {
-  background: initial;
+.page{
+  background-image: url('http://r.photo.store.qq.com/psb?/V10L6jbI2OClBI/HJtXYNGwqE8X.jFVaTH38iQiOAdrCyQUGzFuO3nOjTs!/r/dDYBAAAAAAAA');
+  background-position: 0 0;
+  background-size: 100% 100%;
+  height: 1334rpx;
+  width: 750rpx;
 }
-
-button:focus{
-  outline: 0;
-}
-
-button::after{
-  border: none;
+.rerurn{
+  position: absolute;
+  left: 60rpx;
+  bottom: 60rpx;
+  height: 60rpx;
+  width: 120rpx;
+  background-color: green;
+  text-align: center;
+  line-height: 60rpx;
+  color: white;
 }

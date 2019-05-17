@@ -1,0 +1,23 @@
+/* miniprogram/pages/noInfo/noInfo.wxss */
+.tips{
+    text-align: center;
+    padding-top: 50rpx;
+}
+.text{
+    width: 480rpx;
+	height: 180rpx;
+	color: rgba(80, 80, 80, 1);
+	font-size: 28rpx;
+}
+.addBscMsg,.addJobExp,.addJobRes{
+    height: 150rpx;
+    width: 400rpx;
+    border-radius: 5%;
+    background-color: green;
+    color: white;
+    font-size: 40rpx;
+    text-align: center;
+    line-height: 150rpx;
+    margin-left: 196rpx;
+    margin-top: 60rpx;
+}

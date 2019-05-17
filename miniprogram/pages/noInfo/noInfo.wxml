@@ -1,0 +1,9 @@
+<view class="page">
+    <view class="tips">
+    <text class="text">亲爱的{{jiangzoe}}，你还没有个人信息，
+        快点添加吧~</text></view>
+    <view class="addBscMsg">添加基本信息</view>
+    <view class="addJobExp">添加工作经历</view>
+    <view class="addJobRes">添加项目成果</view>
+    <view class="rerurn">返回</view>
+</view>

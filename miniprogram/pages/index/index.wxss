@@ -1,1 +1,64 @@
-/* miniprogram/pages/index/index.wxss */
+.howToDo {
+    font-size: 28rpx;
+    padding-top: 180rpx;
+    margin-left: 620rpx;
+    color: black;
+}
+
+.userInfo {
+    height: 210rpx;
+    width: 100%;
+    text-align: center;
+}
+
+.userInfo-avatar {
+    margin-top: 50rpx;
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+}
+
+.userInfo-name {
+    font-size: 26rpx;
+}
+
+.test, .create {
+    height: 150rpx;
+    width: 400rpx;
+    border-radius: 5%;
+    background-color: green;
+    color: white;
+    font-size: 40rpx;
+    text-align: center;
+    line-height: 150rpx;
+    margin-left: 196rpx
+}
+
+.test {
+    margin-top: 100rpx;
+}
+
+.create {
+    margin-top: 60rpx;
+}
+
+.tabbar {
+    display: flex;
+    text-align: center;
+    margin-left: 94rpx;
+}
+
+.apeNum, .myInfo, .myResume {
+    width: 160rpx;
+    height: 60rpx;
+    background-color: green;
+    margin-top: 90rpx;
+    font-size: 26rpx;
+    line-height: 60rpx;
+    color: white;
+    border-radius: 5%;
+}
+
+.myInfo, .myResume {
+    margin-left: 40rpx;
+}
