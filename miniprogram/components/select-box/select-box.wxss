@@ -1,0 +1,52 @@
+/* components/select-box/select-box.wxss */
+
+.select_box {
+    background: #fff;
+    width: 320rpx;
+    position: relative;
+    margin-top: 10rpx;
+}
+
+.select {
+    box-sizing: border-box;
+    width: 100%;
+    height: 60rpx;
+    border: 1px solid #efefef;
+    display: flex;
+    align-items: center;
+}
+
+.select_text {
+    font-size: 26rpx;
+    flex: 1;
+}
+.select_img {
+    width: 40rpx;
+    height: 40rpx;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.select_img_rotate {
+    transform: rotate(180deg);
+}
+
+.option_box {
+    position: absolute;
+    top:55rpx;
+    width: 100%;
+    border: 1px solid #efefef;
+    box-sizing: border-box;
+    height: 0;
+    overflow-y: auto;
+    border-top: 0;
+    background: #fff;
+    transition: height 0.3s;
+    z-index: 999;
+}
+.option {
+    display: block;
+    font-size: 26rpx;
+    border-bottom: 1px solid #efefef;
+    line-height: 26rpx;
+}
