@@ -1,5 +1,7 @@
 <view class="page">
-<view class="howToDo">怎么制作</view>
+<view class="howToDo">
+    <text>怎么制作</text>
+    </view>
 <view class="userInfo">
 <image class="userInfo-avatar" src="../../images/test.jpg"></image>
 <view class="userInfo-name">一只酱</view>

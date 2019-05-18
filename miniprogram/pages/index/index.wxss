@@ -1,11 +1,18 @@
 .howToDo {
+    width: 120rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+    text-align: center;
     font-size: 28rpx;
-    padding-top: 180rpx;
-    margin-left: 620rpx;
-    color: black;
+    color:#fff;
+    border: 2rpx solid #fff;
+    border-radius: 5%;
 }
 
 .userInfo {
+    padding-top: 120rpx;
     height: 210rpx;
     width: 100%;
     text-align: center;
@@ -19,23 +26,27 @@
 }
 
 .userInfo-name {
-    font-size: 26rpx;
+    font-size: 32rpx;
+    color: white;
 }
 
 .test, .create {
     height: 150rpx;
     width: 400rpx;
     border-radius: 5%;
-    background-color: green;
+    background-color:#31799f;
+    font-weight: bold;
+    opacity: 0.7;
     color: white;
-    font-size: 40rpx;
+    font-size: 60rpx;
     text-align: center;
     line-height: 150rpx;
-    margin-left: 196rpx
+    letter-spacing: 12rpx;
+    margin-left: 180rpx
 }
 
 .test {
-    margin-top: 100rpx;
+    margin-top: 150rpx;
 }
 
 .create {
@@ -51,12 +62,12 @@
 .apeNum, .myInfo, .myResume {
     width: 160rpx;
     height: 60rpx;
-    background-color: green;
-    margin-top: 90rpx;
-    font-size: 26rpx;
+    margin-top: 150rpx;
+    font-size: 30rpx;
     line-height: 60rpx;
-    color: white;
+    color: #31799f;
     border-radius: 5%;
+    text-decoration: underline;
 }
 
 .myInfo, .myResume {
