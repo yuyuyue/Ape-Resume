@@ -1,1 +1,20 @@
-
+<view class="page">
+<view class="howToDo">
+    <text>怎么制作</text>
+    </view>
+<view class="userInfo">
+<image class="userInfo-avatar" src="../../images/test.jpg"></image>
+<view class="userInfo-name">一只酱</view>
+</view>
+<view class="test">
+猿力测试
+</view>
+<view class="create">
+简历生成
+</view>
+<view class="tabbar">
+<view class="apeNum">我的猿力值</view>
+<view class="myInfo">我的信息</view>
+<view class="myResume">我的简历</view>
+</view>
+</view>

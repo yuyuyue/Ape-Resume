@@ -1,19 +1,57 @@
 /**app.wxss**/
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-} 
-
-button {
-  background: initial;
+page{
+  height: 100%;
 }
-
-button:focus{
-  outline: 0;
+.page{
+  background-image: url('http://r.photo.store.qq.com/psb?/V10L6jbI2OClBI/ad23J0GCYXzG.JEIkmxGTnveZDxPEhhIvWqrx0bFtHU!/r/dDUBAAAAAAAA');
+  background-position: 0 0;
+  background-size: 100% 100%;
+  height: 100%;
+  width: 750rpx;
 }
-
-button::after{
-  border: none;
+.first-title {
+  padding-top: 150rpx;
+  margin-left: 60rpx;
+}
+.titleType{
+  margin-left: 60rpx;
+  margin-top: 40rpx;
+}
+.title{
+  font-size: 26rpx;
+  color: #83a5b8;
+  font-weight: bold;
+}
+.inputText {
+  margin-top: 10rpx;
+  background-color: #fff;
+  font-size: 26rpx;
+  width: 320rpx;
+  height: 60rpx;
+}
+.descript{
+  margin-top: 10rpx;
+  background-color: #fff;
+  font-size: 26rpx;
+  width: 640rpx;
+  height: 200rpx;
+}
+.return,.next{
+  position: absolute;
+  bottom: 40rpx;
+  height: 60rpx;
+  width: 120rpx;
+  border-radius: 10rpx;
+  background-color:#30a164;
+  border: 2rpx solid #c4fbbd;
+  opacity: 0.7;
+  color: #fff;
+  text-align: center;
+  line-height: 60rpx;
+}
+.return{
+  left:20rpx;
+}
+.next{
+ right: 20rpx;
 }

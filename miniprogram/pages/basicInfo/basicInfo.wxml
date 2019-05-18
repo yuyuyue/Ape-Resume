@@ -1,0 +1,32 @@
+<!-- miniprogram/pages/basicInfo/basicInfo.wxml -->
+<view class="page">
+    <view class="userInfo">
+        <view class="userName">
+            <text class="title">姓名</text>
+            <input class="inputText" placeholder="请输入您的姓名" focus="{{focus}}" />
+        </view>
+        <view class="titleType">
+            <text class="title">性别</text>
+            <c_select-box></c_select-box>
+        </view>
+        <view class="titleType">
+            <text class="title"> 年龄</text>
+            <input class="inputText" placeholder="请输入您的年龄" focus="{{focus}}" />
+        </view>
+        <view class="titleType">
+            <text class="title">联系电话</text>
+            <input class="inputText" placeholder="请输入您的电话号码" focus="{{focus}}" />
+        </view>
+        <view class="titleType">
+            <text class="title"> 联系邮箱</text>
+            <input class="inputText" placeholder="请输入您的邮箱" focus="{{focus}}" />
+        </view>
+    </view>
+    <view class="userPic">
+        <view class="addPic">
+            <image class="add" src="../../images/add.png" />
+        </view>
+        <text class="addMsg">添加照片</text>
+    </view>
+    <view class="return">返回</view>
+</view>
