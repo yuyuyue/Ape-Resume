@@ -1,0 +1,32 @@
+<!-- miniprogram/pages/test/test.wxml -->
+<view class="page">
+    <view class="user">
+        <image class="avatar" src="../../images/test.jpg" />
+    </view>
+    <view class="test blue">
+        <image class="test-avatar" src="../../images/github (1).png"></image>
+        <image class="test-name" src="../../images/GitHub.png"></image>
+        <view class="goTest goTest-blue" bindtap="goGitHub">
+        <image class="goTest-image" src= "../../images/go.png"></image>
+        </view>
+    </view>
+    <view class="test orange">
+        <image class="test-avatar" src="../../images/LeetCode.png"></image>
+        <image class="test-name" src="../../images/leetcode2.png"></image>
+        <view class="goTest goTest-orange" bindtap="goLeetCode">
+        <image class="goTest-image" src= "../../images/go1.png"></image>
+        </view>
+    </view>
+    <view class="test pink">
+        <image class="test-avatar" src="../../images/juejin.png"></image>
+        <image class="test-name" src="../../images/juejin1.png"></image>
+        <view class="goTest goTest-pink" bindtap="goJuejin">
+        <image class="goTest-image" src= "../../images/go2.png"></image>
+        </view>
+    </view>
+    <view class="comprehensive">
+        <text class="result">Result!</text>
+    </view>
+    <view class="return" bindtap="goIndex">返回</view>
+    <view class="next">完成</view>
+</view>

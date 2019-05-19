@@ -1,4 +1,4 @@
-// miniprogram/pages/index/index.js
+// miniprogram/pages/item/item.js
 Page({
 
   /**
@@ -7,9 +7,9 @@ Page({
   data: {
 
   },
-  goTest(){
+  goItemDes(){
     wx.navigateTo({
-      url: '../test/test',
+      url: '../itemDes/ietmDes',
       success: (result)=>{
         
       },
@@ -17,6 +17,7 @@ Page({
       complete: ()=>{}
     });
   },
+
   /**
    * 生命周期函数--监听页面加载
    */

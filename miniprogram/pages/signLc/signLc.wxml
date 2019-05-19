@@ -1,0 +1,20 @@
+<!--miniprogram/pages/signLc/signLc.wxml-->
+<!-- miniprogram/pages/signGit/signGit.wxml -->
+<view class="page">
+    <view class="container">
+        <view class="sign">
+            <image class="sign-icon" src="../../images/LeetCode1.png" />
+            <text class="sign-text">Sign in to LeetCode</text>
+        </view>
+        <view class="account">
+            <text class="account-name">Username or email address</text>
+            <input type="text" class="account-input" placeholder="请输入账号" />
+        </view>
+        <view class="password">
+            <text class="account-name">Password</text>
+            <input type="text" class="account-input" placeholder="请输入密码" />
+        </view>
+        <view class="sign-in">Sign in</view>
+    </view>
+    <view class="return" bindtap="goTest">返回</view>
+</view>

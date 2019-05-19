@@ -1,4 +1,4 @@
-// miniprogram/pages/index/index.js
+// miniprogram/pages/signJuejin/signJuejin.js
 Page({
 
   /**
@@ -7,14 +7,14 @@ Page({
   data: {
 
   },
-  goTest(){
+  goTest() {
     wx.navigateTo({
       url: '../test/test',
-      success: (result)=>{
-        
+      success: (result) => {
+
       },
-      fail: ()=>{},
-      complete: ()=>{}
+      fail: () => { },
+      complete: () => { }
     });
   },
   /**

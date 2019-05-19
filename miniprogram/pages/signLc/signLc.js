@@ -1,4 +1,4 @@
-// miniprogram/pages/index/index.js
+// miniprogram/pages/signLc/signLc.js
 Page({
 
   /**

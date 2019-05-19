@@ -1,4 +1,4 @@
-// miniprogram/pages/index/index.js
+// miniprogram/pages/itemDes/ietmDes.js
 Page({
 
   /**
@@ -7,9 +7,9 @@ Page({
   data: {
 
   },
-  goTest(){
+  goBefore(){
     wx.navigateTo({
-      url: '../test/test',
+      url: '../item/item',
       success: (result)=>{
         
       },

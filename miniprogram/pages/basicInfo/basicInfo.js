@@ -5,9 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    selectArray: [{
+      "sexId": "1",
+      "text": "男"
+    }, {
+      "sexId": "2",
+      "text": "女"
+    }]
   },
-
+  goEduInfo(){
+    wx.navigateTo({
+      url: '../eduInfo/eduInfo',
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
