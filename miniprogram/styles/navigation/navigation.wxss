@@ -2,7 +2,7 @@
     position: absolute;
     bottom:50rpx;
     height: 60rpx;
-    width: 120rpx;
+    width: 160rpx;
     border-radius: 10rpx;
     background-color: #f5ffff;
     border-bottom: 6rpx solid #6ba9ee;
@@ -10,8 +10,8 @@
     opacity: 0.9;
     color: #6ba9ee;
     font-size: 30rpx;
-    text-align: center;
     line-height: 60rpx;
+    text-align: center;
 }
 
 .return {

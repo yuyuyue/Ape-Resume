@@ -1,9 +1,11 @@
 <!-- miniprogram/pages/item/item.wxml -->
 <view class="page">
     <view class="container">
+         <form bindsubmit="addItem">
+            <scroll-view scroll-y="true" style="height: 900rpx;">  
         <view class="first-title">
             <text class="title">项目名称</text>
-            <input class="inputText" placeholder="请填写项目名称" focus="{{focus}}" />
+            <input class="inputText" placeholder="请填写项目名称" focus="{{focus}}" name="name" />
         </view>
         <view class="titleType">
             <text class="title">开始时间</text>
@@ -16,9 +18,19 @@
         <view class="titleType">
             <text class="title">技术栈</text>
             <textarea rows="3" cols="20"
- placeholder="请描述项目中使用的技术栈" focus="{{focus}}" class="descript" />
+ placeholder="请描述项目中使用的技术栈" focus="{{focus}}" class="descript" name="techstack" />
         </view>
-    </view>
+        <view class="first-title">
+            <text class="title">项目链接</text>
+            <textarea rows="3" cols="20" class="item-link" placeholder="请填写项目链接" focus="{{focus}}" name="lineadress" />
+        </view>  
+        <view class="titleType">
+            <text class="title">项目描述</text>
+            <textarea rows="3" cols="20" placeholder="请描述你的项目" focus="{{focus}}" class="descript" name="desc" />
+        </view>
+        </scroll-view>
+        </form>
+        </view>
     <view class="return">返回</view>
-    <view class="next" bindtap="goItemDes">下一步</view>
+    <button class="next" formType="submit">提交</button>
 </view>
