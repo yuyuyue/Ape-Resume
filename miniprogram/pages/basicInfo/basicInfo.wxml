@@ -1,33 +1,78 @@
 <!-- miniprogram/pages/basicInfo/basicInfo.wxml -->
 <view class="page">
     <view class="container">
-        <view class="first-title">
-            <text class="title">姓名</text>
-            <input class="inputText" placeholder="请输入您的姓名" focus="{{focus}}" />
-        </view>
-        <view class="titleType">
-            <text class="title">性别</text>
-            <c_select-box  prop-array='{{selectArray}}'></c_select-box>
-        </view>
-        <view class="titleType">
-            <text class="title"> 年龄</text>
-            <input class="inputText" placeholder="请输入您的年龄" focus="{{focus}}" />
-        </view>
-        <view class="titleType">
-            <text class="title">联系电话</text>
-            <input class="inputText" placeholder="请输入您的电话号码" focus="{{focus}}" />
-        </view>
-        <view class="titleType">
-            <text class="title"> 联系邮箱</text>
-            <input class="inputText" placeholder="请输入您的邮箱" focus="{{focus}}" />
-        </view>
-    <view class="userPic">
-        <view class="addPic">
-            <image class="add" src="../../images/add.png" />
-        </view>
-        <text class="addMsg">添加照片</text>
-    </view>
-    <view class="return">返回</view>
-    <view class="next" bindtap="goEduInfo">下一步</view>
+        <form bindsubmit="getBasicInfo">
+            <scroll-view scroll-y="true" style="height: 900rpx;">
+                <view class="first-title">
+                    <text class="title">姓名</text>
+                    <input class="inputText" placeholder="请输入您的姓名" focus="{{focus}}" name="name" />
+                </view>
+                <view class="titleType">
+                    <text class="title">性别</text>
+                    <radio-group name="sex" >
+                        <label>
+                            <radio  value="女" />
+                            女
+                        </label>
+                        <label>
+                            <radio value="男" />
+                            男
+                        </label>
+                    </radio-group>
+                </view>
+                <view class="titleType">
+                    <text class="title">年龄</text>
+                    <input class="inputText" placeholder="请输入您的年龄" focus="{{focus}}" name="age" />
+                </view>
+                <view class="titleType">
+                    <text class="title">联系电话</text>
+                    <input class="inputText" placeholder="请输入您的电话号码" focus="{{focus}}" name="phone" />
+                </view>
+                <view class="titleType">
+                    <text class="title">联系邮箱</text>
+                    <input class="inputText" placeholder="请输入您的邮箱" focus="{{focus}}" name="email" />
+                </view>
+                <view class="userPic">
+                    <view class="addPic">
+                        <image class="add" src="../../images/add.png" />
+                    </view>
+                    <text class="addMsg">添加照片</text>
+                </view>
+                <view class="first-title">
+                    <text class="title">学校名称</text>
+                    <input placeholder="请填写学校名称" focus="{{focus}}" class="inputText" name="schoolname" />
+                </view>
+                <view class="titleType">
+                    <text class="title">学历信息</text>
+                    <c_select-box prop-array='{{selectEdu}}'></c_select-box>
+                </view>
+                <view class="titleType">
+                    <text class="title">所学专业</text>
+                    <input placeholder="请填写所学专业" focus="{{focus}}" class="inputText" name="major" />
+                </view>
+                <view class="titleType">
+                    <text class="title">入学年份</text>
+                    <c_select-box prop-array='{{EduStartTime}}'></c_select-box>
+                </view>
+                <view class="titleType">
+                    <text class="title">毕业年份</text>
+                    <c_select-box prop-array='{{EduGraTime}}'></c_select-box>
+                </view>
+                <view class="titleType">
+                    <text class="title">期望薪资</text>
+                    <input placeholder="请填写期望薪资" focus="{{focus}}" class="inputText" name="expectSary" />
+                </view>
+                <view class="titleType">
+                    <text class="title">期望地点</text>
+                    <input placeholder="请填写期望地点" focus="{{focus}}" class="inputText" name="expectSpace" />
+                </view>
+                <view class="titleType">
+                    <text class="title">个人优势</text>
+                    <textarea rows="3" cols="20" placeholder="请填写个人优势" focus="{{focus}}" class="descript" name="advantage" />
+                </view>
+            </scroll-view>
+        </form>
+        <view class="return">取消</view>
+        <button class="next" formType="submit">提交</button>
     </view>
 </view>
