@@ -7,7 +7,50 @@ Page({
   data: {
 
   },
-
+  // 去绑定github
+  goGitHub(){
+    wx.navigateTo({
+      url: '../signGit/signGit',
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
+  },
+  //去绑定leetcode
+  goLeetCode(){
+    wx.navigateTo({
+      url: '../signLc/signLc',
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
+  },
+  //去绑定掘金
+  goJuejin(){
+    wx.navigateTo({
+      url: '../signJuejin/signJuejin',
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
+  },
+  // 返回首页
+  goIndex(){
+    wx.navigateTo({
+      url: '../index/index',
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -15,5 +15,5 @@
         </view>
         <view class="sign-in">Sign in</view>
     </view>
-    <view class="return">返回</view>
+    <view class="return" bindtap="goTest">返回</view>
 </view>

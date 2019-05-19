@@ -6,7 +6,7 @@
 <image class="userInfo-avatar" src="../../images/test.jpg"></image>
 <view class="userInfo-name">一只酱</view>
 </view>
-<view class="test">
+<view class="test" bindtap="goTest">
 猿力测试
 </view>
 <view class="create">
