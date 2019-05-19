@@ -1,3 +1,0 @@
-/* miniprogram/pages/eduInfo/eduInfo.wxss */
-@import "../../styles/navigation/navigation";
-@import "../../styles/info/info";
