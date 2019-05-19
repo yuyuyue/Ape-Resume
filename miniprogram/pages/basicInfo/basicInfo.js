@@ -13,15 +13,17 @@ Page({
       "text": "女"
     }]
   },
-  goEduInfo(){
-    wx.navigateTo({
-      url: '../eduInfo/eduInfo',
-      success: (result)=>{
-        
-      },
-      fail: ()=>{},
-      complete: ()=>{}
-    });
+  addBasicInfo(e){
+      console.log(e);
+      const data = e.detial.value;
+      wx.cloud.callFunction({
+        name: "userdetail",
+        data: {
+          opt: 'add',
+          data
+        }
+      })
+      
   },
   /**
    * 生命周期函数--监听页面加载
