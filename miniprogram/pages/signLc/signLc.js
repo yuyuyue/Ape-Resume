@@ -1,17 +1,11 @@
-// miniprogram/pages/index/index.js
+// miniprogram/pages/signLc/signLc.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    selectArray: [{
-      "sexId": "1",
-      "text": "男"
-    }, {
-      "sexId": "2",
-      "text": "女"
-    }]
+
   },
 
   /**

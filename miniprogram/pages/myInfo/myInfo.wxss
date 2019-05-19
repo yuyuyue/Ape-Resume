@@ -1,0 +1,21 @@
+/* miniprogram/pages/noInfo/noInfo.wxss */
+@import "../../styles/navigation/navigation";
+.page{
+    box-sizing: border-box;
+    padding-top: 60rpx;
+}
+.addBscMsg,.addJobExp,.addJobRes{
+    height: 300rpx;
+    width: 680rpx;
+    border-radius: 5%;
+    background-color:#31799f;
+    opacity: 0.7;
+    color: white;
+    font-size: 40rpx;
+    text-align: center;
+    line-height: 150rpx;
+    margin-left: 30rpx;
+}
+.addJobExp,.addJobRes{
+    margin-top: 60rpx;
+}

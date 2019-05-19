@@ -1,0 +1,24 @@
+<!-- miniprogram/pages/item/item.wxml -->
+<view class="page">
+    <view class="container">
+        <view class="first-title">
+            <text class="title">项目名称</text>
+            <input class="inputText" placeholder="请填写项目名称" focus="{{focus}}" />
+        </view>
+        <view class="titleType">
+            <text class="title">开始时间</text>
+            <c_select-box prop-array='{{EduStartTime}}'></c_select-box>
+        </view>
+        <view class="titleType">
+            <text class="title">结束时间</text>
+            <c_select-box prop-array='{{EduStartTime}}'></c_select-box>
+        </view>
+        <view class="titleType">
+            <text class="title">技术栈</text>
+            <textarea rows="3" cols="20"
+ placeholder="请描述项目中使用的技术栈" focus="{{focus}}" class="descript" />
+        </view>
+    </view>
+    <view class="return">返回</view>
+    <view class="next">下一步</view>
+</view>

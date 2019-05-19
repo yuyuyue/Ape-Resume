@@ -1,0 +1,44 @@
+.page{
+  box-sizing: border-box;
+  padding-top: 60rpx;
+}
+.container{
+  width: 690rpx;
+  height: 1000rpx;
+  background-color: #31799f;
+  opacity: 0.9;
+  margin-left: 30rpx;
+  border-radius: 8rpx;
+  border: 4rpx solid #83a5b8;
+}
+.first-title {
+    padding-top: 60rpx;
+    margin-left: 60rpx;
+  }
+  .titleType{
+    margin-left: 60rpx;
+    margin-top: 40rpx;
+  }
+  .title{
+    font-size: 30rpx;
+    color: #fff;
+    letter-spacing: 8rpx;
+    font-weight: bold;
+  }
+  .inputText {
+    margin-top: 10rpx;
+    background-color: #fff;
+    font-size: 26rpx;
+    width: 360rpx;
+    height: 70rpx;
+    border-radius: 10rpx;
+    text-indent: 2;
+  }
+  .descript{
+    margin-top: 10rpx;
+    background-color: #fff;
+    font-size: 26rpx;
+    width: 580rpx;
+    height: 140rpx;
+    border-radius: 8rpx;
+  }

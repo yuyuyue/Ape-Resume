@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 12,
 			"list": [
 				{
 					"id": 0,
@@ -44,6 +44,82 @@
 					"name": "basicInfo",
 					"pathName": "pages/basicInfo/basicInfo",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "eduInfo",
+					"pathName": "pages/eduInfo/eduInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "workExp",
+					"pathName": "pages/workExp/workExp",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "item",
+					"pathName": "pages/item/item",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "itemDes",
+					"pathName": "pages/itemDes/ietmDes",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/test/test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "signGit",
+					"pathName": "pages/signGit/signGit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "signLc",
+					"pathName": "pages/signLc/signLc",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "signJuejin",
+					"pathName": "pages/signJuejin/signJuejin",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "myInfo",
+					"pathName": "pages/myInfo/myInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "noInfo",
+					"pathName": "pages/myInfo/myInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "resume",
+					"pathName": "pages/myResume/myResume",
 					"scene": null
 				}
 			]

@@ -1,0 +1,21 @@
+<!-- miniprogram/pages/itemDes/ietmDes.wxml -->
+<view class="page">
+    <view class="container">
+        <view class="commit-item">
+            <view class="commit">
+                <image class="commit-img" src="../../images/add.png" />
+            </view>
+            <text class="commit-text">上传项目缩略图</text>
+        </view>
+        <view class="first-title">
+            <text class="title">项目链接</text>
+            <textarea rows="3" cols="20" class="item-link" placeholder="请填写项目链接" focus="{{focus}}" />
+        </view>  
+        <view class="titleType">
+            <text class="title">项目描述</text>
+            <textarea rows="3" cols="20" placeholder="请描述你的项目" focus="{{focus}}" class="descript" />
+        </view>
+    </view>
+    <view class="return">返回</view>
+    <view class="next">完成</view>
+</view>

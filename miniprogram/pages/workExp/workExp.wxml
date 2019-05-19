@@ -1,0 +1,27 @@
+<!--miniprogram/pages/workExp/workExp.wxml-->
+<view class="page">
+    <view class="container">
+    <view class="first-title">
+        <text class="title">公司名称</text>
+        <input class="inputText" placeholder="请填写公司名称" focus="{{focus}}" />
+    </view>
+    <view class="titleType">
+        <text class="title">从事职位</text>
+        <input class="inputText" placeholder="请填写从事职位" focus="{{focus}}" />
+    </view>
+    <view class="titleType">
+        <text class="title">开始时间</text>
+        <c_select-box prop-array='{{EduStartTime}}'></c_select-box>
+    </view>
+    <view class="titleType">
+        <text class="title">结束时间</text>
+        <c_select-box prop-array='{{EduGraTime}}'></c_select-box>
+    </view>
+    <view class="titleType">
+        <text class="title">工作描述</text>
+        <textarea rows="3" cols="20" placeholder="请描述你在公司所作所为" focus="{{focus}}" class="descript"/>
+    </view>
+    </view>
+    <view class="return">返回</view>
+    <view class="next">保存</view>
+</view>

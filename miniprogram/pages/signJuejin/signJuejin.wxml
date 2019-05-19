@@ -1,0 +1,14 @@
+<!--miniprogram/pages/signJuejin/signJuejin.wxml-->
+<view class="page">
+    <view class="container">
+        <view class="sign">
+            <image class="sign-icon" src="../../images/juejin2.png" />
+            <text class="sign-text">掘 金</text>
+        </view>
+        <view class="account">
+            <input type="text" class="account-input" placeholder="请输入用户名" />
+            <image class="search" src="../../images/search.png"></image>
+        </view>
+    </view>
+    <view class="return">返回</view>
+</view>

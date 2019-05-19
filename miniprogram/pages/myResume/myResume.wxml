@@ -1,0 +1,4 @@
+<!--miniprogram/pages/myResume/myResume.wxml-->
+<view class="page">
+<text class="next">删除简历</text>
+</view>

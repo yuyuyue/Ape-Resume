@@ -1,52 +1,54 @@
-/* components/select-box/select-box.wxss */
-
-.select_box {
-    background: #fff;
-    width: 320rpx;
-    position: relative;
+.com-selectBox{
     margin-top: 10rpx;
+    width: 360rpx;
 }
-
-.select {
-    box-sizing: border-box;
-    width: 100%;
-    height: 60rpx;
-    border: 1px solid #efefef;
-    display: flex;
-    align-items: center;
+.com-sContent{
+    border: 2rpx solid #e2e2e2;
+    background: white;
+    font-size: 32rpx;
+    position: relative;
+    height: 70rpx;
+    line-height: 70rpx;
+    border-radius: 8rpx;
 }
-
-.select_text {
-    font-size: 26rpx;
-    flex: 1;
-}
-.select_img {
-    width: 40rpx;
-    height: 40rpx;
-    display: block;
-    transition: transform 0.3s;
-}
-
-.select_img_rotate {
-    transform: rotate(180deg);
-}
-
-.option_box {
+.com-sImg{
     position: absolute;
-    top:55rpx;
-    width: 100%;
-    border: 1px solid #efefef;
-    box-sizing: border-box;
-    height: 0;
-    overflow-y: auto;
-    border-top: 0;
-    background: #fff;
-    transition: height 0.3s;
-    z-index: 999;
+    right: 20rpx;
+    top: 15rpx;
+    width:40rpx;
+    height:40rpx;
+    transition: all .3s ease;
 }
-.option {
-    display: block;
+.com-sTxt{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding:0 40rpx 0 12rpx;
     font-size: 26rpx;
-    border-bottom: 1px solid #efefef;
-    line-height: 26rpx;
+}
+.com-sList{
+    background: white;
+    width: inherit;
+    position: absolute;
+    border: 2rpx solid #e2e2e2;
+    border-top: none;
+    box-sizing: border-box;
+    z-index: 3;
+    max-height: 140rpx;
+    overflow: auto;
+}
+.com-sItem{
+    height: 60rpx;
+    line-height: 60rpx;
+    border-top: 2rpxpx solid #e2e2e2;
+    padding: 0 12rpx;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 28rpx;
+    color: black;
+}
+.com-sItem:first-child{
+    border-top: none;
 }

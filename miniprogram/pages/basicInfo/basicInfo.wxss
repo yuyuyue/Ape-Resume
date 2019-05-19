@@ -1,25 +1,6 @@
 /* miniprogram/pages/basicInfo/basicInfo.wxss */
-.userName {
-    padding-top: 150rpx;
-    margin-left: 60rpx;
-}
-
-.titleType {
-    margin-left: 60rpx;
-    margin-top: 40rpx;
-}
-
-.title {
-    font-size: 26rpx;
-}
-
-.inputText {
-    margin-top: 10rpx;
-    background-color: #fff;
-    font-size: 26rpx;
-    width: 320rpx;
-    height: 60rpx;
-}
+@import "../../styles/navigation/navigation";
+@import "../../styles/info/info";
 .userPic{
     position: absolute;
     top: 200rpx;
