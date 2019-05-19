@@ -13,7 +13,16 @@ Page({
       "text": "女"
     }]
   },
-
+  goEduInfo(){
+    wx.navigateTo({
+      url: '../eduInfo/eduInfo',
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

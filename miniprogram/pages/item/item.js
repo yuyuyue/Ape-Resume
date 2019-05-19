@@ -7,6 +7,16 @@ Page({
   data: {
 
   },
+  goItemDes(){
+    wx.navigateTo({
+      url: '../itemDes/ietmDes',
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
+  },
 
   /**
    * 生命周期函数--监听页面加载

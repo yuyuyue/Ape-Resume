@@ -28,6 +28,6 @@
         <text class="addMsg">添加照片</text>
     </view>
     <view class="return">返回</view>
-    <view class="next">下一步</view>
+    <view class="next" bindtap="goEduInfo">下一步</view>
     </view>
 </view>

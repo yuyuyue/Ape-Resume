@@ -7,7 +7,16 @@ Page({
   data: {
 
   },
-
+  goBefore(){
+    wx.navigateTo({
+      url: '../item/item',
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

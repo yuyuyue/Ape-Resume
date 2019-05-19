@@ -110,16 +110,17 @@
 					"scene": null
 				},
 				{
-					"id": 11,
-					"name": "noInfo",
-					"pathName": "pages/myInfo/myInfo",
+					"id": -1,
+					"name": "resume",
+					"pathName": "pages/myResume/myResume",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "resume",
-					"pathName": "pages/myResume/myResume",
+					"name": "basicInfo",
+					"pathName": "pages/basicInfo/basicInfo",
+					"query": "",
 					"scene": null
 				}
 			]
