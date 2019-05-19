@@ -1,6 +1,22 @@
 <view class="page">
-    <view class="addBscMsg"></view>
+    <view class="itemText">
+        <text class="item">基本信息</text>
+    </view>
+    <view class="addBscMsg">
+        <view class="noInfoText">
+            <text class="noInfo">你还没有基本信息，快点击添加吧~</text>
+            </view>
+            <view class="addInfo">
+                <image class="addImg" src="../../images/add1.png" />
+            </view>
+    </view>
+    <view class="itemText">
+        <text class="item">工作经历</text>
+    </view>
     <view class="addJobExp"></view>
+    <view class="itemText">
+        <text class="item">我的项目</text>
+    </view>
     <view class="addJobRes"></view>
     <view class="return">返回</view>
 </view>

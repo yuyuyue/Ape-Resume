@@ -2,20 +2,41 @@
 @import "../../styles/navigation/navigation";
 .page{
     box-sizing: border-box;
-    padding-top: 60rpx;
+    padding-top: 40rpx;
+}
+.itemText{
+    width: 140rpx;
+    height: 50rpx;
+    background-color: #ffd099;
+    margin-left: 30rpx;
+    text-align: center;
+    line-height: 50rpx;
+    border-radius: 10rpx;
+    margin-top:16rpx;
+    border-left: 4rpx solid #83a5b8;
+    border-top: 4rpx solid #83a5b8;
+}
+.item{
+    color: #fff;
+    font-size: 30rpx;
+    font-weight: bold;
 }
 .addBscMsg,.addJobExp,.addJobRes{
-    height: 300rpx;
+    height: 260rpx;
     width: 680rpx;
     border-radius: 5%;
+    border-style: dashed;
     background-color:#31799f;
     opacity: 0.7;
     color: white;
-    font-size: 40rpx;
+    font-size: 30rpx;
     text-align: center;
     line-height: 150rpx;
     margin-left: 30rpx;
+    margin-top: 8rpx;
+    display: flex;
 }
-.addJobExp,.addJobRes{
-    margin-top: 60rpx;
+.addImg{
+    width: 80rpx;
+    height: 80rpx;
 }

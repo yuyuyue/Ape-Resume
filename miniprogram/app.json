@@ -2,10 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/basicInfo/basicInfo",
-    "pages/eduInfo/eduInfo",
     "pages/workExp/workExp",
     "pages/item/item",
-    "pages/itemDes/ietmDes",
     "pages/test/test",
     "pages/signGit/signGit",
     "pages/signLc/signLc",

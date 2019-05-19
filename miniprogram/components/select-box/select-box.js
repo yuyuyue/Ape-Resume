@@ -48,6 +48,8 @@ Component({
             },
             //设置内容
             setText:function(e){
+                console.log(e);
+                
                 var nowData = this.properties.propArray;//当前option的数据是引入组件的页面传过来的，所以这里获取数据只有通过this.properties
                 var nowIdx = e.target.dataset.index;//当前点击的索引
                 var nowText = nowData[nowIdx].text;//当前点击的内容
@@ -57,6 +59,9 @@ Component({
                     selectShow: false,
                     nowText:nowText,
                     animationData: this.animation.export()
+                })
+                this.triggerEvent("picked",{
+                   item: this.properties.propArray[e.target.dataset.index]
                 })
             }
         }

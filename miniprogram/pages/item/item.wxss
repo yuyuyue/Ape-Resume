@@ -1,3 +1,20 @@
 /* miniprogram/pages/item/item.wxss */
 @import "../../styles/navigation/navigation";
 @import "../../styles/info/info";
+
+.commit-text{
+    font-size: 26rpx;
+    color:#fff;
+}
+.item-link{
+    margin-top: 20rpx;
+    width: 580rpx;
+    height:150rpx;
+    background-color: #fff;
+    font-size: 26rpx;
+    border-radius: 8rpx;
+}
+.descript{
+    margin-top: 20rpx;
+    height: 150rpx;
+}

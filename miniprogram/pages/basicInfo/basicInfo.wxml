@@ -44,7 +44,7 @@
                 </view>
                 <view class="titleType">
                     <text class="title">学历信息</text>
-                    <c_select-box prop-array='{{selectEdu}}'></c_select-box>
+                    <c_select-box bind:picked="picked" prop-array='{{selectEdu}}'></c_select-box>
                 </view>
                 <view class="titleType">
                     <text class="title">所学专业</text>

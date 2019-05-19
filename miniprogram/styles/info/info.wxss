@@ -12,7 +12,7 @@
   border: 4rpx solid #83a5b8;
 }
 .first-title {
-    padding-top: 60rpx;
+    padding-top: 40rpx;
     margin-left: 60rpx;
   }
   .titleType{
