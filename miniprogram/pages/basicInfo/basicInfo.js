@@ -15,7 +15,7 @@ Page({
   },
   addBasicInfo(e){
       console.log(e);
-      const data = e.detial.value;
+      const data = e.detail.value;
       wx.cloud.callFunction({
         name: "userdetail",
         data: {
