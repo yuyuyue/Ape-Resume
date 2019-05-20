@@ -48,13 +48,6 @@
 				},
 				{
 					"id": -1,
-					"name": "eduInfo",
-					"pathName": "pages/eduInfo/eduInfo",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
 					"name": "workExp",
 					"pathName": "pages/workExp/workExp",
 					"query": "",

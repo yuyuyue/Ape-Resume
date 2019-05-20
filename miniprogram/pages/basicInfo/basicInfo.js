@@ -13,15 +13,17 @@ Page({
       "text": "女"
     }]
   },
-  goEduInfo(){
-    wx.navigateTo({
-      url: '../eduInfo/eduInfo',
-      success: (result)=>{
-        
-      },
-      fail: ()=>{},
-      complete: ()=>{}
-    });
+  addBasicInfo(e){
+      console.log(e);
+      const data = e.detail.value;
+      wx.cloud.callFunction({
+        name: "userdetail",
+        data: {
+          opt: 'add',
+          data
+        }
+      })
+      
   },
   picked(e){
     console.log(e.item);

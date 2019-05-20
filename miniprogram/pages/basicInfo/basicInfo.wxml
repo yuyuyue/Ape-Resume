@@ -1,7 +1,7 @@
 <!-- miniprogram/pages/basicInfo/basicInfo.wxml -->
 <view class="page">
     <view class="container">
-        <form bindsubmit="getBasicInfo">
+        <form bindsubmit="addBasicInfo">
             <scroll-view scroll-y="true" style="height: 900rpx;">
                 <view class="first-title">
                     <text class="title">姓名</text>
@@ -9,9 +9,9 @@
                 </view>
                 <view class="titleType">
                     <text class="title">性别</text>
-                    <radio-group name="sex" >
+                    <radio-group name="sex">
                         <label>
-                            <radio  value="女" />
+                            <radio value="女" />
                             女
                         </label>
                         <label>
@@ -71,8 +71,9 @@
                     <textarea rows="3" cols="20" placeholder="请填写个人优势" focus="{{focus}}" class="descript" name="advantage" />
                 </view>
             </scroll-view>
+                          <button class="next" formType="submit">提交</button>
         </form>
         <view class="return">取消</view>
-        <button class="next" formType="submit">提交</button>
+      
     </view>
 </view>
