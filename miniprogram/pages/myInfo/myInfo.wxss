@@ -24,8 +24,7 @@
 .addBscMsg,.addJobExp,.addJobRes{
     height: 260rpx;
     width: 680rpx;
-    border-radius: 5%;
-    border-style: dashed;
+    border-radius: 10rpx;
     background-color:#31799f;
     opacity: 0.7;
     color: white;
