@@ -52,19 +52,23 @@
                 </view>
                 <view class="titleType">
         <text class="title">入学年份</text>
-        <input class="inputText" placeholder="请填写入学年份，2018-09" focus="{{focus}}" name="beginDate" />
+        <input class="inputText" placeholder="请填写入学年份，2018-09" focus="{{focus}}" name="begindate" />
     </view>
                 <view class="titleType">
         <text class="title">毕业年份</text>
-        <input class="inputText" placeholder="请填写毕业年份，2018-09" focus="{{focus}}" name="beginDate" />
+        <input class="inputText" placeholder="请填写毕业年份，2018-09" focus="{{focus}}" name="begindate" />
     </view>
+    <view class="titleType">
+                    <text class="title">投递岗位</text>
+                    <input placeholder="请填写期望岗位" focus="{{focus}}" class="inputText" name="expectjob" />
+                </view>
                 <view class="titleType">
                     <text class="title">期望薪资</text>
-                    <input placeholder="请填写期望薪资" focus="{{focus}}" class="inputText" name="expectSary" />
+                    <input placeholder="请填写期望薪资" focus="{{focus}}" class="inputText" name="expectsary" />
                 </view>
                 <view class="titleType">
                     <text class="title">期望地点</text>
-                    <input placeholder="请填写期望地点" focus="{{focus}}" class="inputText" name="expectSpace" />
+                    <input placeholder="请填写期望地点" focus="{{focus}}" class="inputText" name="expectspace" />
                 </view>
                 <view class="titleType">
                     <text class="title">个人优势</text>
