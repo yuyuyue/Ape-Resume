@@ -11,10 +11,9 @@
       </view>
       <view class="content">
         <text class="time">2018.9-2019.2</text>
-        <text class="itemName">· 旅行小账本</text>
-        <text class="itemLink">项目链接：</text>
-        <text class="techStack">技术栈：</text>
-        <text class="itemDesc">项目描述：</text>
+        <text class="company">· 阿里巴巴网络技术有限公司</text>
+        <text class="job">担任职位：</text>
+        <text class="desc">工作描述：</text>
       </view>
     </view>
   </view>

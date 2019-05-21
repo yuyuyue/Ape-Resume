@@ -13,11 +13,11 @@
     </view>
     <view class="titleType">
         <text class="title">开始时间</text>
-        <c_select-box prop-array='{{EduStartTime}}'></c_select-box>
+        <input class="inputText" placeholder="请填写入职时间，2018-09-01" focus="{{focus}}" name="begindate" />
     </view>
     <view class="titleType">
         <text class="title">结束时间</text>
-        <c_select-box prop-array='{{EduGraTime}}'></c_select-box>
+        <input class="inputText" placeholder="请填写离职时间，2018-09-01" focus="{{focus}}" name="enddate" />
     </view>
     <view class="titleType">
         <text class="title">工作描述</text>

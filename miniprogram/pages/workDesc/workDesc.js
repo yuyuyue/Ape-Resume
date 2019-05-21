@@ -1,4 +1,4 @@
-// miniprogram/pages/itemDesc/itemDesc.js
+// miniprogram/pages/basicDesc/basicDesc.js
 Page({
 
   /**

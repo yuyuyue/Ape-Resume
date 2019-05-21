@@ -10,6 +10,7 @@
     "pages/signJuejin/signJuejin",
     "pages/myInfo/myInfo",
     "pages/myResume/myResume",
+    "pages/workDesc/workDesc",
     "pages/itemDesc/itemDesc"
   ],
   "window": {
@@ -18,9 +19,6 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "云开发 QuickStart",
     "navigationBarTextStyle": "black"
-  },
-  "usingComponents": {
-    "c_select-box": "./components/select-box/select-box"
   },
   "sitemapLocation": "sitemap.json"
 }
