@@ -9,12 +9,12 @@
 <view class="test" bindtap="goTest">
 猿力测试
 </view>
-<view class="create">
+<view class="create" bindtap="makeRes">
 简历生成
 </view>
 <view class="tabbar">
 <view class="apeNum">我的猿力值</view>
-<view class="myInfo">我的信息</view>
+<view class="myInfo" bindtap="goMyInfo">我的信息</view>
 <view class="myResume">我的简历</view>
 </view>
 </view>

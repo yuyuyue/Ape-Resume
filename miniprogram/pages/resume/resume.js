@@ -1,4 +1,4 @@
-// miniprogram/pages/index/index.js
+// miniprogram/pages/resume/resume.js
 Page({
 
   /**
@@ -7,26 +7,7 @@ Page({
   data: {
 
   },
-  goTest(){
-    wx.navigateTo({
-      url: '../test/test',
-      success: (result)=>{
-        
-      },
-      fail: ()=>{},
-      complete: ()=>{}
-    });
-  },
-  goMyInfo(){
-    wx.navigateTo({
-      url:'../myInfo/myInfo'
-    })
-  },
-  makeRes(){
-    wx.navigateTo({
-      url:'../makeRes/makeRes'
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
