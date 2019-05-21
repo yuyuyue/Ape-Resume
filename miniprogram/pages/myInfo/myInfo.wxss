@@ -1,41 +1,69 @@
 /* miniprogram/pages/noInfo/noInfo.wxss */
 @import "../../styles/navigation/navigation";
-.page{
-    box-sizing: border-box;
-    padding-top: 40rpx;
-}
-.itemText{
-    width: 140rpx;
-    height: 50rpx;
-    background-color: #ffd099;
+.basicInfo{
+    width: 690rpx;
     margin-left: 30rpx;
-    text-align: center;
-    line-height: 50rpx;
-    border-radius: 10rpx;
-    margin-top:16rpx;
-    border-left: 4rpx solid #83a5b8;
-    border-top: 4rpx solid #83a5b8;
-}
-.item{
-    color: #fff;
-    font-size: 30rpx;
-    font-weight: bold;
-}
-.addBscMsg,.addJobExp,.addJobRes{
-    height: 260rpx;
-    width: 680rpx;
-    border-radius: 10rpx;
-    background-color:#31799f;
-    opacity: 0.7;
-    color: white;
-    font-size: 30rpx;
-    text-align: center;
-    line-height: 150rpx;
-    margin-left: 30rpx;
-    margin-top: 8rpx;
+    height: 330rpx;
+    border: 1px solid #000;
+    margin-bottom: 80rpx;
     display: flex;
 }
-.addImg{
-    width: 80rpx;
-    height: 80rpx;
+.userPhoto{
+   margin-top: 17rpx;
+   margin-left:17rpx;
+   margin-right: 30rpx;
+}
+.photo{
+    width: 213rpx;
+    height: 297rpx;
+}
+.userInfo{
+    width: 420rpx;
+    height: 300rpx;
+    margin-top: 15rpx;
+}
+.infoItem{
+    margin-bottom: 10rpx;
+}
+.infoName{
+    font-size: 26rpx;
+}
+.more{
+    margin-top: 240rpx;
+}
+.workExp,.item{
+    width: 690rpx;
+    height: 280rpx;
+    border: 1px solid #000;
+    margin-left: 30rpx;
+}
+.workExp{
+    margin-bottom: 30rpx;
+}
+.cardTitle{
+    margin-left: 20rpx;
+    width: 650rpx;
+    height: 68rpx;
+}
+.cardItem{
+    width: 650rpx;
+    height: 100rpx;
+    margin-left: 20rpx;
+}
+.borderbottom{
+    border-bottom: 1px solid #f0f0f0;
+}
+.icon{
+    height: 60rpx;
+    width: 60rpx;
+    margin-top: 20rpx;
+}
+.company{
+    margin-left:40rpx;
+}
+.desc{
+    width: 60rpx;
+    height: 60rpx;
+    float: right;
+    margin-top: 20rpx;
 }
