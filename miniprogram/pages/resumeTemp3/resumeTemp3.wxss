@@ -1,0 +1,102 @@
+.flex{
+  display: flex;
+  height: 100%;
+}
+.left{
+  width: 250rpx;
+  background-color:#31799f;
+}
+.right{
+  width: 500rpx;
+}
+.container{
+  margin-left: 20rpx;
+}
+.photo{
+  width: 135rpx;
+  height: 135rpx;
+  margin-left: 35rpx;
+  margin-top: 55rpx;
+  margin-bottom: 80rpx;
+  border-radius: 50%;
+}
+.infoType{
+  font-size: 22rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20rpx;
+}
+.infoIcon{
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+}
+.infoDesc{
+  font-size: 15rpx;
+  color: #c6e8fa;
+  margin-bottom: 15rpx;
+  margin-right: 15rpx;
+}
+.infoTemp{
+  margin-bottom: 40rpx;
+}
+
+/* 右侧内容 */
+.content{
+  margin-left: 45rpx;
+}
+.itemTemp{
+  margin-bottom: 40rpx;
+}
+.userName{
+  margin-top: 140rpx;
+  margin-right: 40rpx;
+  font-size: 45rpx;
+  font-weight: bold;
+  margin-bottom: 60rpx;
+}
+.expectJob{
+  height: 80rpx;
+  margin-top: 120rpx;
+  background-color: #31799f;
+  line-height: 2.5;
+}
+.expect{
+  font-size: 20rpx;
+  color: #fff;
+}
+.job{
+  font-size: 25rpx;
+  color: #fff;
+}
+.itemTitle{
+  font-size: 22rpx;
+  font-weight: bold;
+  position: relative;
+}
+.itemTitle::before{
+
+}
+.itemTitle:after{
+  content: "";
+  height:4rpx;
+  width: 300rpx;
+  background-color: #31799f;
+  position: absolute;
+  top: 20rpx;
+  left:120rpx;
+}
+.itemInfo{
+  font-size: 19rpx;
+  color: #31799f;
+  margin-right: 15rpx;
+}
+.itemDesc{
+  font-size: 16rpx;
+  color: #868686;
+  margin-right: 25rpx;
+}
+.grey{
+  color: #83a5b8;
+  font-size: 16rpx;
+}

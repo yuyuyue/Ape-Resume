@@ -1,0 +1,88 @@
+<!-- miniprogram/pages/resumeTemp3/resumeTemp3.wxml -->
+<view class="flex">
+  <view class="left">
+    <view class="container">
+      <image class="photo" src="../../images/test.jpg" />
+      <view class="infoTemp">
+        <view class="infoType">个人信息</view>
+        <view class="flex marginBottom">
+          <image class="infoIcon" src="../../images/age1.png" />
+          <view class="infoDesc">20岁</view>
+        </view>
+        <view class="flex marginBottom">
+          <image class="infoIcon" src="../../images/wechat1.png" />
+          <view class="infoDesc ">12545635425</view>
+        </view>
+        <view class="flex marginBottom">
+          <image class="infoIcon" src="../../images/phone1.png" />
+          <view class="infoDesc">12545635425</view>
+        </view>
+        <view class="flex marginBottom">
+          <image class="infoIcon" src="../../images/email1.png" />
+          <view class="infoDesc">1254563525154u@qq.com</view>
+        </view>
+      </view>
+      <view class="infoTemp">
+        <view class="infoType">教育背景</view>
+        <view class="infoDesc">2016-至今</view>
+        <view class="infoDesc">东华理工大学</view>
+        <view class="infoDesc">软件工程（本科）</view>
+      </view>
+      <view class="infoTemp">
+        <view class="infoType">个人优势</view>
+        <view class="infoDesc">熟悉 HTML、HTML5、语义化标签，了解 Canvas</view>
+        <view class="infoDesc">熟悉 CSS、CSS3、Less、Stylus，会用 BootStrap 框架</view>
+        <view class="infoDesc">熟悉原生 JavaScript、ES6+ 新特性，会用 JQuery 库， 了解 TypeScript</view>
+      </view>
+    </view>
+  </view>
+  <view class="right">
+    <view class="content">
+      <view class="flex">
+        <view class="userName">一只酱</view>
+        <view class="expectJob">
+          <text class="expect">求职意向</text>
+          <text class="job">/前端工程师</text>
+        </view>
+      </view>
+      <view class="itemTemp">
+        <view class="itemTitle">工作经验</view>
+        <view class="item">
+          <text class="itemInfo">2018.10-至今</text>
+          <text class="itemInfo">网易云网络公司</text>
+          <text class="itemInfo">切图仔</text>
+          <view class="itemDesc">
+            所在部门为智能分发部，技术栈为React，做B端数据报表维护和 奇计界面重构的任务。奇计需求是将传统JavaWeb项目重构为前 后端分离的项目，使用前端框架为React。
+          </view>
+        </view>
+        <view class="item">
+          <text class="itemInfo">2018.10-至今</text>
+          <text class="itemInfo">网易云网络公司</text>
+          <text class="itemInfo">切图仔</text>
+          <view class="itemDesc">
+            所在部门为智能分发部，技术栈为React，做B端数据报表维护和 奇计界面重构的任务。奇计需求是将传统JavaWeb项目重构为前 后端分离的项目，使用前端框架为React。
+          </view>
+        </view>
+      </view>
+      <view class="itemTemp">
+        <view class="itemTitle">项目成果</view>
+        <view class="item">
+          <text class="itemInfo">2018.10-至今</text>
+          <text class="itemInfo">旅行小账本</text>
+          <view class="itemInfo grey"> 技术栈：Maven + Spring + SpringMVC + Mybatis + Ajax + JQuery + BootStrap</view>
+          <view class="itemDesc">
+            所在部门为智能分发部，技术栈为React，做B端数据报表维护和 奇计界面重构的任务。奇计需求是将传统JavaWeb项目重构为前 后端分离的项目，使用前端框架为React。
+          </view>
+        </view>
+         <view class="item">
+          <text class="itemInfo">2018.10-至今</text>
+          <text class="itemInfo">旅行小账本</text>
+          <view class="itemInfo grey"> 技术栈：Maven + Spring + SpringMVC + Mybatis + Ajax + JQuery + BootStrap</view>
+          <view class="itemDesc">
+            所在部门为智能分发部，技术栈为React，做B端数据报表维护和 奇计界面重构的任务。奇计需求是将传统JavaWeb项目重构为前 后端分离的项目，使用前端框架为React。
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
