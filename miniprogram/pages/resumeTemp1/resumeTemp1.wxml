@@ -1,0 +1,54 @@
+<!-- miniprogram/pages/resume/resume.wxml -->
+<view class="content">
+     <image class="photo" src="../../images/test.jpg" />
+  <view class="resume-titleBorder">
+    <text class="resume-title">邹豪豪</text>
+  </view>
+  <view class="resume-keyInfo">
+    <text class="keyInfo">前端工程化、Node.js、前端业务逻辑开发</text>
+  </view>
+  <text class="info">· 男 / 1997 / 2020届</text>
+  <text class="info">· 本科 / 江西财经大学 / 软件工程专业</text>
+  <text class="info">· 期望职位：Web前端工程师实习生 / Node.js工程实习生</text>
+</view>
+<view class="content">
+  <view class="resume-titleBorder">
+    <text class="resume-title">联系方式</text>
+  </view>
+  <text class="info">· 手机：12345678962</text>
+  <text class="info">· 邮箱：1025525555@qq.com</text>
+  <text class="info">· 微信：152154151</text>
+</view>
+<view class="content">
+  <view class="resume-titleBorder">
+    <text class="resume-title">个人信息</text>
+  </view>
+</view>
+<view class="content">
+  <view class="resume-titleBorder">
+    <text class="resume-title">工作经验</text>
+  </view>
+  <view class="resume-keyInfo">
+    <text class="keyInfo">时间：2019-03 – 至今</text>
+    <text class="keyInfo">公司：北京爱奇艺科技有限公司</text>
+    <text class="keyInfo">职位：Web前端开发工程师</text>
+  </view>
+  <text class="info">
+    所在部门为智能分发部，技术栈为React，做B端数据报表维护和 奇计界面重构的任务。奇计需求是将传统JavaWeb项目重构为前 后端分离的项目，使用前端框架为React。
+  </text>
+</view>
+<view class="content">
+  <view class="resume-titleBorder">
+    <text class="resume-title">项目成果</text>
+  </view>
+  <view class="itemName">旅行小账本</view>
+  <image class="itemImg" src="../../images/test.jpg"></image>
+  <view class="resume-keyInfo">
+    <text class="keyInfo">2018.11-2019.01</text>
+    <text class="keyInfo">技术栈：</text>
+  </view>
+  <text class="info">项目描述：</text>
+</view>
+<view class="content">
+  <text class="info">个人优势：</text>
+</view>

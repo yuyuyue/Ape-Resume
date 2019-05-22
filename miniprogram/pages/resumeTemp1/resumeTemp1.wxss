@@ -1,0 +1,49 @@
+/* miniprogram/pages/resume/resume.wxss */
+.content{
+ margin: 50rpx 100rpx;
+}
+.resume-titleBorder{
+  height:80rpx;
+  border-bottom: 2rpx solid #dddada;
+}
+.resume-title{
+  font-weight: bold;
+  font-size: 40rpx;
+}
+.photo{
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  top: 20rpx;
+  right:120rpx;
+  border-radius: 50%;
+}
+.resume-keyInfo{
+  margin-top: 10rpx;
+  border-left: 4rpx solid #bfbfbf;
+}
+.keyInfo{
+  color: #7c7c7c;
+  font-weight: bold;
+  font-size: 20rpx;
+  margin-left: 20rpx;
+}
+.info{
+  display: block;
+  font-size: 20rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+.itemName{
+  font-size: 26rpx;
+  color: #2370c5;
+  font-weight: bold;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+}
+.itemImg{
+  margin-top: 20rpx;
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+}
