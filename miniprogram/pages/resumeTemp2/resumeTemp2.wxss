@@ -1,0 +1,98 @@
+/* 简历头部 */
+.resume-header{
+  margin-left: 65rpx;
+  margin-top: 40rpx;
+  display: flex;
+}
+.photo{
+  width: 105rpx;
+  height: 105rpx;
+  border-radius: 50%;
+  border: 1rpx solid #8cba50;
+}
+.user{
+  margin-left: 20rpx;
+  height: 60rpx;
+  margin-top: 30rpx;
+}
+.userName{
+  font-size: 40rpx;
+  color: #8cba50;
+  display: block;
+  font-weight: bold;
+}
+.expectJob{
+  font-size: 14rpx;
+  color: #c2dc84;
+  display: block;
+  margin-top: 5rpx;
+}
+.basicInfo{
+  margin-left: 140rpx;
+}
+.infoItem{
+  line-height: 0.5;
+}
+.icon{
+  height: 20rpx;
+  width: 20rpx;
+}
+.message{
+  font-size: 13rpx;
+  margin-left: 10rpx;
+}
+/* 简历详情 */
+.flex{
+  display: flex;
+}
+.resume-item{
+  margin-left: 55rpx;
+}
+.infoType,.infoDesc{
+  margin-right: 55rpx;
+}
+.infoType{
+  margin-left: 40rpx;
+}
+.infoTitle{
+  font-size: 20rpx;
+  font-weight: bold;
+}
+.infoDesc{
+  display: flex;
+  margin-left: 20rpx;
+  padding-left: 20rpx;
+  padding-bottom: 20rpx;
+  border-left: 4rpx solid #b3b3b3;
+}
+.time{
+  font-size: 15rpx;
+  color: #7e7e7e;
+  text-align: right;
+  display: block;
+}
+.desc{
+  margin-left: 20rpx;
+}
+.descName{
+  font-size:17rpx;
+  margin-right: 15rpx;
+  color: #a5d97d;
+}
+.descJob{
+  font-size: 15rpx;
+  color: #82a4a0;
+  margin-top:4rpx;
+}
+.descInfo{
+  font-size: 15rpx;
+  color: #b6b6b6;
+  width: 460rpx;
+  margin-top: 10rpx;
+}
+.itemImg{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 5rpx 0;
+  border-radius: 50%;
+}

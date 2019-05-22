@@ -1,4 +1,4 @@
-// miniprogram/pages/resume/resume.js
+// miniprogram/pages/resumeTemp2/resumeTemp2.js
 Page({
 
   /**
