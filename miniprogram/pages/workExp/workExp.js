@@ -5,9 +5,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    startInit: '请选择',
+    endInit: '请选择',
   },
-
+  startDateChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      startDate: e.detail.value,
+      startInit: '',
+    })
+  },
+  endDateChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      endDate: e.detail.value,
+      endInit: '',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
