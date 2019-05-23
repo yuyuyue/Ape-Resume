@@ -1,44 +1,72 @@
 .page{
+  background-color: #F5FAFE;
+  height: 100%;
   box-sizing: border-box;
-  padding-top: 60rpx;
+  padding-top: 100rpx;
+}
+.header{
+  width: 178rpx;
+  height: 178rpx;
+  position: absolute;
+  top: 20rpx;
+  left: 286rpx;
+}
+.userAvatar{
+  width: 178rpx;
+  height: 178rpx;
+  border-radius: 50%;
+}
+.firstContainer,.container{
+  width: 690rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 3px 7px 0px rgba(0, 0, 0, 0.08);
+}
+.firstContainer{
+  margin: 0 auto;
 }
 .container{
-  width: 690rpx;
-  height: 1000rpx;
-  background-color: #31799f;
-  opacity: 0.9;
-  margin-left: 30rpx;
-  border-radius: 8rpx;
-  border: 4rpx solid #83a5b8;
+ margin: 60rpx auto;
 }
-.first-title {
-    padding-top: 40rpx;
-    margin-left: 60rpx;
-  }
-  .titleType{
-    margin-left: 60rpx;
-    margin-top: 40rpx;
-  }
-  .title{
-    font-size: 30rpx;
-    color: #fff;
-    letter-spacing: 8rpx;
-    font-weight: bold;
-  }
-  .inputText {
-    margin-top: 10rpx;
-    background-color: #fff;
-    font-size: 26rpx;
-    width: 360rpx;
-    height: 70rpx;
-    border-radius: 10rpx;
-    text-indent: 2;
-  }
-  .descript{
-    margin-top: 10rpx;
-    background-color: #fff;
-    font-size: 26rpx;
-    width: 580rpx;
-    height: 140rpx;
-    border-radius: 8rpx;
-  }
+.firstTemp{
+  padding-top: 110rpx;
+}
+.Temp{
+  padding-top: 40rpx;
+}
+.lastTemp{
+  padding-bottom: 20rpx;
+}
+.infoTemp{
+  display: flex;
+}
+.infoTitle{
+  font-size: 30rpx;
+  font-weight: bold;
+  height: 90rpx;
+  width: 122rpx;
+  margin: 30rpx 0 0 28rpx;
+}
+.input{
+  height: 90rpx;
+  width: 510rpx;
+  border-bottom: 1rpx solid #E1E1E1;
+}
+.inputText,.picker,.longText{
+  margin: 30rpx 0;
+  font-size: 30rpx;
+}
+.longText{
+  width: 510rpx;
+  height: 240rpx;
+  border-bottom: 1rpx solid #E1E1E1;
+}
+textarea{
+  font-size: 30rpx;
+}
+.marginL{
+  margin-left: 40rpx;
+  width: 470rpx;
+}
+textarea{
+  width: 460rpx;
+}

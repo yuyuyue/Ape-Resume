@@ -1,0 +1,13 @@
+.header{
+  text-align: center;
+}
+.userAvatar{
+  margin-top: 60rpx;
+  width: 215rpx;
+  height: 215rpx;
+  border-radius: 50%;
+}
+.nickName{
+  color: #fff;
+  font-size: 36rpx;
+}
