@@ -1,4 +1,4 @@
-// miniprogram/pages/index/index.js
+// miniprogram/pages/addInfo/addInfo.js
 Page({
 
   /**
@@ -7,21 +7,25 @@ Page({
   data: {
 
   },
-  goTest(){
+  addBasicInfo(){
     wx.navigateTo({
-      url: '../test/test'
+      url: '../basicInfo/basicInfo'
     })
   },
-  addInfo(){
+  addWorkExp(){
     wx.navigateTo({
-      url: '../addInfo/addInfo'
+      url: '../workExp/workExp'
+    })
+  },
+  addItem(){
+    wx.navigateTo({
+      url: '../item/item'
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**

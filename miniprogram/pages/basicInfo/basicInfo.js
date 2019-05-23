@@ -5,27 +5,47 @@ Page({
    * 页面的初始数据
    */
   data: {
-    selectArray: [{
-      "sexId": "1",
-      "text": "男"
-    }, {
-      "sexId": "2",
-      "text": "女"
-    }]
+    pickInit: '请选择',
+    startInit: '请选择',
+    endInit: '请选择',
+    selectSex: [
+      "男", "女"
+    ],
   },
-  addBasicInfo(e){
-      console.log(e);
-      const data = e.detail.value;
-      wx.cloud.callFunction({
-        name: "userdetail",
-        data: {
-          opt: 'add',
-          data
-        }
-      })
-      
+  bindPickerChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value,
+      pickInit: ''
+    })
   },
-  picked(e){
+  startDateChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      startDate: e.detail.value,
+      startInit: '',
+    })
+  },
+  endDateChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      endDate: e.detail.value,
+      endInit: '',
+    })
+  },
+  addBasicInfo(e) {
+    console.log(e);
+    const data = e.detail.value;
+    wx.cloud.callFunction({
+      name: "userdetail",
+      data: {
+        opt: 'add',
+        data
+      }
+    })
+
+  },
+  picked(e) {
     console.log(e.item);
   },
   /**

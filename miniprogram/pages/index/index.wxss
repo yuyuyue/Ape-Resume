@@ -1,75 +1,44 @@
-.howToDo {
-    width: 120rpx;
-    height: 40rpx;
-    position: absolute;
-    top: 20rpx;
-    right: 20rpx;
-    text-align: center;
-    font-size: 28rpx;
-    color:#fff;
-    border: 2rpx solid #fff;
-    border-radius: 5%;
+/* 用户信息 */
+@import "../../styles/userAvatar/userAvatar";
+/* 板块 */
+.body{
+  width: 600rpx;
+  height: 600rpx;
+  margin: 50rpx auto;
+  background-color: #fff;
+  box-shadow: 0 0 12rpx #e6e6e6;
 }
-
-.userInfo {
-    padding-top: 120rpx;
-    height: 210rpx;
-    width: 100%;
-    text-align: center;
+.top,.bottom{
+  display: flex;
 }
-
-.userInfo-avatar {
-    margin-top: 50rpx;
-    width: 150rpx;
-    height: 150rpx;
-    border-radius: 50%;
+.temp{
+  width: 300rpx;
+  height: 300rpx;
+  text-align: center;
 }
-
-.userInfo-name {
-    font-size: 32rpx;
-    color: white;
+.iconBg{
+  width: 130rpx;
+  height: 130rpx;
+  margin: 60rpx 85rpx 40rpx;
+  border-radius: 50%;
 }
-
-.test, .create {
-    height: 150rpx;
-    width: 400rpx;
-    border-radius: 5%;
-    background-color:#31799f;
-    font-weight: bold;
-    opacity: 0.7;
-    color: white;
-    font-size: 60rpx;
-    text-align: center;
-    line-height: 150rpx;
-    letter-spacing: 12rpx;
-    margin-left: 180rpx
+.itemIcon{
+  margin-top: 25rpx;
+  width: 80rpx;
+  height: 80rpx;
 }
-
-.test {
-    margin-top: 150rpx;
+.itemName{
+  font-size: 28rpx;
 }
-
-.create {
-    margin-top: 60rpx;
+.orange{
+  background-color: #fbbb40;
 }
-
-.tabbar {
-    display: flex;
-    text-align: center;
-    margin-left: 94rpx;
+.green{
+  background-color: #8cde56;
 }
-
-.apeNum, .myInfo, .myResume {
-    width: 160rpx;
-    height: 60rpx;
-    margin-top: 150rpx;
-    font-size: 30rpx;
-    line-height: 60rpx;
-    color: #31799f;
-    border-radius: 5%;
-    text-decoration: underline;
+.red{
+  background-color: #ff575c;
 }
-
-.myInfo, .myResume {
-    margin-left: 40rpx;
+.blue{
+  background-color: #98d4f5;
 }

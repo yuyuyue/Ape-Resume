@@ -1,0 +1,29 @@
+/* 用户信息 */
+@import "../../styles/userAvatar/userAvatar";
+.temp{
+  width:560rpx;
+  height: 180rpx;
+  border-radius: 6rpx;
+  background-color: #e8e8e8;
+  margin: 30rpx auto;
+  display: flex;
+}
+.purple{
+  border: 4rpx solid #ab9df8;
+}
+.yellow{
+  border: 4rpx solid #ffe994;
+}
+.orange{
+  border: 4rpx solid #ffd894;
+}
+.infoIcon{
+  width: 120rpx;
+  height: 120rpx;
+  margin: auto 20rpx;
+}
+.addInfo{
+  line-height: 180rpx;
+  margin-left: 40rpx;
+  font-size:36rpx;
+}

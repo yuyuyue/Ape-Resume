@@ -1,79 +1,99 @@
 <!-- miniprogram/pages/basicInfo/basicInfo.wxml -->
 <view class="page">
+  <form bindsubmit="addBasicInfo">
+    <view class="header">
+      <image class="userAvatar" src="../../images/avatar.jpg"></image>
+    </view>
+    <view class="firstContainer">
+      <view class="infoTemp firstTemp">
+        <view class="infoTitle">姓名</view>
+        <view class="input">
+          <input class="inputText" placeholder="请输入您的姓名" name="name" />
+        </view>
+      </view>
+      <view class="infoTemp">
+        <view class="infoTitle">性别</view>
+        <view class="input">
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{selectSex}}">
+            <view class="picker">{{pickInit}}{{selectSex[index]}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="infoTemp">
+        <text class="infoTitle">年龄</text>
+        <view class="input">
+          <input class="inputText" placeholder="请输入您的年龄" name="age" />
+        </view>
+      </view>
+      <view class="infoTemp">
+        <text class="infoTitle">微信</text>
+        <view class="input">
+          <input class="inputText" placeholder="请输入您的微信号" name="wechat" />
+        </view>
+      </view>
+      <view class="infoTemp">
+        <text class="infoTitle">电话</text>
+        <view class="input">
+          <input class="inputText" placeholder="请输入您的电话号码" name="phone" />
+        </view>
+      </view>
+      <view class="infoTemp lastTemp">
+        <text class="infoTitle">邮箱</text>
+        <view class="input">
+          <input class="inputText" placeholder="请输入您的邮箱" name="email" />
+        </view>
+      </view>
+    </view>
     <view class="container">
-        <form bindsubmit="addBasicInfo">
-            <scroll-view scroll-y="true" style="height: 900rpx;">
-                <view class="first-title">
-                    <text class="title">姓名</text>
-                    <input class="inputText" placeholder="请输入您的姓名" focus="{{focus}}" name="name" />
-                </view>
-                <view class="titleType">
-                    <text class="title">性别</text>
-                    <radio-group name="sex">
-                        <label>
-                            <radio value="女" />
-                            女
-                        </label>
-                        <label>
-                            <radio value="男" />
-                            男
-                        </label>
-                    </radio-group>
-                </view>
-                <view class="titleType">
-                    <text class="title">年龄</text>
-                    <input class="inputText" placeholder="请输入您的年龄" focus="{{focus}}" name="age" />
-                </view>
-                <view class="titleType">
-                    <text class="title">联系电话</text>
-                    <input class="inputText" placeholder="请输入您的电话号码" focus="{{focus}}" name="phone" />
-                </view>
-                <view class="titleType">
-                    <text class="title">联系邮箱</text>
-                    <input class="inputText" placeholder="请输入您的邮箱" focus="{{focus}}" name="email" />
-                </view>
-                <view class="titleType">
-                    <text class="title">联系微信</text>
-                    <input class="inputText" placeholder="请输入您的微信号" focus="{{focus}}" name="wechat" />
-                </view>
-                <view class="userPic">
-                    <view class="addPic">
-                        <image class="add" src="../../images/add.png" />
-                    </view>
-                    <text class="addMsg">添加照片</text>
-                </view>
-                <view class="titleType">
-                    <text class="title">学校名称</text>
-                    <input placeholder="请填写学校名称" focus="{{focus}}" class="inputText" name="schoolname" />
-                </view>
-                <view class="titleType">
-        <text class="title">学历信息</text>
-        <input class="inputText" placeholder="大专/本科" focus="{{focus}}" name="beginDate" />
+      <view class="infoTemp Temp">
+        <text class="infoTitle ">学校名称</text>
+        <view class="input marginL">
+          <input placeholder="请填写学校名称" class="inputText" name="schoolname" />
+        </view>
+      </view>
+      <view class="infoTemp">
+        <text class="infoTitle">入学年份</text>
+        <view class="input marginL">
+          <picker mode="date" value="{{startDate}}" start="1990-09" end="2018-09" fields="month" bindchange="startDateChange">
+            <view class="picker">{{startInit}} {{startDate}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="infoTemp">
+        <text class="infoTitle">毕业年份</text>
+        <view class="input marginL">
+          <picker mode="date" value="{{endDate}}" start="1994-06" end="2025-06" fields="month" bindchange="endDateChange">
+            <view class="picker">{{endInit}} {{endDate}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="infoTemp">
+        <text class="infoTitle ">学历信息</text>
+        <view class="input marginL">
+          <input class="inputText" placeholder="大专/本科" name="beginDate" />
+        </view>
+      </view>
+      <view class="infoTemp lastTemp">
+        <text class="infoTitle">所学专业</text>
+        <view class="input marginL">
+          <input placeholder="请填写所学专业" class="inputText" name="major" />
+        </view>
+      </view>
     </view>
-                <view class="titleType">
-                    <text class="title">所学专业</text>
-                    <input placeholder="请填写所学专业" focus="{{focus}}" class="inputText" name="major" />
-                </view>
-                <view class="titleType">
-        <text class="title">入学年份</text>
-        <input class="inputText" placeholder="请填写入学年份，2018-09" focus="{{focus}}" name="begindate" />
+    <view class="container">
+      <view class="infoTemp Temp">
+        <text class="infoTitle">投递岗位</text>
+        <view class="input marginL">
+          <input placeholder="请填写期望岗位" class="inputText" name="expectjob" />
+        </view>
+      </view>
+      <view class="infoTemp lastTemp">
+        <text class="infoTitle">个人优势</text>
+        <view class="longText marginL">
+          <textarea rows="3" cols="20" maxlength="1000" placeholder="请填写个人优势" name="advantage" />
+        </view>
+      </view>
     </view>
-                <view class="titleType">
-        <text class="title">毕业年份</text>
-        <input class="inputText" placeholder="请填写毕业年份，2018-09" focus="{{focus}}" name="begindate" />
-    </view>
-    <view class="titleType">
-                    <text class="title">投递岗位</text>
-                    <input placeholder="请填写期望岗位" focus="{{focus}}" class="inputText" name="expectjob" />
-                </view>
-                <view class="titleType">
-                    <text class="title">个人优势</text>
-                    <textarea rows="3" cols="20" placeholder="请填写个人优势" focus="{{focus}}" class="descript" name="advantage" />
-                </view>
-            </scroll-view>
-                          <button class="next" formType="submit">提交</button>
-        </form>
-        <view class="return">取消</view>
-      
-    </view>
+  </form>
+  <button class="next" formType="submit">提交</button>
 </view>

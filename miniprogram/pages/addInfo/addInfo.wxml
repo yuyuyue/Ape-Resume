@@ -1,0 +1,20 @@
+<view class="page">
+  <view class="header">
+    <image class="userAvatar" src="../../images/avatar.jpg" />
+    <view class="nickName">一只酱{{item.nikeName}}</view>
+  </view>
+  <view class="body" >
+    <view class="temp purple" bindtap="addBasicInfo">
+      <image class="infoIcon" src="../../images/basicInfo.png" />
+      <view class="addInfo">添加个人信息</view>
+    </view>
+    <view class="temp yellow" bindtap="addWorkExp">
+      <image class="infoIcon" src="../../images/basicInfo.png" />
+      <view class="addInfo">添加工作经验</view>
+    </view>
+    <view class="temp orange" bindtap="addItem">
+      <image class="infoIcon" src="../../images/basicInfo.png" />
+      <view class="addInfo">添加项目成果</view>
+    </view>
+  </view>
+</view>

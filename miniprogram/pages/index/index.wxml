@@ -1,20 +1,38 @@
+<!-- miniprogram/pages/index/index.wxml -->
 <view class="page">
-<view class="howToDo">
-    <text>怎么制作</text>
+  <view class="header">
+    <image class="userAvatar" src="../../images/avatar.jpg" />
+    <view class="nickName">一只酱{{item.nikeName}}</view>
+  </view>
+  <view class="body">
+    <view class="top">
+      <view class="temp" bindtap="goTest">
+        <view class="iconBg orange">
+          <image class="itemIcon" src="../../images/test.png" />
+        </view>
+        <view class="itemName">猿力测试</view>
+      </view>
+       <view class="temp" bindtap="addInfo">
+        <view class="iconBg green">
+          <image class="itemIcon" src="../../images/add.png" />
+        </view>
+        <view class="itemName">添加信息</view>
+      </view>
+     
     </view>
-<view class="userInfo">
-<image class="userInfo-avatar" src="../../images/test.jpg"></image>
-<view class="userInfo-name">一只酱</view>
-</view>
-<view class="test" bindtap="goTest">
-猿力测试
-</view>
-<view class="create" bindtap="makeRes">
-简历生成
-</view>
-<view class="tabbar">
-<view class="apeNum">我的猿力值</view>
-<view class="myInfo" bindtap="goMyInfo">我的信息</view>
-<view class="myResume">我的简历</view>
-</view>
+    <view class="bottom">
+      <view class="temp">
+        <view class="iconBg red">
+          <image class="itemIcon " src="../../images/make.png" />
+        </view>
+        <view class="itemName">简历生成</view>
+      </view>
+      <view class="temp">
+        <view class="iconBg blue">
+          <image class="itemIcon" src="../../images/use.png" />
+        </view>
+        <view class="itemName">如何使用</view>
+      </view>
+    </view>
+  </view>
 </view>
