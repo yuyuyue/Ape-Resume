@@ -1,4 +1,4 @@
-// miniprogram/pages/basicDesc/basicDesc.js
+// miniprogram/pages/resume/resume.js
 Page({
 
   /**

@@ -1,13 +1,29 @@
-// miniprogram/pages/itemDesc/itemDesc.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    navbarActiveIndex: 0,
+    scrollIndex:0,
+    toView:'0',
+    navbarTitle: [
+      "基本信息",
+      "工作经验",
+      "项目成果",
+      "猿力值"
+    ],
+    scrollTest:[
+      "第一项",
+      "第二项",
+      "第三项"
+    ]
   },
-
+  onNavBarTap: function (event) {
+    let navbarTapIndex = event.currentTarget.dataset.navbarIndex
+    this.setData({
+      navbarActiveIndex: navbarTapIndex      
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

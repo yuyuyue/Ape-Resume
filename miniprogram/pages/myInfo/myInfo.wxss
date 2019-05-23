@@ -1,5 +1,4 @@
 /* miniprogram/pages/noInfo/noInfo.wxss */
-@import "../../styles/navigation/navigation";
 .basicInfo{
     width: 690rpx;
     margin-left: 30rpx;

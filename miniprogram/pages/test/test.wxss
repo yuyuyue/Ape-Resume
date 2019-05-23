@@ -1,4 +1,4 @@
-@import "../../styles/navigation/navigation";
+
 .user{
     padding-top: 40rpx;
     margin-left: 300rpx;

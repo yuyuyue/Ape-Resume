@@ -1,36 +1,51 @@
-<!-- miniprogram/pages/item/item.wxml -->
 <view class="page">
-    <view class="container">
-         <form bindsubmit="addItem">
-            <scroll-view scroll-y="true" style="height: 900rpx;">  
-        <view class="first-title">
-            <text class="title">项目名称</text>
-            <input class="inputText" placeholder="请填写项目名称" focus="{{focus}}" name="name" />
-        </view>
-        <view class="titleType">
-        <text class="title">开始时间</text>
-        <input class="inputText" placeholder="项目开启时间，2018-09-01" focus="{{focus}}" name="begintime" />
+  <view class="header">
+    <image class="userAvatar" src="../../images/avatar.jpg"></image>
+  </view>
+  <view class="container">
+    <form bindsubmit="addItem">
+    <view class="infoTemp firstTemp">
+      <view class="infoTitle">项目名称</view>
+      <view class="input marginL">
+        <input class="inputText" placeholder="请填写公司名称" focus="{{focus}}" name="name" />
+      </view>
     </view>
-        <view class="titleType">
-        <text class="title">结束时间</text>
-        <input class="inputText" placeholder="项目完成时间，2018-09-01" focus="{{focus}}" name="endtime" />
+    <view class="infoTemp">
+        <text class="infoTitle">开始时间</text>
+        <view class="input marginL">
+          <picker mode="date" value="{{startDate}}" start="1990-09" end="2018-09" fields="month" bindchange="startDateChange">
+            <view class="picker">{{startInit}} {{startDate}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="infoTemp">
+        <text class="infoTitle">结束时间</text>
+        <view class="input marginL">
+          <picker mode="date" value="{{endDate}}" start="1994-06" end="2025-06" fields="month" bindchange="endDateChange">
+            <view class="picker">{{endInit}} {{endDate}}</view>
+          </picker>
+        </view>
+      </view>
+    <view class="infoTemp">
+      <view class="infoTitle">技术栈</view>
+      <view class="input marginL">
+        <input class="inputText" placeholder="请填写从事职位" focus="{{focus}}" name="techstack" />
+      </view>
     </view>
-        <view class="titleType">
-            <text class="title">技术栈</text>
-            <textarea rows="3" cols="20"
- placeholder="请描述项目中使用的技术栈" focus="{{focus}}" class="descript" name="techstack" />
+    <view class="infoTemp">
+      <view class="infoTitle">项目链接</view>
+      <view class="input marginL">
+        <input class="inputText" placeholder="请填写项目链接" focus="{{focus}}" name="lineadress" />
+      </view>
+    </view>
+
+      <view class="infoTemp lastTemp">
+        <text class="infoTitle">项目描述</text>
+        <view class="longText marginL">
+          <textarea rows="3" cols="20" maxlength="1000" placeholder="请描述你的项目" name="desc" />
         </view>
-        <view class="first-title">
-            <text class="title">项目链接</text>
-            <textarea rows="3" cols="20" class="item-link" placeholder="请填写项目链接" focus="{{focus}}" name="lineadress" />
-        </view>  
-        <view class="titleType">
-            <text class="title">项目描述</text>
-            <textarea rows="3" cols="20" placeholder="请描述你的项目" focus="{{focus}}" class="descript" name="desc" />
-        </view>
-        </scroll-view>
-        </form>
-        </view>
-    <view class="return">返回</view>
-    <button class="next" formType="submit">提交</button>
+      </view>
+      </form>
+  </view>
+  <button class="next" formType="submit">提交</button>
 </view>

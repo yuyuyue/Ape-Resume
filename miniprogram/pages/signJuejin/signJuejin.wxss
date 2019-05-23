@@ -1,6 +1,5 @@
 /* miniprogram/pages/signJuejin/signJuejin.wxss */
 @import "../../styles/sign/sign";
-@import "../../styles/navigation/navigation";
 
 .search{
     width: 60rpx;

@@ -1,0 +1,48 @@
+<!-- miniprogram/pages/info/info.wxml -->
+<view class="page">
+  <view class="search-container">
+    <view class="search">
+      <input type="text" placeholder="输入你想要的内容" confirm-type="search"></input>
+      <image class="" src="../../images/go.png"></image>
+    </view>
+  </view>
+  <view class="navbar-container">
+    <view class="navbar">
+      <block wx:for="{{navbarTitle}}" wx:key="{{index}}">
+        <view class="navbar-item {{navbarActiveIndex === index ? 'navbar-item-active' : ''}}" data-navbar-index="{{index}}" catchtap="onNavBarTap">
+          <text>{{item}}</text>
+        </view>
+      </block>
+    </view>
+    <view class="content-wrapper">
+      <swiper current="{{navbarActiveIndex}}">
+        <swiper-item wx:for="{{navbarTitle}}" wx:key="index">
+          <scroll-view>
+            <view class="scroll-cotainer">
+              <swiper current="{{scrollIndex}}">
+                <swiper-item style="width:40%">
+                  <scroll-view>
+                    <view >
+                      <view class="info">我的基础信息</view>
+                      <view class="info">我的基础信息</view>
+                      <view class="info">我的基础信息</view>
+                    </view>
+                  </scroll-view>
+                </swiper-item>
+                <swiper-item style="width:40%">
+                  <scroll-view>
+                    <view >
+                      <view class="info">我的学历</view>
+                      <view class="info">我的学历</view>
+                      <view class="info">我的学历</view>
+                    </view>
+                  </scroll-view>
+                </swiper-item>
+              </swiper>
+            </view>
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</view>

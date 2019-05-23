@@ -1,3 +1,2 @@
 /* miniprogram/pages/signLc/signLc.wxss */
 @import "../../styles/sign/sign";
-@import "../../styles/navigation/navigation";
