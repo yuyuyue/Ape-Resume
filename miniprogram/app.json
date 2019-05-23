@@ -1,26 +1,54 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/info/info",
+    "pages/resume/resume",
+    "pages/myInfo/myInfo",
+    "pages/myResume/myResume",
+    "pages/test/test",
     "pages/basicInfo/basicInfo",
     "pages/workExp/workExp",
     "pages/item/item",
-    "pages/test/test",
     "pages/signGit/signGit",
     "pages/signLc/signLc",
     "pages/signJuejin/signJuejin",
-    "pages/myInfo/myInfo",
-    "pages/myResume/myResume",
-    "pages/workDesc/workDesc",
-    "pages/itemDesc/itemDesc",
     "pages/makeRes/makeRes",
-    "pages/resume/resume"
+    "pages/resumeTemp1/resumeTemp1",
+    "pages/resumeTemp2/resumeTemp2",
+    "pages/resumeTemp3/resumeTemp3",
+    "pages/addInfo/addInfo"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "云开发 QuickStart",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#76a8f0",
+    "navigationBarTitleText": "猿简历",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#8e8e8e",
+    "backgroundColor": "#fff",
+    "selectedColor": "#76a8f0",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index1.png"
+      },
+      {
+        "pagePath": "pages/info/info",
+        "text": "我的信息",
+        "iconPath": "images/info.png",
+        "selectedIconPath": "images/info1.png"
+      },
+      {
+        "pagePath": "pages/resume/resume",
+        "text": "我的简历",
+        "iconPath": "images/resume.png",
+        "selectedIconPath": "images/resume1.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }
