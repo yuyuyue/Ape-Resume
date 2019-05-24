@@ -1,2 +1,59 @@
 /* miniprogram/pages/makeRes/makeRes.wxss */
-@import "../../styles/dist/style/weui";
+.page{
+  background-color: #F5FAFE;
+  box-sizing: border-box;
+  padding-top: 40rpx;
+}
+.container{
+  width: 710rpx;
+  margin: 0 auto 40rpx;
+  background-color: #fff;
+}
+.select-header,.workLi{
+  display: flex;
+}
+.select-header{
+  height: 110rpx;
+  margin-bottom: 45rpx;
+  border-bottom: 1rpx solid #f6f6f6;
+}
+.info{
+  margin-left: 260rpx;
+  font-size: 32rpx;
+  line-height: 110rpx;
+  margin-right: 140rpx;
+}
+.selectImg{
+  width: 40rpx;
+  height: 40rpx;
+  margin: 35rpx 20rpx;
+}
+.choose{
+  width: 60rpx;
+  height: 60rpx;
+}
+.chooseAll{
+  font-size: 30rpx;
+  color: #a9a4ad;
+  line-height: 110rpx;
+}
+.workLi{
+  height: 100rpx;
+  padding: 0 30rpx;
+}
+.itemNum{
+  width: 45rpx;
+  height: 45rpx;
+  margin-right: 60rpx;
+  background-color: #2364fc;
+  border-radius: 6rpx;
+  text-align: center;
+  line-height: 45rpx;
+}
+.num{
+  font-size: 27rpx;
+  color: #fff;
+}
+.workName{
+  flex: 1;
+}

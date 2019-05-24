@@ -17,6 +17,11 @@ Page({
       url: '../addInfo/addInfo'
     })
   },
+  makeRes(){
+    wx.navigateTo({
+      url: '../makeRes/makeRes'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

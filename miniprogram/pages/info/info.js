@@ -4,24 +4,25 @@ Page({
    */
   data: {
     navbarActiveIndex: 0,
-    scrollIndex:0,
-    toView:'0',
     navbarTitle: [
       "基本信息",
       "工作经验",
       "项目成果",
       "猿力值"
     ],
-    scrollTest:[
-      "第一项",
-      "第二项",
-      "第三项"
-    ]
+    scrollIndex: 0,
+    nowIndex: 0
   },
   onNavBarTap: function (event) {
     let navbarTapIndex = event.currentTarget.dataset.navbarIndex
     this.setData({
       navbarActiveIndex: navbarTapIndex      
+    })
+  },
+  childSwiper(e) {
+    console.log(e.detail.current)
+    this.setData({
+      nowIndex: e.detail.current
     })
   },
   /**

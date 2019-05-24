@@ -1,4 +1,11 @@
 /* miniprogram/pages/info/info.wxss */
+page{
+  height: 100%;
+}
+.page{
+  background-color:#F5FAFE;
+  height: 100vh;
+}
 .search-container{
   background-color: #76a8f0;
 }
@@ -10,12 +17,11 @@
   align-items: center;
   width: 710rpx;
   height:60rpx;
-  background-color:whitesmoke;
+  background-color: #fff;
   border:1rpx solid whitesmoke;
   border-radius: 5rpx;
   margin: 0 auto;
 }
-
 /* 搜索框提示文字样式 */
 .search input
 {
@@ -35,12 +41,23 @@
   display: flex;
   flex-direction: column;
 }
+.swiper-page{
+  height:100vh;
+  width: 100vw;
+}
+.swiper-page .swiper-center {
+  display: flex;
+  justify-content: center;
+}
+.swiper-center .container {
+  width: 494rpx;
+  height:680rpx;
+}
 .navbar{
   display: flex;
   position: absolute;
   left: 0;
   top: 60rpx;
-  z-index: 500;
   width: 100%;
   height: 100rpx;
   flex-direction: row;
@@ -52,15 +69,121 @@
 }
 .navbar-item{
   flex: 1;
-  padding: 40rpx 0px;
+  padding: 40rpx 0;
 }
 .navbar-item-active{
   transition: all 0.3s;
-  border-bottom: 10rpx solid #494949;
+  border-bottom: 10rpx solid #fff;
   color: #fff;
   font-weight: bold;
 }
-
-.content-wrapper{
-  padding-top: 50px;
+.wrapper-container{
+  padding-top:100rpx;
+}
+/* 轮播页面 */
+.container{
+  background-color: #fff;
+  box-shadow:0 6rpx 14rpx 0 rgba(0, 0, 0, 0.08);
+}
+.swiper-center{
+  margin-top: 140rpx;
+}
+.active{
+  margin-top: 80rpx;
+}
+/* 基本信息 */
+.flex{
+  display: flex;
+}
+.container-body{
+  background-color: #fff;
+  width: 690rpx;
+  margin: 30rpx auto;
+}
+.label{
+  height: 39rpx;
+  margin-left: 20rpx;
+  margin-bottom: 30rpx;
+}
+.expectJob{
+  font-size: 20rpx;
+  background-color: #48A6FD;
+  padding: 11rpx 21rpx;
+  color: #fff;
+  border-radius: 6rpx;
+}
+.lastTemp{
+  padding-bottom: 40rpx;
+}
+/* info */
+.container-header{
+  margin-top:20rpx;
+  text-align: center;
+}
+.itemImg{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.infoItem{
+  font-size: 26rpx;
+  margin-bottom: 70rpx;
+}
+.center{
+  display: flex;  
+}
+.infoTemp{
+  display: flex;
+  margin-bottom: 25rpx;
+  margin-left:20rpx;
+}
+.userName{
+  font-size: 40rpx;
+  color: #010101;
+}
+.itemName{
+  font-size: 32rpx;
+}
+.icon{
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 10rpx;
+  margin-left: 13rpx;
+}
+.infoIcon{
+  width: 30rpx;
+  height: 30rpx;
+}
+.infoDesc{
+  margin-left: 20rpx;
+  color: #333;
+  font-size: 30rpx;
+}
+.textDesc{
+  margin-left: 20rpx;
+  width: 400rpx;
+  font-size:18rpx;
+}
+/* 工作经验 */
+.workLeft{
+  margin-top: 80rpx;
+  margin-left: 40rpx;
+  border-left: 4rpx solid #aaa;
+}
+.workTemp{
+  margin-bottom: 20rpx;
+}
+.workDesc{
+  color: #aaa;
+  font-weight: bold;
+  font-size: 26rpx;
+}
+.desc{
+  font-size: 26rpx;
+  color: #242424;
+}
+.descTemp{
+  margin-top: 40rpx;
+  margin-left: 40rpx;
+  width: 420rpx;
 }

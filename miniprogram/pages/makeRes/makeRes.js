@@ -5,54 +5,83 @@ Page({
    * 页面的初始数据
    */
   data: {
-    workExp:[
-      {name: '阿里巴巴', value: '0',checked: true},
-      {name: '网易云', value: '1'},
-      {name: '腾讯', value: '2'},
+   workList: [
+      { id: 1, name: 1, company: "爱奇艺", checked: false },
+      { id: 2, name: 2, company: "阿里巴巴", checked: false },
+      { id: 3, name: 3, company: "腾讯", checked: false },
+      { id: 4, name: 4, company: "丁香园", checked: false },
     ],
-    itemDesc: [
-      {name: '旅行小账本', value: '0',checked: true},
-      {name: '有赞商城', value: '1'},
-      {name: '猿简历', value: '2'},
-  ]
+    selectall: false,
+    itemList: [
+      { id: 1, name: 1, company: "旅行小账本", checked: false },
+      { id: 2, name: 2, company: "有赞精选", checked: false },
+      { id: 3, name: 3, company: "gihub", checked: false },
+      { id: 4, name: 4, company: "二维火点餐", checked: false },
+    ],
+    selectitemall: false
   },
-  selectItem(e){
-    console.log('checkbox发生change事件，携带value值为：', e.detail.value);
-
-    var itemDesc = this.data.itemDesc, values = e.detail.value;
-    for (var i = 0, lenI = itemDesc.length; i < lenI; ++i) {
-        itemDesc[i].checked = false;
-
-        for (var j = 0, lenJ = values.length; j < lenJ; ++j) {
-            if(itemDesc[i].value == values[j]){
-                itemDesc[i].checked = true;
-                break;
-            }
-        }
-    }
+  select: function (e) {
+    let selectValue = e.currentTarget.dataset.name
+    let index = e.currentTarget.dataset.index;
+    let workList = this.data.workList
+    let newli = 'workList[' + index + '].checked';
     this.setData({
-        itemDesc: itemDesc
-    });
+      [newli]: !this.data.workList[index].checked
+    })
   },
-  selectWork(e) {
-    console.log('checkbox发生change事件，携带value值为：', e.detail.value);
-
-    var workExp = this.data.workExp, values = e.detail.value;
-    for (var i = 0, lenI = workExp.length; i < lenI; ++i) {
-        workExp[i].checked = false;
-
-        for (var j = 0, lenJ = values.length; j < lenJ; ++j) {
-            if(workExp[i].value == values[j]){
-                workExp[i].checked = true;
-                break;
-            }
-        }
+  //全选，取消全选
+  selectAll: function (e) {
+    let workList = this.data.workList;
+    let selectall = this.data.selectall;
+    if (selectall == false) {
+      for (let i = 0; i < workList.length; i++) {
+        let newli = 'workList[' + i + '].checked';
+        this.setData({
+          [newli]: true,
+          selectall: true
+        })
+      }
+    } else {
+      for (let i = 0; i < workList.length; i++) {
+        let newli = 'workList[' + i + '].checked';
+        this.setData({
+          [newli]: false,
+          selectall: false
+        })
+      }
     }
-
+  },
+  // 项目选择
+  selectItem: function (e) {
+    let selectValue = e.currentTarget.dataset.name
+    let index = e.currentTarget.dataset.index;
+    let itemList = this.data.itemList
+    let newli = 'itemList[' + index + '].checked';
     this.setData({
-        workExp: workExp
-    });
-},
+      [newli]: !this.data.itemList[index].checked
+    })
+  },
+  selectItemAll: function (e) {
+    let itemList = this.data.itemList;
+    let selectitemall = this.data.selectitemall;
+    if (selectitemall == false) {
+      for (let i = 0; i <itemList.length; i++) {
+        let newli = 'itemList[' + i + '].checked';
+        this.setData({
+          [newli]: true,
+          selectitemall: true
+        })
+      }
+    } else {
+      for (let i = 0; i <itemList.length; i++) {
+        let newli = 'itemList[' + i + '].checked';
+        this.setData({
+          [newli]: false,
+          selectitemall: false
+        })
+      }
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */

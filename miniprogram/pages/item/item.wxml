@@ -7,7 +7,7 @@
     <view class="infoTemp firstTemp">
       <view class="infoTitle">项目名称</view>
       <view class="input marginL">
-        <input class="inputText" placeholder="请填写公司名称" focus="{{focus}}" name="name" />
+        <input class="inputText" placeholder="请填写项目名称" focus="{{focus}}" name="name" />
       </view>
     </view>
     <view class="infoTemp">

@@ -20,7 +20,7 @@
       </view>
      
     </view>
-    <view class="bottom">
+    <view class="bottom" bindtap="makeRes">
       <view class="temp">
         <view class="iconBg red">
           <image class="itemIcon " src="../../images/make.png" />
