@@ -3,8 +3,6 @@
     "pages/index/index",
     "pages/info/info",
     "pages/resume/resume",
-    "pages/myInfo/myInfo",
-    "pages/myResume/myResume",
     "pages/test/test",
     "pages/basicInfo/basicInfo",
     "pages/workExp/workExp",
