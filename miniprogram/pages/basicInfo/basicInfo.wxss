@@ -1,1 +1,4 @@
 @import "../../styles/info/info";
+.placeholder {
+    color: #000;
+}

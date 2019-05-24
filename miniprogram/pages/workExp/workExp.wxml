@@ -4,19 +4,19 @@
   </view>
   <view class="container">
     <form bindsubmit="addWorkExp">
-    <view class="infoTemp firstTemp">
-      <view class="infoTitle">公司名称</view>
-      <view class="input marginL">
-        <input class="inputText" placeholder="请填写公司名称" focus="{{focus}}" name="company" />
+      <view class="infoTemp firstTemp">
+        <view class="infoTitle">公司名称</view>
+        <view class="input marginL">
+          <input class="inputText" placeholder="请填写公司名称" focus="{{focus}}" name="company" />
+        </view>
       </view>
-    </view>
-    <view class="infoTemp">
-      <view class="infoTitle">从事职位</view>
-      <view class="input marginL">
-        <input class="inputText" placeholder="请填写从事职位" focus="{{focus}}" name="job" />
+      <view class="infoTemp">
+        <view class="infoTitle">从事职位</view>
+        <view class="input marginL">
+          <input class="inputText" placeholder="请填写从事职位" focus="{{focus}}" name="job" />
+        </view>
       </view>
-    </view>
-    <view class="infoTemp">
+      <view class="infoTemp">
         <text class="infoTitle">开始时间</text>
         <view class="input marginL">
           <picker mode="date" value="{{startDate}}" start="1990-09" end="2018-09" fields="month" bindchange="startDateChange">
@@ -38,7 +38,7 @@
           <textarea rows="3" cols="20" maxlength="1000" placeholder="请填写个人优势" name="desc" />
         </view>
       </view>
-      </form>
+      <button class="next" formType="submit">提交</button>
+    </form>
   </view>
-  <button class="next" formType="submit">提交</button>
 </view>

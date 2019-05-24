@@ -32,7 +32,7 @@
         <view class="itemNum">
           <view class="num">{{item.id}}</view>
         </view>
-        <view class="workName">{{item.company}}</view>
+        <view class="workName">{{item.proname}}</view>
         <view class="chooseImg" data-index="{{index}}" data-name="{{item.id}}" bindtap="selectItem">
           <image data-ide="0" class="choose" src="{{item.checked == true ? '../../images/select.png' : '../../images/select1.png'}}" />
         </view>

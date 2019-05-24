@@ -38,14 +38,16 @@ const mapper = db.collection('apt_expe');
 
 // 增加
 async function add(data) {
-  const isSaved = await findByName(data.name, data.openId);
+  const isSaved = await findByName(data);
 
   if (isSaved.data.length > 0) {
-    code = 6; //修改成功
-    return await update(data);
+    code = 6; //重名
+    // return await updateByName(data);
   } else {
+    console.log("======","正在添加",data);
+    
     data.createTime = util.formatTime(new Date());
-    return mapper.add({
+    return await mapper.add({
       data
     })
   }
@@ -55,7 +57,7 @@ async function add(data) {
 function delByName(data) {
   return mapper.where({
     openId: data.openId,
-    name: data.name
+    company: data.company
   }).remove()
 };
 
@@ -64,7 +66,7 @@ function updateByName(data) {
   data.updateTime = util.formatTime(new Date());
   return mapper.where({
     openId: data.openId,
-    name: data.name
+    company: data.company
   }).update({
     // data 传入需要局部更新的数据
     data
@@ -75,13 +77,13 @@ function updateByName(data) {
 function findByName(data) {
   return mapper.where({
     openId: data.openId,
-    name: data.name
+    company: data.company
   }).get()
 }
 
-function findAll(openId) {
+function findAll(data) {
   return mapper.where({
-    openId
+    openId:data.openId
   }).get()
 }
 
@@ -89,7 +91,7 @@ function findAll(openId) {
 exports.main = async (event, context) => {
   // const wxContext = cloud.getWXContext()
 
-  // console.log(event.userInfo, '>>>>>>>>>');
+  console.log(event.userInfo, '>>>>>>>>>');
   // console.log(wxContext, '？？？？？？？？？？？？？？？？？？？？');
   const {
     opt,

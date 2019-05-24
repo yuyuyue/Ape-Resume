@@ -22,11 +22,29 @@ Page({
       endInit: '',
     })
   },
+  addWorkExp(e) {
+    const data = e.detail.value;
+    console.log(data);
+    data.startDate = this.data.startDate;
+    data.endDate = this.data.endDate;
+    wx.cloud.callFunction({
+      name: "expe",
+      data: {
+        opt: 'add',
+        data
+      },
+      success: res => {
+        console.log(res);
+        
+      },
+    })
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+ 
   },
 
   /**

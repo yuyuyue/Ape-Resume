@@ -26,10 +26,17 @@ App({
         success: function (res) {
           // console.log(res.result);
           if(!res.result.result.data.length){
+           
             wx.navigateTo({
               url: '/pages/authorize/authorize'
             })
           }
+           wx.setStorage({
+             key: 'userInfo',
+             data: res.result.result.data[0]
+           })
+          // console.log(res.result);
+          
           getApp().globalData.userInfo = res.result;
         },
         fail:function (err) {

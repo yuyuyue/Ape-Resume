@@ -32,21 +32,57 @@ const util = new Utils();
 const db = cloud.database({
   env
 });
+//表映射
 const mapper = db.collection('apt_resume');
+const resProMapper = db.collection('apt_resume_pro');
+const resExpeMapper = db.collection('apt_resume_expe');
 //  res 是一个对象， 其中有 _id 字段标记刚创建的记录的 id
 
+// 调用其他云函数
+const expe = (data) => {
+  cloud.callFunction({
+    name: 'expe',
+    data
+  })
+}
+const project = (data) => {
+  cloud.callFunction({
+    name: 'project',
+    data
+  })
+}
+const userdetail = (data) => {
+  cloud.callFunction({
+    name: 'userdetail',
+    data
+  })
+}
 
 // 增加
 async function add(data) {
-  const isSaved = await findByName(data.name, data.openId);
-  
+  const isSaved = await findByName(data);
+
   if (isSaved.data.length > 0) {
-    code = 6; //修改成功
-    return await update(data);
+    code = 1; // 添加失败，名字重复
+    return;
   } else {
-    data.createTime = util.formatTime(new Date());
-    return mapper.add({
-      data
+    await mapper.add({
+      name: data.name,
+      openId: data.openId,
+      createTime: util.formatTime(new Date())
+    })
+    // 中间表添加数据
+    resProMapper.add({
+      data: {
+        resu_name: data.name,
+        pro_name: data.proName
+      }
+    })
+    resExpeMapper.add({
+      data: {
+        resu_name: data.name,
+        expe_name: data.expeName
+      }
     })
   }
 };
@@ -72,25 +108,70 @@ function updateByName(data) {
 };
 
 // 查
-function findByName(data) {
-  return mapper.where({
+async function findByName(data) {
+  let data1 = {
+    opt: 'selectById',
+    data: {}
+  }
+  let userInfo = userdetail(data1).result;
+  
+  // 个人实习信息
+  let expes = await resExpeMapper.where({
     openId: data.openId,
-    name: data.name
-  }).get()
+    resumeName: data.name
+  }).get();
+
+  let expeInfos = []
+  expes.forEach(item => {
+    data1 = {
+      opt: 'selectByName',
+      data: {
+        company: item.expeName
+      }
+    }
+      expeInfos.push(expe(data1).result)
+  })
+
+  // 项目信息
+  let data2
+   let pros = await resExpeMapper.where({
+     openId: data.openId,
+     resumeName: data.name
+   }).get();
+   let proInfos = []
+   pros.forEach(item => {
+     data2 = {
+       opt: 'selectByName',
+       data: {
+         proname: item.proName
+       }
+     }
+     proInfos.push(project(data1).result)
+   })
+
+   
+ 
+
+  return {
+    userInfo,
+    proInfos,
+    expeInfos
+  }
 }
 
-function findAll(openId) {
-  return mapper.where({
-    openId
+function findAll(data) {
+  let resumes =  await mapper.where({
+    openId:data.openId
   }).get()
+  resumes.forEach(item=>{
+    findByName(item)
+  })
+
 }
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  // const wxContext = cloud.getWXContext()
 
-  // console.log(event.userInfo, '>>>>>>>>>');
-  // console.log(wxContext, '？？？？？？？？？？？？？？？？？？？？');
   const {
     opt,
     data
@@ -106,10 +187,10 @@ exports.main = async (event, context) => {
       result = await delByName(data);
       break;
     case 'updateByName':
-      result = await update(data);
+      result = await updateByName(data);
       break;
     case 'selectByName':
-      result = await findByName(data)
+      result = findByName(data)
       break;
     case 'selectAll':
       result = await findAll(data);

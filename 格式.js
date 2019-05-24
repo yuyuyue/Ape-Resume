@@ -8,3 +8,5 @@ const reqData = {
 
 
 // 返回数据格式  Promise
+
+// code: 1  已存在

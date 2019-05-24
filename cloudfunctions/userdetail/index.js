@@ -83,9 +83,9 @@ function findById(data) {
     openId: data.openId
   }).get()
 }
-function findAll(openId) {
+function findAll(data) {
   return mapper.where({
-    openId
+    openId: data.openId
   }).get()
 }
 
@@ -104,13 +104,15 @@ exports.main = async (event, context) => {
   let result, code = 0;
   switch (opt) {
     case 'add':
+      console.log("=====",data);
+      
       result = await add(data);
       break;
     case 'deleteByName':
       result = await delByName(data);
       break;
     case 'updateByName':
-      result = await update(data);
+      result = await updateByName(data);
       break;
     case 'selectByName':
       result = await findByName(data)
@@ -118,6 +120,8 @@ exports.main = async (event, context) => {
     case 'selectAll':
       result = await findAll(data);
       break;
+    case 'selectById':
+      result = await findById(data);
 
     default:
       ;

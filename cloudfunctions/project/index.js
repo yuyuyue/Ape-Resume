@@ -38,11 +38,11 @@ const mapper = db.collection('apt_pro');
 
 // 增加
 async function add(data) {
-  const isSaved = await findByName(data.name,data.openId);
+  const isSaved = await findByName(data);
 
   if (isSaved.data.length > 0) {
-    code = 6;//修改成功
-    return await update(data);
+    code = 6;//重名
+    // return await update(data);
   } else {
     data.createTime = util.formatTime(new Date());
     return mapper.add({
@@ -75,13 +75,13 @@ function updateByName(data) {
 function findByName(data) {
   return mapper.where({
     openId: data.openId,
-    name: data.name
+    proname: data.proname
   }).get()
 }
 
-function findAll(openId) {
+function findAll(data) {
   return mapper.where({
-    openId
+    openId:data.openId
   }).get()
 }
 

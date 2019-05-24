@@ -6,17 +6,17 @@ Page({
    */
   data: {
    workList: [
-      { id: 1, name: 1, company: "爱奇艺", checked: false },
-      { id: 2, name: 2, company: "阿里巴巴", checked: false },
-      { id: 3, name: 3, company: "腾讯", checked: false },
-      { id: 4, name: 4, company: "丁香园", checked: false },
+      // { id: 1, name: 1, company: "爱奇艺", checked: false },
+      // { id: 2, name: 2, company: "阿里巴巴", checked: false },
+      // { id: 3, name: 3, company: "腾讯", checked: false },
+      // { id: 4, name: 4, company: "丁香园", checked: false },
     ],
     selectall: false,
     itemList: [
-      { id: 1, name: 1, company: "旅行小账本", checked: false },
-      { id: 2, name: 2, company: "有赞精选", checked: false },
-      { id: 3, name: 3, company: "gihub", checked: false },
-      { id: 4, name: 4, company: "二维火点餐", checked: false },
+      // { id: 1, name: 1, company: "旅行小账本", checked: false },
+      // { id: 2, name: 2, company: "有赞精选", checked: false },
+      // { id: 3, name: 3, company: "gihub", checked: false },
+      // { id: 4, name: 4, company: "二维火点餐", checked: false },
     ],
     selectitemall: false
   },
@@ -86,7 +86,45 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let data = {};
+     wx.cloud.callFunction({
+       name:'project',
+       data: {
+         opt: 'selectAll',
+         data
+       },
+       success: res => {
+         console.log(res);
+         let itemList = res.result.result.data;
+         console.log(itemList);
 
+         if (res.result.result.data.length) {
+           this.setData({
+             itemList
+           })
+         }
+
+       }
+     })
+     wx.cloud.callFunction({
+       name: 'expe',
+       data: {
+         opt: 'selectAll',
+         data
+       },
+       success: res => {
+         console.log(res);
+         let workList = res.result.result.data;
+         console.log(workList);
+
+         if (res.result.result.data.length) {
+           this.setData({
+             workList
+           })
+         }
+
+       }
+     })
   },
 
   /**

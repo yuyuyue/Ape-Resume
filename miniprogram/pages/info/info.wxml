@@ -15,17 +15,17 @@
       </block>
     </view>
     <view class="wrapper-container">
-      <swiper class="swiper-page" current="{{navbarActiveIndex}}">
+      <swiper  bindchange="changeHandle" class="swiper-page" current="{{navbarActiveIndex}}">
         <!-- 基本信息 -->
         <swiper-item>
           <view class="basic-container">
             <view class="container-body">
               <view class="container-header">
-                <image class="itemImg" src="../../images/avatar.jpg" />
+                <image class="itemImg" src="{{avatarUrl}}" />
                 <!-- 项目缩略图 thumb -->
                 <view class="infoItem">
-                  <text class="itemName">一只酱{{item.name}}</text>
-                  <image class="icon" src="../../images/girl.png" />
+                  <text class="itemName">{{nickName}}{{item.name}}</text>
+                  <image class="icon" src="../../images/{{sex=='男'?'boy':'girl'}}.png" />
                 </view>
               </view>
               <view class="label">

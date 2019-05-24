@@ -16,7 +16,7 @@ Page({
   onNavBarTap: function (event) {
     let navbarTapIndex = event.currentTarget.dataset.navbarIndex
     this.setData({
-      navbarActiveIndex: navbarTapIndex      
+      navbarActiveIndex: navbarTapIndex
     })
   },
   childSwiper(e) {
@@ -26,10 +26,68 @@ Page({
     })
   },
   /**
+   * swiper组件切换事件
+   */
+  changeHandle(e) {
+    
+    let name;
+    //避免多次请求
+    if (this.data.navbarActiveIndex == 1 && !this.data.company) name = "expe";
+    if (this.data.navbarActiveIndex == 2 && !this.data.techstack) name = "project";
+    let data = {}
+    wx.cloud.callFunction({
+      name,
+      data: {
+        opt: 'selectAll',
+        data
+      },
+      success: res => {
+        console.log(res);
+        let queryData = res.result.result.data[0];
+        console.log(queryData);
+        
+        if (res.result.result.data.length) {
+          this.setData({
+            ...queryData
+          })
+        }
+
+      }
+    })
+  },
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.getStorage({
+      key: 'userInfo',
+      success: (res) => {
+        // console.log(res.data)
+        this.setData({
+          avatarUrl: res.data.avatarUrl,
+          nickName: res.data.nickName
+        })
 
+      }
+    })
+    let data = {}
+    wx.cloud.callFunction({
+      name: "userdetail",
+      data: {
+        opt: 'selectById',
+        data
+      },
+      success: res => {
+        // console.log(res);
+        let queryData = res.result.result.data[0];
+        if (res.result.result.data.length) {
+          this.setData({
+            ...queryData
+          })
+        }
+
+      },
+    })
   },
 
   /**
