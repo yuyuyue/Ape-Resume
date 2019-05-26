@@ -1,0 +1,36 @@
+/* miniprogram/pages/chooseRes/chooseRes.wxss */
+page{
+  background-color: #f5f5f5;
+}
+.header{
+  height: 200rpx;
+  width: 100%;
+  background-color: #fff;
+  padding: 20rpx 35rpx;
+}
+.temp{
+  color: #aaa;
+  font-size: 28rpx;
+}
+.chooseTemp{
+  display: flex;
+}
+.tempIcon{
+  height: 120rpx;
+  width: 120rpx;
+  margin-top: 30rpx;
+  margin-right: 40rpx;
+  border: 1px solid #7c7c7c;
+}
+.showTemp{
+  width: 100%;
+  overflow: hidden;
+  padding: 20rpx;
+  white-space: nowrap;
+  }
+  .temp{
+  width: 100%;
+  height: auto;
+  margin-right: 23rpx;
+  display: inline-block;
+  }

@@ -1,0 +1,25 @@
+<!-- miniprogram/pages/chooseRes/chooseRes.wxml -->
+<view class="page">
+  <view class="header">
+    <view class="temp">请选择简历模板</view>
+    <view class="chooseTemp">
+      <image class="tempIcon" src="../../images/avatar.jpg" />
+      <image class="tempIcon" src="../../images/avatar.jpg" />
+      <image class="tempIcon" src="../../images/avatar.jpg" />
+    </view>
+  </view>
+  <view class="showTemp">
+    <scroll-view class="" style="width:auto;overflow:hidden;">
+      <view class="temp">
+        <image class="tempImg" src="../../images/avatar.jpg" />
+      </view>
+      <view class="temp">
+        <image class="tempImg" src="../../images/avatar.jpg" />
+      </view>
+      <view class="temp">
+        <image class="tempImg" src="../../images/avatar.jpg" />
+      </view>
+    </scroll-view>
+  </view>
+  <button>预览简历</button>
+</view>
