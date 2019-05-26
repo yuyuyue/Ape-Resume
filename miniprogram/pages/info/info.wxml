@@ -21,35 +21,35 @@
           <view class="basic-container">
             <view class="container-body">
               <view class="container-header">
-                <image class="itemImg" src="{{avatarUrl}}" />
+                <image class="itemImg" src="{{basicInfo.avatarUrl}}" />
                 <!-- 项目缩略图 thumb -->
                 <view class="infoItem">
-                  <text class="itemName">{{nickName}}{{item.name}}</text>
-                  <image class="icon" src="../../images/{{sex=='男'?'boy':'girl'}}.png" />
+                  <text class="itemName">{{item.name}}</text>
+                  <image class="icon" src="../../images/{{item.sex=='男'?'boy':'girl'}}.png" />
                 </view>
               </view>
               <view class="label">
-                <text class="expectJob">前端工程师{{item.expectjob}}</text>
+                <text class="expectJob">{{item.expectjob}}</text>
               </view>
               <view class="flex">
                 <view>
                   <view class="infoTemp">
                     <image class="infoIcon" src="../../images/infoAge.png" />
-                    <view class="infoDesc">20{{item.age}}岁</view>
+                    <view class="infoDesc">{{item.age}}岁</view>
                   </view>
                   <view class="infoTemp">
                     <image class="infoIcon" src="../../images/infoWechat.png" />
-                    <view class="infoDesc">freeH495{{item.wechat}}</view>
+                    <view class="infoDesc">{{item.wechat}}</view>
                   </view>
                 </view>
                 <view>
                   <view class="infoTemp">
                     <image class="infoIcon" src="../../images/infoPhone.png" />
-                    <view class="infoDesc">13361710717{{item.phone}}</view>
+                    <view class="infoDesc">{{item.phone}}</view>
                   </view>
                   <view class="infoTemp lastTemp">
                     <image class="infoIcon" src="../../images/infoEmail.png" />
-                    <view class="infoDesc">1097288257@qq.com{{item.email}}</view>
+                    <view class="infoDesc">{{item.email}}</view>
                   </view>
                 </view>
               </view>
@@ -57,15 +57,15 @@
             <view class="container-body">
               <view class="infoTemp">
                     <image class="infoIcon" src="../../images/infoAge.png" />
-                    <view class="infoDesc">东华理工大学{{item.schoolname}}</view>
+                    <view class="infoDesc">{{item.schoolname}}</view>
                   </view>
                   <view class="infoTemp">
                     <image class="infoIcon" src="../../images/infoWechat.png" />
-                    <view class="infoDesc">2016-09{{item.enrollmenttime}}~2020-06{{item.graduationtime}}</view>
+                    <view class="infoDesc">{{item.startDate}}~{{item.endDate}}</view>
                   </view>
                   <view class="infoTemp lastTemp">
                     <image class="infoIcon" src="../../images/infoAge.png" />
-                    <view class="infoDesc">软件工程{{item.major}}/本科{{item.education}}</view>
+                    <view class="infoDesc">{{item.major}}/{{item.education}}</view>
                   </view>
             </view>
             <view class="container-body">
@@ -80,24 +80,26 @@
         <swiper-item>
           <view class="scroll-container">
             <swiper previous-margin="100rpx" next-margin="120rpx" class="swiper-page" current="{{scrollIndex}}" bindchange="childSwiper">
-              <swiper-item class="swiper-center {{nowIndex === 0 ? 'active' : ''}}">
+              <swiper-item wx:for="{{expes}}" wx:key="expe" wx:for-item="expe" class="swiper-center {{nowIndex === 0 ? 'active' : ''}}">
                 <view class="container">
                   <view class="workLeft">
                     <view class="workTemp">
                       <view class="infoDesc workDesc">
-                        2019-03{{item.begindate}}~2019-05{{item.enddate}}
+                        实习时间： {{expe.startDate}}~{{expe.endDate}}
                       </view>
                     </view>
                     <view class="workTemp">
-                      <view class="infoDesc workDesc">北京爱奇艺科技有限公司{{item.company}}</view>
+                      <view class="infoDesc workDesc">
+                      实习公司： {{expe.company}}</view>
                     </view>
                     <view class="workTemp">
-                      <view class="infoDesc workDesc">Web前端开发工程师{{item.job}}</view>
+                      <view class="infoDesc workDesc">
+                      实习职位：{{expe.job}}</view>
                     </view>
                   </view>
                   <view class="infoTemp descTemp">
                     <view class="desc">
-                      所在部门为智能分发部，技术栈为React，做B端数据报表维护和 奇计界面重构的任务。奇计需求是将传统JavaWeb项目重构为前 后端分离的项目，使用前端框架为React。{{item.desc}}
+                     实习描述: {{expe.desc}}
                     </view>
                   </view>
                 </view>

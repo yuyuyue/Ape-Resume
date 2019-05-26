@@ -39,7 +39,8 @@ const mapper = db.collection('apt_pro');
 // 增加
 async function add(data) {
   const isSaved = await findByName(data);
-
+  console.log("=====",isSaved);
+  
   if (isSaved.data.length > 0) {
     code = 6;//重名
     // return await update(data);
@@ -101,6 +102,7 @@ exports.main = async (event, context) => {
   switch (opt) {
     case 'add':
       result = await add(data);
+      if(!result) code = 6
       break;
     case 'deleteByName':
       result = await delByName(data);

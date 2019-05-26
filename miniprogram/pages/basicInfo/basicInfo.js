@@ -61,10 +61,16 @@ Page({
       },
       success: res => {
       console.log(res);
-        if (getCurrentPages().length != 0) {
-          //刷新当前页面的数据
-          getCurrentPages()[getCurrentPages().length - 1].onLoad()
-        }
+        wx.showToast({
+          title: '成功',
+          icon: 'success',
+          duration: 2000,
+          complete(){
+            wx.navigateTo({
+              url: './basicInfo'
+            })
+          }
+        })
       },
     })
 

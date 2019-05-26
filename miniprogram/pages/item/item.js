@@ -22,22 +22,53 @@ Page({
       endInit: '',
     })
   },
-  addItem(e){
-     const data = e.detail.value;
-     console.log(data);
+  addItem(e) {
+    const data = e.detail.value;
+    console.log(data);
     data.startDate = this.data.startDate;
     data.endDate = this.data.endDate;
-     wx.cloud.callFunction({
-       name: "project",
-       data: {
-         opt: 'add',
-         data
-       },
-       success: res => {
-         console.log(res);
-          
-       },
-     })
+    wx.cloud.callFunction({
+      name: "project",
+      data: {
+        opt: 'add',
+        data
+      },
+      success: res => {
+        console.log(res.result.code);
+        
+        if (!res.result.code) {
+          wx.showModal({
+            title: '添加成功',
+            content: '是否继续添加',
+            success(res) {
+              if (res.confirm) {
+                wx.navigateTo({
+                  url: './item'
+                })
+              } else if (res.cancel) {
+                wx.switchTab({
+                  url: '../index/index'
+                })
+              }
+            }
+          })
+        } else if (res.result.code == 6) {
+          wx.showModal({
+            title: '添加失败',
+            content: '项目名重复，是否修改继续添加',
+            success(res) {
+              if (res.confirm) {
+
+              } else if (res.cancel) {
+                wx.switchTab({
+                  url: '../index/index'
+                })
+              }
+            }
+          })
+        }
+      },
+    })
   },
 
   /**

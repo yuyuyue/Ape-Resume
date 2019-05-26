@@ -11,7 +11,15 @@ Page({
       "猿力值"
     ],
     scrollIndex: 0,
-    nowIndex: 0
+    nowIndex: 0,
+    item: {
+
+    },
+    basicInfo: {
+
+    },
+    pros: [],
+    expes: []
   },
   onNavBarTap: function (event) {
     let navbarTapIndex = event.currentTarget.dataset.navbarIndex
@@ -43,12 +51,12 @@ Page({
       },
       success: res => {
         console.log(res);
-        let queryData = res.result.result.data[0];
+        let queryData = res.result.result.data;
         console.log(queryData);
         
         if (res.result.result.data.length) {
           this.setData({
-            ...queryData
+            expes: queryData
           })
         }
 
@@ -64,8 +72,7 @@ Page({
       success: (res) => {
         // console.log(res.data)
         this.setData({
-          avatarUrl: res.data.avatarUrl,
-          nickName: res.data.nickName
+          basicInfo: res.data
         })
 
       }
@@ -82,7 +89,7 @@ Page({
         let queryData = res.result.result.data[0];
         if (res.result.result.data.length) {
           this.setData({
-            ...queryData
+            item:queryData
           })
         }
 

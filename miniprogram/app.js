@@ -11,7 +11,18 @@ App({
     }
 
     this.globalData = {}
-    this.queryUsreInfo()
+    // this.queryUsreInfo()
+    wx.login({
+      success(res) {
+          if (res.code) {
+            // 发起网络请求
+            console.log(res.code);
+            
+          } else {
+            console.log('登录失败！' + res.errMsg)
+          }
+        }
+    })
   
   },
     queryUsreInfo() {

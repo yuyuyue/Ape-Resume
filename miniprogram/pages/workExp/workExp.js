@@ -34,8 +34,38 @@ Page({
         data
       },
       success: res => {
-        console.log(res);
-        
+        if (!res.result.code) {
+          wx.showModal({
+            title: '添加成功',
+            content: '是否继续添加',
+            success(res) {
+              if (res.confirm) {
+                wx.navigateTo({
+                  url: './workExp'
+                })
+              } else if (res.cancel) {
+                wx.switchTab({
+                  url: '../index/index'
+                })
+              }
+            }
+          })
+        } else if (res.result.code == 6) {
+          wx.showModal({
+            title: '添加失败',
+            content: '实习公司名重复，是否修改继续添加',
+            success(res) {
+              if (res.confirm) {
+
+              } else if (res.cancel) {
+                wx.switchTab({
+                  url: '../index/index'
+                })
+              }
+            }
+          })
+        }
+
       },
     })
 
@@ -44,7 +74,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
- 
+
   },
 
   /**
