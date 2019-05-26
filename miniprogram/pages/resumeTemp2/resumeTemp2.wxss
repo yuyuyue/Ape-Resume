@@ -51,19 +51,20 @@
   margin-right: 55rpx;
 }
 .infoType{
-  margin-left: 40rpx;
   margin-bottom: 20rpx;
 }
 .infoTitle{
   font-size: 26rpx;
   font-weight: bold;
 }
+.type{
+  margin:0 0 20rpx 0;
+  border-left: 4rpx solid #b3b3b3;
+}
 .infoDesc{
   display: flex;
-  margin-left: 20rpx;
-  padding-left: 20rpx;
-  padding-bottom: 20rpx;
-  border-left: 4rpx solid #b3b3b3;
+  padding-left: 10rpx;
+  margin-bottom: 30rpx;
 }
 .time{
   font-size: 20rpx;
@@ -73,7 +74,6 @@
 }
 .desc{
   margin-left: 20rpx;
-  margin-bottom: 20rpx;
 }
 .descName{
   font-size:22rpx;
