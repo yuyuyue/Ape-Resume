@@ -18,7 +18,7 @@ Page({
     basicInfo: {
 
     },
-    pros: [],
+    projects: [],
     expes: []
   },
   onNavBarTap: function (event) {
@@ -40,8 +40,8 @@ Page({
     
     let name;
     //避免多次请求
-    if (this.data.navbarActiveIndex == 1 && !this.data.company) name = "expe";
-    if (this.data.navbarActiveIndex == 2 && !this.data.techstack) name = "project";
+    if (this.data.navbarActiveIndex == 1 && !this.data.expes.length) name = "expe";
+    if (this.data.navbarActiveIndex == 2 && !this.data.projects.length) name = "project";
     let data = {}
     wx.cloud.callFunction({
       name,
@@ -50,14 +50,14 @@ Page({
         data
       },
       success: res => {
-        console.log(res);
+        // console.log(res);
         let queryData = res.result.result.data;
         console.log(queryData);
-        
+        let key = name + 's';
+        let setD = {};
+        setD[key] = queryData 
         if (res.result.result.data.length) {
-          this.setData({
-            expes: queryData
-          })
+          this.setData(setD)
         }
 
       }

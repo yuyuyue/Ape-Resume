@@ -88,7 +88,7 @@ function findAll() {
 exports.main = async (event, context) => {
   // const wxContext = cloud.getWXContext()
 
-  // console.log(event.userInfo, '>>>>>>>>>');
+  console.log(event.userInfo, '>>>>>>>>>');
   // console.log(wxContext, '？？？？？？？？？？？？？？？？？？？？');
   const {
     opt,

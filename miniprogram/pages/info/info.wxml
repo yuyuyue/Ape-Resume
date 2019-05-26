@@ -111,33 +111,33 @@
         <swiper-item>
           <view class="scroll-container">
             <swiper previous-margin="100rpx" next-margin="120rpx" class="swiper-page" current="{{scrollIndex}}" bindchange="childSwiper">
-              <swiper-item class="swiper-center {{nowIndex === 0 ? 'active' : ''}}">
+              <swiper-item wx:for="{{projects}}" wx:key="pro" wx:for-item="pro" class="swiper-center {{nowIndex === 0 ? 'active' : ''}}">
                 <view class="container">
                   <view class="container-header">
                     <image class="itemImg" src="../../images/avatar.jpg" />
                     <!-- 项目缩略图 thumb -->
                     <view class="infoItem">
-                      <text class="itemName">旅行小账本{{item.name}}</text>
+                      <text class="itemName">{{pro.name}}</text>
                     </view>
                   </view>
                   <view class="infoTemp">
                     <image class="infoIcon" src="../../images/infoAge.png" />
-                    <view class="infoDesc">2018-09{{item.begintime}}~2019.02{{item.endtime}}</view>
+                    <view class="infoDesc">{{pro.begintime}}~{{pro.endtime}}</view>
                   </view>
                   <view class="infoTemp">
                     <image class="infoIcon" src="../../images/infoWechat.png" />
                     <view class="textDesc">
-                      访问链接：https://github.com/FightingHao/travelbook{{item.lineaddress}}
+                      访问链接：{{pro.lineaddress}}
                     </view>
                   </view>
                   <view class="infoTemp">
                     <image class="infoIcon" src="../../images/infoPhone.png" />
-                    <view class="textDesc">技术栈：小程序+ES6+vant框架+小程序云开发 {{item.techstack}}</view>
+                    <view class="textDesc">技术栈： {{pro.techstack}}</view>
                   </view>
                   <view class="infoTemp">
                     <image class="infoIcon" src="../../images/infoEmail.png" />
                     <view class="textDesc">
-                      项目描述：重构腾讯《旅行小账本》小程序；包括 账本显示、账本编辑、收支记录、账本明细等模块；vant框架做UI搭建、BEM命名CSS规范；使用小程序云开发提供的API；云数据库做数据持久化；云函数做数据批量操作、级联操作{{item.desc}}
+                      项目描述：{{pro.desc}}
                     </view>
                   </view>
                 </view>

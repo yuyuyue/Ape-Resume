@@ -74,7 +74,7 @@ Page({
           //从数据库获取用户信息
           that.queryUsreInfo();
           console.log("插入小程序登录用户信息成功！");
-           wx.navigateTo({
+           wx.switchTab({
              url: '/pages/index/index'
            })
         }

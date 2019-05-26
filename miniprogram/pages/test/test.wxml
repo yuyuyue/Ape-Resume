@@ -1,7 +1,7 @@
 <!-- miniprogram/pages/test/test.wxml -->
 <view class="page">
     <view class="user">
-        <image class="avatar" src="../../images/test.jpg" />
+        <!-- <image class="avatar" src="../../images/test.jpg" /> -->
     </view>
     <view class="test blue">
         <image class="test-avatar" src="../../images/github (1).png"></image>
