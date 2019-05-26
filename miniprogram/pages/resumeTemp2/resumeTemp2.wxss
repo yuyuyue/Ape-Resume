@@ -1,34 +1,30 @@
 /* 简历头部 */
 .resume-header{
-  margin-left: 65rpx;
-  margin-top: 40rpx;
+  padding:40rpx 20rpx 40rpx 60rpx; 
   display: flex;
 }
 .photo{
-  width: 105rpx;
-  height: 105rpx;
-  border-radius: 50%;
+  width: 84rpx;
+  height: 119rpx;
+  margin-right: 20rpx;
   border: 1rpx solid #8cba50;
 }
-.user{
-  margin-left: 20rpx;
-  height: 60rpx;
-  margin-top: 30rpx;
+.userInfo{
+  flex: 1;
+  display: flex;
 }
 .userName{
+  margin-top: 40rpx;
   font-size: 40rpx;
   color: #8cba50;
-  display: block;
   font-weight: bold;
 }
 .expectJob{
-  font-size: 14rpx;
+  font-size: 19rpx;
   color: #c2dc84;
-  display: block;
-  margin-top: 5rpx;
 }
 .basicInfo{
-  margin-left: 140rpx;
+  margin-top: 15rpx;
 }
 .infoItem{
   line-height: 0.5;
@@ -38,24 +34,28 @@
   width: 20rpx;
 }
 .message{
-  font-size: 13rpx;
+  font-size: 18rpx;
   margin-left: 10rpx;
+}
+.body{
+  padding: 10rpx 40rpx;
 }
 /* 简历详情 */
 .flex{
   display: flex;
 }
 .resume-item{
-  margin-left: 55rpx;
+  margin-bottom: 40rpx;
 }
-.infoType,.infoDesc{
+.infoType{
   margin-right: 55rpx;
 }
 .infoType{
   margin-left: 40rpx;
+  margin-bottom: 20rpx;
 }
 .infoTitle{
-  font-size: 20rpx;
+  font-size: 26rpx;
   font-weight: bold;
 }
 .infoDesc{
@@ -66,33 +66,33 @@
   border-left: 4rpx solid #b3b3b3;
 }
 .time{
-  font-size: 15rpx;
+  font-size: 20rpx;
   color: #7e7e7e;
   text-align: right;
   display: block;
 }
 .desc{
   margin-left: 20rpx;
+  margin-bottom: 20rpx;
 }
 .descName{
-  font-size:17rpx;
+  font-size:22rpx;
   margin-right: 15rpx;
   color: #a5d97d;
 }
 .descJob{
-  font-size: 15rpx;
+  font-size: 20rpx;
   color: #82a4a0;
   margin-top:4rpx;
 }
 .descInfo{
-  font-size: 15rpx;
+  font-size: 25rpx;
   color: #b6b6b6;
-  width: 460rpx;
   margin-top: 10rpx;
 }
 .itemImg{
-  width: 60rpx;
-  height: 60rpx;
+  width: 80rpx;
+  height:80rpx;
   margin: 5rpx 0;
   border-radius: 50%;
 }
