@@ -90,5 +90,6 @@
 }
 .grey{
   color: #83a5b8;
+  margin-bottom: 10rpx;
   font-size: 16rpx;
 }
