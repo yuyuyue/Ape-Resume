@@ -27,24 +27,24 @@
     </view>
   </view>
   <view class="body">
-      <view class="resume-item">
-        <view class="infoType">
-          <text class="infoTitle">工作经验</text>
-        </view>
-        <view class="type">
-          <view class="infoDesc">
-            <text class="time">2019.04
+    <view class="resume-item">
+      <view class="infoType">
+        <text class="infoTitle">工作经验</text>
+      </view>
+      <view class="type">
+        <view class="infoDesc">
+          <text class="time">2019.04
     -2019.05</text>
-            <view class="desc">
-              <view class="flex">
-                <view class="descName">猿简历科技有限公司</view>
-                <view class="descJob">切图仔</view>
-              </view>
-              <view class="descInfo">
-                所在部门为猿简历分发部，所在部门为猿简历分发部，所在部门为猿简历分发部，所在部门为猿简历分发部，所在部门为猿简历分发部
-              </view>
+          <view class="desc">
+            <view class="flex">
+              <view class="descName">猿简历科技有限公司</view>
+              <view class="descJob">切图仔</view>
+            </view>
+            <view class="descInfo">
+              所在部门为猿简历分发部，所在部门为猿简历分发部，所在部门为猿简历分发部，所在部门为猿简历分发部，所在部门为猿简历分发部
             </view>
           </view>
+        </view>
       </view>
     </view>
     <view class="resume-item">
@@ -59,12 +59,10 @@
     -2019.05</text>
           </view>
           <view class="desc">
-            <view class="descName">旅行小账本</view>
-            <view class="descJob">
-              技术栈：Maven + Spring + SpringMVC + Mybatis + Ajax + JQuery + BootStrap
-            </view>
+            <view class="descName">猿简历</view>
+            <view class="descJob">技术栈：猿简历公司猿简历公司猿简历公司猿简历公司猿简历公司猿简历公司</view>
             <view class="descInfo">
-              重构腾讯《旅行小账本》小程序；包括 账本显示、账本编辑、收支记录、账本明细等模块；vant框架做UI搭建、BEM命名CSS规范；使用小程序云开发提供的API；云数据库做数据持久化；云函数做数据批量操作、级联操作
+              所在部门为猿简历分发部，所在部门为猿简历分发部，所在部门为猿简历分发部，所在部门为猿简历分发部，所在部门为猿简历分发部
             </view>
           </view>
         </view>
@@ -79,11 +77,11 @@
     -2020.06</text>
             <view class="desc">
               <view class="flex">
-                <view class="descName">东华理工大学</view>
+                <view class="descName">猿简历大学</view>
                 <view class="descJob">软件工程（本科）</view>
               </view>
               <view class="descInfo">
-                熟悉 HTML、HTML5、语义化标签，了解 Canvas；熟悉 CSS、CSS3、Less、Stylus，会用 BootStrap 框架 ； 熟悉原生 JavaScript、ES6+ 新特性，会用 JQuery 库， 了解 TypeScript；熟悉前后端分离模式，熟悉 Ajax、Fetch 请求，熟悉跨域请求；了解 Babel、Webpack4 工作流
+                猿简历公司猿简历公司猿简历公司猿简历公司猿简历公司猿简历公司猿简历公司猿简历公司猿简历公司
               </view>
             </view>
           </view>
