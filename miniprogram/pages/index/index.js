@@ -7,19 +7,44 @@ Page({
   data: {
 
   },
-  goTest(){
+  goTest() {
     wx.navigateTo({
       url: '../test/test'
     })
   },
-  addInfo(){
+  addInfo() {
     wx.navigateTo({
       url: '../addInfo/addInfo'
     })
   },
-  makeRes(){
+  makeRes() {
     wx.navigateTo({
       url: '../makeRes/makeRes'
+    })
+  },
+  handleGetLocalUserInfo() {
+    return new Promise((reso, rej) => {
+      wx.getSetting({
+        success: res => {
+          console.log("set",res);
+          
+          if (res.authSetting['scope.userInfo']) {
+            wx.getUserInfo({
+              success: res => {
+                const userInfo = res.userInfo;
+                reso(userInfo)
+              },
+              fail: err=>{
+
+              }
+            })
+          }else{
+            wx.navigateTo({
+              url: '/pages/authorize/authorize'
+            })
+          }
+        }
+      })
     })
   },
   /**
@@ -27,17 +52,32 @@ Page({
    */
   onLoad: function (options) {
     wx.cloud.callFunction({
-      name:'userdetail',
-      data:{
-        opt:'selectById',
-        data:{}
+      name: 'userdetail',
+      data: {
+        opt: 'selectById',
+        data: {}
       },
-      success: res=>{
+      success: res => {
         wx.setStorage({
           key: 'userdetail',
-          data:res.result.result.data[0]
+          data: res.result.result.data[0]
         })
       }
+    })
+    this.handleGetLocalUserInfo().then(userInfo => {
+      console.log(userInfo);
+      
+      if (userInfo) {
+        wx.setStorage({
+          key: 'userInfo',
+          data: userInfo
+        })
+      } else {
+        wx.navigateTo({
+          url: '/pages/authorize/authorize'
+        })
+      }
+
     })
   },
 
