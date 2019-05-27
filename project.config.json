@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 19,
+			"current": 21,
 			"list": [
 				{
 					"id": 0,
@@ -169,6 +169,20 @@
 					"id": -1,
 					"name": "temp1",
 					"pathName": "pages/resumeTemp1/resumeTemp1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "temp2",
+					"pathName": "pages/resumeTemp2/resumeTemp2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "temp3",
+					"pathName": "pages/resumeTemp3/resumeTemp3",
 					"query": "",
 					"scene": null
 				}
