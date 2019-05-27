@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 17,
+			"current": 19,
 			"list": [
 				{
 					"id": 0,
@@ -145,8 +145,8 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "makeRes",
+					"id": 16,
+					"name": "chooseResInfo",
 					"pathName": "pages/makeRes/makeRes",
 					"query": "",
 					"scene": null
@@ -155,6 +155,20 @@
 					"id": -1,
 					"name": "info",
 					"pathName": "pages/info/info",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 18,
+					"name": "chooseResTemp",
+					"pathName": "pages/chooseRes/chooseRes",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "temp1",
+					"pathName": "pages/resumeTemp1/resumeTemp1",
 					"query": "",
 					"scene": null
 				}

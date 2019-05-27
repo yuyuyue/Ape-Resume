@@ -28,7 +28,7 @@ Page({
     })
   },
   childSwiper(e) {
-    console.log(e.detail.current)
+    // console.log(e.detail.current)
     this.setData({
       nowIndex: e.detail.current
     })
@@ -54,10 +54,10 @@ Page({
         let queryData = res.result.result.data;
         console.log(queryData);
         let key = name + 's';
-        let setD = {};
-        setD[key] = queryData 
         if (res.result.result.data.length) {
-          this.setData(setD)
+          this.setData({
+            [key]: queryData
+          })
         }
 
       }

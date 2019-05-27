@@ -12,7 +12,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.getStorage({
+      key: 'userdetail',
+      success: (res) => {
+        console.log(res);
 
+        this.setData({
+          detail: res.data
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'userInfo',
+      success: (res) => {
+        this.setData({
+          info: res.data
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'selected',
+      success: (res) => {
+        this.setData({
+          selected: res.data
+        })
+      }
+    })
   },
 
   /**

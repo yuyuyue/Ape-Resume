@@ -5,31 +5,46 @@ Page({
    * 页面的初始数据
    */
   data: {
-   workList: [
+    workList: [
       // { id: 1, name: 1, company: "爱奇艺", checked: false },
       // { id: 2, name: 2, company: "阿里巴巴", checked: false },
       // { id: 3, name: 3, company: "腾讯", checked: false },
       // { id: 4, name: 4, company: "丁香园", checked: false },
     ],
     selectall: false,
-    itemList: [
+    workList: [
       // { id: 1, name: 1, company: "旅行小账本", checked: false },
       // { id: 2, name: 2, company: "有赞精选", checked: false },
       // { id: 3, name: 3, company: "gihub", checked: false },
       // { id: 4, name: 4, company: "二维火点餐", checked: false },
     ],
-    selectitemall: false
+    selectitemall: false,
+    selected: {
+      works: [
+
+      ],
+      items: [
+
+      ]
+    }
   },
   select: function (e) {
     let selectValue = e.currentTarget.dataset.name
     let index = e.currentTarget.dataset.index;
-    let workList = this.data.workList
+
     let newli = 'workList[' + index + '].checked';
     this.setData({
       [newli]: !this.data.workList[index].checked
     })
+    this.setData({
+      ['selected.works']: this.data.workList.filter(item => item.checked)
+    })    
+    if (this.data.workList.every(item => item.checked)) this.setData({
+      selectall: true
+    })
+
   },
-  //全选，取消全选
+  //实习经验 全选，取消全选
   selectAll: function (e) {
     let workList = this.data.workList;
     let selectall = this.data.selectall;
@@ -38,7 +53,8 @@ Page({
         let newli = 'workList[' + i + '].checked';
         this.setData({
           [newli]: true,
-          selectall: true
+          selectall: true,
+          ['selected.works']: this.data.workList
         })
       }
     } else {
@@ -60,20 +76,27 @@ Page({
     this.setData({
       [newli]: !this.data.itemList[index].checked
     })
+    this.setData({
+      ['selected.items']: this.data.itemList.filter(item => item.checked)
+    })
+    if (this.data.itemList.every(item => item.checked)) this.setData({
+      selectitemall: true
+    })
   },
   selectItemAll: function (e) {
     let itemList = this.data.itemList;
     let selectitemall = this.data.selectitemall;
     if (selectitemall == false) {
-      for (let i = 0; i <itemList.length; i++) {
+      for (let i = 0; i < itemList.length; i++) {
         let newli = 'itemList[' + i + '].checked';
         this.setData({
           [newli]: true,
-          selectitemall: true
+          selectitemall: true,
+          ['selected.items']: this.data.itemList
         })
       }
     } else {
-      for (let i = 0; i <itemList.length; i++) {
+      for (let i = 0; i < itemList.length; i++) {
         let newli = 'itemList[' + i + '].checked';
         this.setData({
           [newli]: false,
@@ -82,49 +105,66 @@ Page({
       }
     }
   },
+  // 点击下一步跳转到选择模板页
+  chooseTempHandle() {
+    // let works = .work.toString();
+    // let pros = this.data.selected.item.toString();
+    // let selected = encodeURIComponent(JSON.stringify(this.data.selected))
+    wx.setStorage({
+      key: 'selected',
+      data: this.data.selected
+    })
+    wx.navigateTo({
+      url: `../chooseRes/chooseRes`
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     let data = {};
-     wx.cloud.callFunction({
-       name:'project',
-       data: {
-         opt: 'selectAll',
-         data
-       },
-       success: res => {
-         console.log(res);
-         let itemList = res.result.result.data;
-         console.log(itemList);
+    wx.cloud.callFunction({
+      name: 'project',
+      data: {
+        opt: 'selectAll',
+        data
+      },
+      success: res => {
+        console.log(res);
+        let itemList = res.result.result.data;
+        // console.log(itemList);
+        itemList.map((item, index) => {
+          return item.id = index + 1
+        })
+        if (res.result.result.data.length) {
+          this.setData({
+            itemList
+          })
+        }
 
-         if (res.result.result.data.length) {
-           this.setData({
-             itemList
-           })
-         }
+      }
+    })
+    wx.cloud.callFunction({
+      name: 'expe',
+      data: {
+        opt: 'selectAll',
+        data
+      },
+      success: res => {
+        console.log(res);
+        let workList = res.result.result.data;
+        console.log(workList);
+        workList.map((item, index) => {
+          return item.id = index + 1
+        })
+        if (res.result.result.data.length) {
+          this.setData({
+            workList
+          })
+        }
 
-       }
-     })
-     wx.cloud.callFunction({
-       name: 'expe',
-       data: {
-         opt: 'selectAll',
-         data
-       },
-       success: res => {
-         console.log(res);
-         let workList = res.result.result.data;
-         console.log(workList);
-
-         if (res.result.result.data.length) {
-           this.setData({
-             workList
-           })
-         }
-
-       }
-     })
+      }
+    })
   },
 
   /**

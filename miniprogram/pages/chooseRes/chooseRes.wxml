@@ -3,23 +3,15 @@
   <view class="header">
     <view class="temp">请选择简历模板</view>
     <view class="chooseTemp">
-      <image class="tempIcon" src="../../images/avatar.jpg" />
-      <image class="tempIcon" src="../../images/avatar.jpg" />
-      <image class="tempIcon" src="../../images/avatar.jpg" />
+      <image wx:for="{{resumeTemps}}" mode="aspectFill" wx:key="item" bindtap="switchHandle" data-index="{{index}}" class="tempIcon {{index == current? 'on': ''}}" src="{{item}}" />
     </view>
   </view>
   <view class="showTemp">
-    <scroll-view class="" style="width:auto;overflow:hidden;">
-      <view class="temp">
-        <image class="tempImg" src="../../images/avatar.jpg" />
-      </view>
-      <view class="temp">
-        <image class="tempImg" src="../../images/avatar.jpg" />
-      </view>
-      <view class="temp">
-        <image class="tempImg" src="../../images/avatar.jpg" />
+    <scroll-view  bindscroll="scrollHandle" scroll-x="{{true}}" scroll-into-view="{{'temp'+current}}" class="">
+      <view wx:for="{{resumeTemps}}" wx:key="item" id="temp0" class="temp">
+        <image class="tempImg" id="{{'temp'+index}}" src="{{item}}" />
       </view>
     </scroll-view>
   </view>
-  <button>预览简历</button>
+  <button bindtap="mkresumeHandle">预览简历</button>
 </view>

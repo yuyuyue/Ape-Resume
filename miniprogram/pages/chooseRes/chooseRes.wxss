@@ -15,12 +15,18 @@ page{
 .chooseTemp{
   display: flex;
 }
+.tempIcon.on {
+  border: 5rpx solid blue
+}
 .tempIcon{
   height: 120rpx;
   width: 120rpx;
   margin-top: 30rpx;
   margin-right: 40rpx;
   border: 1px solid #7c7c7c;
+}
+.tempImg {
+  transition: 1s all ease;
 }
 .showTemp{
   width: 100%;

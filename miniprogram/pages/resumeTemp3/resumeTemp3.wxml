@@ -3,76 +3,52 @@
   <view class="left">
     <view class="container">
       <view class="userImg">
-      <image class="photo" src="../../images/avatar.jpg" />
+        <image class="photo" src="{{info.avatarUrl}}" />
       </view>
       <view class="infoTemp">
         <view class="infoType">个人信息</view>
-        <view class="infoDesc">20岁</view>
-        <view class="infoDesc">12345678910(微信)</view>
-        <view class="infoDesc">12345678910(手机)</view>
-        <view class="infoDesc">12345678910@qq.com(邮箱)</view>
+        <view class="infoDesc">{{detail.age||'暂无数据'}}岁</view>
+        <view class="infoDesc">{{detail.wechat||'暂无数据'}}(微信)</view>
+        <view class="infoDesc">{{detail.phone||'暂无数据'}}(手机)</view>
+        <view class="infoDesc">{{detail.email||'暂无数据'}}(邮箱)</view>
       </view>
       <view class="infoTemp">
         <view class="infoType">教育背景</view>
-        <view class="infoDesc">2016-09~2020-06</view>
-        <view class="infoDesc">猿简历大学</view>
-        <view class="infoDesc">软件工程（本科）</view>
+        <view class="infoDesc">{{detail.startDate||'暂无数据'}}~{{detail.endDate||'暂无数据'}}</view>
+        <view class="infoDesc">{{detail.schoolname||'暂无数据'}}</view>
+        <view class="infoDesc">{{detail.education||'暂无数据'}}（{{detail.major||'暂无数据'}}）</view>
       </view>
       <view class="infoTemp">
         <view class="infoType">个人优势</view>
-        <view class="infoDesc">
-          猿简历公司猿简历公司猿简历公司猿简历公司猿简历公司猿简历公司猿简历公司猿简历公司猿简历公司猿简历公司猿简历公司
-        </view>
+        <view class="infoDesc">{{detail.advantage||'暂无数据'}}</view>
       </view>
     </view>
   </view>
   <view class="right">
     <view class="content">
       <view class="flex">
-        <view class="userName">一只酱</view>
+        <view class="userName">{{detail.name||'暂无数据'}}</view>
         <view class="expectJob">
           <text class="expect">求职意向</text>
-          <text class="job">/前端工程师</text>
+          <text class="job"> {{detail.expectjob||'暂无数据'}}</text>
         </view>
       </view>
       <view class="itemTemp">
         <view class="itemTitle">工作经验</view>
-        <view class="item">
-          <text class="itemInfo">2018.10-至今</text>
-          <text class="itemInfo">猿简历科技有限公司</text>
-          <text class="itemInfo">切图仔</text>
-          <view class="itemDesc">
-            所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部
-          </view>
-        </view>
-        <view class="item">
-          <text class="itemInfo">2018.10-至今</text>
-          <text class="itemInfo">网易云网络公司</text>
-          <text class="itemInfo">切图仔</text>
-          <view class="itemDesc">
-            所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部 
-          </view>
+        <view class="item" wx:for="{{selected.works}}" wx:key="item">
+          <text class="itemInfo">{{item.startDate||'暂无数据'}} ~ {{item.endDate||'暂无数据'}}</text>
+          <text class="itemInfo">{{item.company||'暂无数据'}}</text>
+          <text class="itemInfo">{{item.job||'暂无数据'}}</text>
+          <view class="itemDesc">{{item.desc||'暂无数据'}}</view>
         </view>
       </view>
       <view class="itemTemp">
         <view class="itemTitle">项目成果</view>
-        <view class="item">
-          <text class="itemInfo">2018.10-至今</text>
-          <text class="itemInfo">旅行小账本</text>
-          <view class="itemInfo grey">
-            技术栈：猿简历公司猿简历公司，猿简历公司猿简历公司，猿简历公司猿简历公司
-          </view>
-          <view class="itemDesc">
-所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部          </view>
-        </view>
-        <view class="item">
-          <text class="itemInfo">2018.10-至今</text>
-          <text class="itemInfo">旅行小账本</text>
-          <view class="itemInfo grey">
-            技术栈：猿简历公司猿简历公司，猿简历公司猿简历公司，猿简历公司猿简历公司
-          </view>
-          <view class="itemDesc">
-所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部，所在部门为猿简历发部          </view>
+        <view class="item" wx:for="{{selected.items}}" wx:key="item">
+          <text class="itemInfo">{{item.startDate||'暂无数据'}}~{{item.endDate||'暂无数据'}}</text>
+          <text class="itemInfo">{{item.proname||'暂无数据'}}</text>
+          <view class="itemInfo grey">技术栈：{{item.techstack||'暂无数据'}}</view>
+          <view class="itemDesc">项目描述：{{item.desc||'暂无数据'}}</view>
         </view>
       </view>
     </view>
