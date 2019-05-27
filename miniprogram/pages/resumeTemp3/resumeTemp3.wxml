@@ -45,8 +45,8 @@
       <view class="itemTemp">
         <view class="itemTitle">项目成果</view>
         <view class="item" wx:for="{{selected.items}}" wx:key="item">
-          <text class="itemInfo">{{item.startDate||'暂无数据'}}~{{item.endDate||'暂无数据'}}</text>
           <text class="itemInfo">{{item.proname||'暂无数据'}}</text>
+          <text class="itemInfo">{{item.startDate||'暂无数据'}}~{{item.endDate||'暂无数据'}}</text>
           <view class="itemInfo grey">技术栈：{{item.techstack||'暂无数据'}}</view>
           <view class="itemDesc">项目描述：{{item.desc||'暂无数据'}}</view>
         </view>
