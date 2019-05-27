@@ -26,7 +26,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.cloud.callFunction({
+      name:'userdetail',
+      data:{
+        opt:'selectById',
+        data:{}
+      },
+      success: res=>{
+        wx.setStorage({
+          key: 'userdetail',
+          data:res.result.result.data[0]
+        })
+      }
+    })
   },
 
   /**
