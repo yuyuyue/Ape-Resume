@@ -3,7 +3,7 @@
   <view class="search-container">
     <view class="search">
       <input type="text" placeholder="输入你想要的内容" confirm-type="search"></input>
-      <image class="" src="../../images/go.png"></image>
+      <image class="" src="../../images/search.svg"></image>
     </view>
   </view>
   <view class="navbar-container">
@@ -24,7 +24,7 @@
                 <image class="itemImg" src="{{basicInfo.avatarUrl}}" />
                 <view class="infoItem">
                   <text class="itemName">{{item.name}}</text>
-                  <image class="icon" src="../../images/{{item.sex=='男'?'boy':'girl'}}.png" />
+                  <image class="icon" src="../../images/{{item.sex=='男'?'boy':'girl'}}.svg" />
                 </view>
               </view>
               <view class="line">

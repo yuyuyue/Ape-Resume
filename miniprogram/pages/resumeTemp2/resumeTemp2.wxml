@@ -9,24 +9,69 @@
     </view>
     <view class="basicInfo">
       <view class="infoItem">
-        <image class="icon" src="../../images/age.png" />
+        <image class="icon" src="../../images/age1.svg" />
         <text class="message">年龄：{{detail.age||'暂无数据'}}岁</text>
       </view>
       <view class="infoItem">
-        <image class="icon" src="../../images/wechat.png" />
+        <image class="icon" src="../../images/wechat1.svg" />
         <text class="message">微信：{{detail.wechat||'暂无数据'}}</text>
       </view>
       <view class="infoItem">
-        <image class="icon" src="../../images/phone.png" />
+        <image class="icon" src="../../images/phone1.svg" />
         <text class="message">手机：{{detail.phone||'暂无数据'}}</text>
       </view>
       <view class="infoItem">
-        <image class="icon" src="../../images/email.png" />
+        <image class="icon" src="../../images/email1.svg" />
         <text class="message">邮箱：{{detail.email||'暂无数据'}}</text>
       </view>
     </view>
   </view>
   <view class="body">
+    <view class="resume-item">
+      <view class="infoType">
+        <text class="infoTitle">个人信息</text>
+      </view>
+      <view class="type">
+        <view class="infoDesc">
+          <image class="apeIcon" src="../../images/github.svg" />
+          <view class="apeDesc">
+            <text class="apeInfo">Stars 210{{}}</text>
+          </view>
+          <view class="apeDesc">
+            <text class="apeInfo">Forks 1.5k{{}}</text>
+          </view>
+          <view class="apeDesc">
+            <text class="apeInfo">Followers 11.5k{{}}</text>
+          </view>
+        </view>
+        <view class="infoDesc">
+          <image class="apeIcon" src="../../images/LeetCode.svg" />
+          <view class="apeDesc">
+            <text class="apeInfo">排名 52020{{}}</text>
+          </view>
+          <view class="apeDesc">
+            <text class="apeInfo">做题数 68{{}}</text>
+          </view>
+          <view class="apeDesc">
+            <text class="apeInfo">竞赛积分 2020{{}}</text>
+          </view>
+        </view>
+        <view class="infoDesc">
+          <image class="apeIcon" src="../../images/juejin.svg" />
+          <view class="apeDesc">
+            <text class="apeInfo">掘力值 2020{{}}</text>
+            <text class="apeInfo">关注者 5276{{}}</text>
+          </view>
+          <view class="apeDesc">
+            <text class="apeInfo">发布文章 72{{}}</text>
+            <text class="apeInfo">获得点赞 1549{{}}</text>
+          </view>
+          <view class="apeDesc">
+            <text class="apeInfo">文章被阅读 53059{{}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
     <view class="resume-item">
       <view class="infoType">
         <text class="infoTitle">工作经验</text>
@@ -53,21 +98,21 @@
         <text class="infoTitle">项目成果</text>
       </view>
       <view class="type">
-      <view  wx:for="{{selected.items}}" wx:key="item" >
-        <view class="infoDesc">
-          <view>
-            <image class="itemImg" src="../../images/ape.png" />
-            <text class="time">{{item.startDate||'暂无数据'}}</text>
-            <text class="time">~</text>
-            <text class="time">{{item.endDate||'暂无数据'}}</text>
-          </view>
-          <view class="desc">
-            <view class="descName">{{item.proname||'暂无数据'}}</view>
-            <view class="descJob">技术栈：{{item.techstack||'暂无数据'}}</view>
-            <view class="descInfo">{{item.desc||'暂无数据'}}</view>
+        <view wx:for="{{selected.items}}" wx:key="item">
+          <view class="infoDesc">
+            <view>
+              <image class="itemImg" src="../../images/ape.png" />
+              <text class="time">{{item.startDate||'暂无数据'}}</text>
+              <text class="time">~</text>
+              <text class="time">{{item.endDate||'暂无数据'}}</text>
+            </view>
+            <view class="desc">
+              <view class="descName">{{item.proname||'暂无数据'}}</view>
+              <view class="descJob">技术栈：{{item.techstack||'暂无数据'}}</view>
+              <view class="descInfo">{{item.desc||'暂无数据'}}</view>
+            </view>
           </view>
         </view>
-      </view>
       </view>
     </view>
     <view class="resume-item">
@@ -77,9 +122,9 @@
       <view class="type">
         <view class="infoDesc">
           <view class="time">
-          <text class="time">{{detail.startDate||'暂无数据'}}</text>
-          <text class="time">~</text>
-          <text class="time">{{detail.endDate||'暂无数据'}}</text>
+            <text class="time">{{detail.startDate||'暂无数据'}}</text>
+            <text class="time">~</text>
+            <text class="time">{{detail.endDate||'暂无数据'}}</text>
           </view>
           <view class="desc">
             <view class="flex">

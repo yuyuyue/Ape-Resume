@@ -72,7 +72,7 @@
   text-align: right;
   display: block;
 }
-.desc{
+.desc,.apeDesc{
   margin-left: 20rpx;
 }
 .descName{
@@ -95,4 +95,18 @@
   height:80rpx;
   margin: 5rpx 0;
   border-radius: 50%;
+}
+/* 个人信息 */
+.apeType{
+  font-size: 26rpx;
+  color: #7e7e7e;
+}
+.apeIcon{
+  width: 50rpx;
+  height: 50rpx;
+}
+.apeInfo{
+  font-size: 24rpx;
+  color: #b6b6b6;
+  display: block;
 }

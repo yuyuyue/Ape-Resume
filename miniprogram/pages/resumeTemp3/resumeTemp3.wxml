@@ -1,5 +1,5 @@
 <!-- miniprogram/pages/resumeTemp3/resumeTemp3.wxml -->
-<view class="flex">
+<view class="page flex">
   <view class="left">
     <view class="container">
       <view class="userImg">
@@ -30,7 +30,54 @@
         <view class="userName">{{detail.name||'暂无数据'}}</view>
         <view class="expectJob">
           <text class="expect">求职意向</text>
-          <text class="job"> {{detail.expectjob||'暂无数据'}}</text>
+          <text class="job">{{detail.expectjob||'暂无数据'}}</text>
+        </view>
+      </view>
+      <view class="itemTemp">
+        <view class="itemTitle">个人信息</view>
+        <view class="item">
+          <view class="itemInfo">GitHub</view>
+          <view class="flex infoDesc">
+            <view class="apeType">
+              <text class="apeInfo">Stars 210{{}}</text>
+            </view>
+            <view class="apeType">
+              <text class="apeInfo">Forks 1.5k{{}}</text>
+            </view>
+            <view class="apeType">
+              <text class="apeInfo">Followers 11.5k{{}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="item">
+          <view class="itemInfo">LeetCode</view>
+          <view class="flex infoDesc">
+            <view class="apeType">
+              <text class="apeInfo">排名 52020{{}}</text>
+            </view>
+            <view class="apeType">
+              <text class="apeInfo">做题数 68{{}}</text>
+            </view>
+            <view class="apeType">
+              <text class="apeInfo">竞赛积分 2020{{}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="item">
+          <view class="itemInfo">掘金</view>
+          <view class="flex infoDesc">
+            <view class="apeType">
+              <text class="apeInfo">掘力值 2020{{}}</text>
+              <text class="apeInfo">关注者 5276{{}}</text>
+            </view>
+            <view class="apeType">
+              <text class="apeInfo">发布文章 72{{}}</text>
+              <text class="apeInfo">获得点赞 1549{{}}</text>
+            </view>
+            <view class="apeType">
+              <text class="apeInfo">文章被阅读 53059{{}}</text>
+            </view>
+          </view>
         </view>
       </view>
       <view class="itemTemp">
