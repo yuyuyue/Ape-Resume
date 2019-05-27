@@ -48,7 +48,7 @@
   <text class="info">项目描述：{{item.desc||'暂无数据'}}</text>
   <text class="info  infodesc">{{item.begintime||'暂无数据'}}</text>
 </view>
-<div class="content">
+<view>class="content">
   <text class="info">个人优势：{{detail.advantage||'暂无数据'}}</text>
   <text class="info  infodesc">{{item.begintime||'暂无数据'}}</text>
-</div>
+</view> 
