@@ -1,54 +1,61 @@
 <!-- miniprogram/pages/resume/resume.wxml -->
-<view class="content">
-  <view class="resume-titleBorder">
-    <text class="resume-title">{{detail.name||'暂无数据'}}</text>
+<view class="page">
+  <view class="content">
+    <view class="resume-titleBorder">
+      <view class="resume-title">{{detail.name||'暂无数据'}}</view>
+    </view>
+    <view class="info">
+      · {{detail.sex||'暂无数据'}} / {{detail.age||'暂无数据'}}岁 / {{detail.startDate||'暂无数据'}}届
+    </view>
+    <view class="info">
+      · {{detail.education||'暂无数据'}} / {{detail.schoolname||'暂无数据'}} / {{detail.major||'暂无数据'}}
+    </view>
+    <view class="info">· 期望职位：{{detail.expectjob||'暂无数据'}}</view>
   </view>
-  <text class="info">
-    · {{detail.sex||'暂无数据'}} / {{detail.age||'暂无数据'}}岁 / {{detail.startDate||'暂无数据'}}届
-  </text>
-  <text class="info">
-    · {{detail.education||'暂无数据'}} / {{detail.schoolname||'暂无数据'}} / {{detail.major||'暂无数据'}}
-  </text>
-  <text class="info">· 期望职位：{{detail.expectjob||'暂无数据'}}</text>
-</view>
-<view class="content">
-  <view class="resume-titleBorder">
-    <text class="resume-title">联系方式</text>
+  <view class="content">
+    <view class="resume-titleBorder">
+      <text class="resume-title">联系方式</text>
+    </view>
+    <text class="info">· 微信：{{detail.wechat||'暂无数据'}}</text>
+    <text class="info">· 手机：{{detail.phone||'暂无数据'}}</text>
+    <text class="info">· 邮箱：{{detail.email||'暂无数据'}}</text>
   </view>
-  <text class="info">· 微信：{{detail.wechat||'暂无数据'}}</text>
-  <text class="info">· 手机：{{detail.phone||'暂无数据'}}</text>
-  <text class="info">· 邮箱：{{detail.email||'暂无数据'}}</text>
-</view>
-<view class="content">
-  <view class="resume-titleBorder">
-    <text class="resume-title">工作经验</text>
-  </view>
-  <view wx:for="{{selected.works}}" wx:key="item" class="resume-keyInfo">
-    <text class="keyInfo">时间：{{item.startDate||'暂无数据'}} ~ {{item.endDate||'暂无数据'}}</text>
-    <text class="keyInfo">公司：{{item.company||'暂无数据'}}</text>
-    <text class="keyInfo">职位：{{item.job||'暂无数据'}}</text>
-    <view class="keyInfo">工作描述: {{item.desc||'暂无数据'}}</view>
-  </view>
-</view>
-<view class="content" wx:for="{{selected.items}}" wx:key="item">
-  <view class="resume-titleBorder">
-    <text class="resume-title">项目成果</text>
-  </view>
-  <view>
-    <view class="itemName">{{item.proname||'暂无数据'}}</view>
-  </view>
-  <view class="resume-keyInfo-no">
-    <image class="itemImg" src="../../images/ape.png" />
-    <view>
-      <text class="keyInfo">{{item.startDate||'暂无数据'}}~{{item.endDate||'暂无数据'}}</text>
-      <text class="keyInfo">技术栈：{{item.techstack||'暂无数据'}}</text>
-      <text class="keyInfo">链接地址：{{item.lineadress||'暂无数据'}}</text>
+  <view class="content">
+    <view class="resume-titleBorder">
+      <text class="resume-title">工作经验</text>
+    </view>
+    <view class="temp" wx:for="{{selected.works}}" wx:key="item">
+      <view class="resume-keyInfo">
+        <text class="keyInfo">时间：{{item.startDate||'暂无数据'}} ~ {{item.endDate||'暂无数据'}}</text>
+        <text class="keyInfo">公司：{{item.company||'暂无数据'}}</text>
+        <text class="keyInfo">职位：{{item.job||'暂无数据'}}</text>
+      </view>
+      <view class="info">{{item.desc||'暂无数据'}}</view>
     </view>
   </view>
-  <text class="info">项目描述：{{item.desc||'暂无数据'}}</text>
-  <text class="info  infodesc">{{item.begintime||'暂无数据'}}</text>
+  <view class="content">
+    <view class="resume-titleBorder">
+      <text class="resume-title">项目成果</text>
+    </view>
+    <view class="temp" wx:for="{{selected.items}}" wx:key="item">
+      <view>
+        <view class="itemName">{{item.proname||'暂无数据'}}</view>
+      </view>
+      <view class="resume-keyInfo-no">
+        <image class="itemImg" src="../../images/ape.png" />
+        <view>
+          <text class="keyInfo">{{item.startDate||'暂无数据'}}~{{item.endDate||'暂无数据'}}</text>
+          <text class="keyInfo">技术栈：{{item.techstack||'暂无数据'}}</text>
+          <text class="keyInfo">链接地址：{{item.lineadress||'暂无数据'}}</text>
+        </view>
+      </view>
+      <view class="info">{{item.desc||'暂无数据'}}</view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="resume-titleBorder">
+      <text class="resume-title">个人优势</text>
+    </view>
+    <text class="info">{{detail.advantage||'暂无数据'}}</text>
+  </view>
 </view>
-<view>class="content">
-  <text class="info">个人优势：{{detail.advantage||'暂无数据'}}</text>
-  <text class="info  infodesc">{{item.begintime||'暂无数据'}}</text>
-</view> 
