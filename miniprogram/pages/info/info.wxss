@@ -1,11 +1,9 @@
 /* miniprogram/pages/info/info.wxss */
 page{
   height: 100%;
-}
-.page{
   background-color:#F5FAFE;
-  height: 100vh;
 }
+
 .search-container{
   background-color: #76a8f0;
 }
@@ -79,6 +77,7 @@ page{
 }
 .wrapper-container{
   padding-top:100rpx;
+  padding-bottom: 60rpx;
 }
 /* 轮播页面 */
 .container{
@@ -100,20 +99,24 @@ page{
   width: 690rpx;
   margin: 30rpx auto;
 }
-.label{
-  height: 39rpx;
-  margin-left: 20rpx;
-  margin-bottom: 30rpx;
+.line{
+  position: relative;
+  padding-top: 20rpx;
+  margin-bottom: 10rpx;
 }
 .expectJob{
-  font-size: 20rpx;
-  background-color: #48A6FD;
-  padding: 11rpx 21rpx;
-  color: #fff;
-  border-radius: 6rpx;
+  font-size: 30rpx;
+  color: #000;
+  margin-left:20rpx;
 }
-.lastTemp{
-  padding-bottom: 40rpx;
+.expectJob::before,.workCompany::before{
+  content: '';
+  width: 6rpx;
+  height: 40rpx;
+  top: 30rpx;
+  left: 0;
+  background-color: #98d4f5;
+  position: absolute;
 }
 /* info */
 .container-header{
@@ -127,22 +130,20 @@ page{
 }
 .infoItem{
   font-size: 26rpx;
-  margin-bottom: 70rpx;
 }
 .center{
   display: flex;  
 }
 .infoTemp{
   display: flex;
-  margin-bottom: 25rpx;
-  margin-left:20rpx;
 }
 .userName{
-  font-size: 40rpx;
+  font-size: 50rpx;
   color: #010101;
 }
 .itemName{
   font-size: 32rpx;
+  font-weight: bold;
 }
 .icon{
   width: 30rpx;
@@ -153,37 +154,30 @@ page{
 .infoIcon{
   width: 30rpx;
   height: 30rpx;
+  margin-left: 20rpx;
 }
 .infoDesc{
-  margin-left: 20rpx;
+  padding:0 20rpx 20rpx;
   color: #333;
   font-size: 30rpx;
 }
 .textDesc{
-  margin-left: 20rpx;
-  width: 400rpx;
-  font-size:18rpx;
+  padding: 0 20rpx;
+  font-size:22rpx;
 }
 /* 工作经验 */
-.workLeft{
-  margin-top: 80rpx;
-  margin-left: 40rpx;
-  border-left: 4rpx solid #aaa;
+
+.workCompany{
+  font-size: 36rpx;
+  color: #000;
+  margin-left:20rpx;
 }
-.workTemp{
-  margin-bottom: 20rpx;
-}
-.workDesc{
+.workTime{
+  font-size: 30rpx;
+  margin-left: 20rpx;
   color: #aaa;
-  font-weight: bold;
-  font-size: 26rpx;
 }
-.desc{
-  font-size: 26rpx;
-  color: #242424;
-}
-.descTemp{
-  margin-top: 40rpx;
-  margin-left: 40rpx;
-  width: 420rpx;
+.workJob{
+  font-size: 30rpx;
+  margin-left: 20rpx;
 }

@@ -57,3 +57,7 @@
 .workName{
   flex: 1;
 }
+.flower{
+  width: 40rpx;
+  height: 40rpx;
+}

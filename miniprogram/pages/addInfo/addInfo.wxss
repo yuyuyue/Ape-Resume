@@ -4,18 +4,9 @@
   width:560rpx;
   height: 180rpx;
   border-radius: 6rpx;
-  background-color: #e8e8e8;
   margin: 30rpx auto;
   display: flex;
-}
-.purple{
-  border: 4rpx solid #ab9df8;
-}
-.yellow{
-  border: 4rpx solid #ffe994;
-}
-.orange{
-  border: 4rpx solid #ffd894;
+  box-shadow: 0 0 12rpx #e6e6e6;
 }
 .infoIcon{
   width: 120rpx;
@@ -25,5 +16,5 @@
 .addInfo{
   line-height: 180rpx;
   margin-left: 40rpx;
-  font-size:36rpx;
+  font-size:40rpx;
 }

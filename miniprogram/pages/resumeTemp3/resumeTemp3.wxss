@@ -66,9 +66,6 @@
   font-weight: bold;
   position: relative;
 }
-.itemTitle::before{
-
-}
 .itemTitle:after{
   content: "";
   height:4rpx;

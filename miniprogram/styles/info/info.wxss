@@ -69,4 +69,5 @@ textarea{
 }
 textarea{
   width: 460rpx;
+  height: 220rpx;
 }
