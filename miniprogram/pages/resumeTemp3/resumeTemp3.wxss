@@ -3,22 +3,20 @@
   height: 100%;
 }
 .left{
-  width: 250rpx;
   background-color:#31799f;
-}
-.right{
-  width: 500rpx;
+  max-width: 270rpx;
 }
 .container{
-  margin-left: 20rpx;
+  padding: 0 15rpx;
+}
+.userImg{
+  width: 100%;
+  text-align: center;
 }
 .photo{
-  width: 135rpx;
-  height: 135rpx;
-  margin-left: 35rpx;
-  margin-top: 55rpx;
-  margin-bottom: 80rpx;
-  border-radius: 50%;
+  width: 90rpx;
+  height: 120rpx;
+  margin: 55rpx 0 80rpx;
 }
 .infoType{
   font-size: 22rpx;
@@ -26,16 +24,10 @@
   color: #fff;
   margin-bottom: 20rpx;
 }
-.infoIcon{
-  width: 20rpx;
-  height: 20rpx;
-  margin-right: 20rpx;
-}
 .infoDesc{
-  font-size: 15rpx;
+  font-size: 18rpx;
   color: #c6e8fa;
   margin-bottom: 15rpx;
-  margin-right: 15rpx;
 }
 .infoTemp{
   margin-bottom: 40rpx;
@@ -98,5 +90,6 @@
 }
 .grey{
   color: #83a5b8;
+  margin-bottom: 10rpx;
   font-size: 16rpx;
 }
