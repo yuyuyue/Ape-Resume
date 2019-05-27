@@ -90,7 +90,7 @@
       <view class="infoTemp lastTemp">
         <text class="infoTitle">个人优势</text>
         <view class="longText marginL">
-          <textarea rows="3" cols="20"  placeholder-class="placeholder" maxlength="1000" placeholder="{{advantage}}" name="advantage" />
+          <textarea rows="3" cols="20"  maxlength="1000" placeholder-class="placeholder" maxlength="1000" placeholder="{{advantage}}" name="advantage" />
         </view>
       </view>
     </view>

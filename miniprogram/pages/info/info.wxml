@@ -15,64 +15,68 @@
       </block>
     </view>
     <view class="wrapper-container">
-      <swiper  bindchange="changeHandle" class="swiper-page" current="{{navbarActiveIndex}}">
+      <swiper bindchange="changeHandle" class="swiper-page" current="{{navbarActiveIndex}}">
         <!-- 基本信息 -->
         <swiper-item>
           <view class="basic-container">
             <view class="container-body">
               <view class="container-header">
                 <image class="itemImg" src="{{basicInfo.avatarUrl}}" />
-                <!-- 项目缩略图 thumb -->
                 <view class="infoItem">
                   <text class="itemName">{{item.name}}</text>
                   <image class="icon" src="../../images/{{item.sex=='男'?'boy':'girl'}}.png" />
                 </view>
               </view>
-              <view class="label">
+              <view class="line">
                 <text class="expectJob">{{item.expectjob}}</text>
               </view>
               <view class="flex">
                 <view>
                   <view class="infoTemp">
-                    <image class="infoIcon" src="../../images/infoAge.png" />
+                    <image class="infoIcon" src="../../images/age.svg" />
                     <view class="infoDesc">{{item.age}}岁</view>
                   </view>
                   <view class="infoTemp">
-                    <image class="infoIcon" src="../../images/infoWechat.png" />
+                    <image class="infoIcon" src="../../images/wechat.svg" />
                     <view class="infoDesc">{{item.wechat}}</view>
                   </view>
                 </view>
                 <view>
                   <view class="infoTemp">
-                    <image class="infoIcon" src="../../images/infoPhone.png" />
+                    <image class="infoIcon" src="../../images/phone.svg" />
                     <view class="infoDesc">{{item.phone}}</view>
                   </view>
-                  <view class="infoTemp lastTemp">
-                    <image class="infoIcon" src="../../images/infoEmail.png" />
+                  <view class="infoTemp ">
+                    <image class="infoIcon" src="../../images/email.svg" />
                     <view class="infoDesc">{{item.email}}</view>
                   </view>
                 </view>
               </view>
             </view>
             <view class="container-body">
+              <view class="line">
+                <text class="expectJob">学历信息</text>
+              </view>
               <view class="infoTemp">
-                    <image class="infoIcon" src="../../images/infoAge.png" />
-                    <view class="infoDesc">{{item.schoolname}}</view>
-                  </view>
-                  <view class="infoTemp">
-                    <image class="infoIcon" src="../../images/infoWechat.png" />
-                    <view class="infoDesc">{{item.startDate}}~{{item.endDate}}</view>
-                  </view>
-                  <view class="infoTemp lastTemp">
-                    <image class="infoIcon" src="../../images/infoAge.png" />
-                    <view class="infoDesc">{{item.major}}/{{item.education}}</view>
-                  </view>
+                <image class="infoIcon" src="../../images/school.svg" />
+                <view class="infoDesc">{{item.schoolname}}</view>
+              </view>
+              <view class="infoTemp">
+                <image class="infoIcon" src="../../images/time.svg" />
+                <view class="infoDesc">{{item.startDate}}~{{item.endDate}}</view>
+              </view>
+              <view class="infoTemp ">
+                <image class="infoIcon" src="../../images/edu.svg" />
+                <view class="infoDesc">{{item.major}}/{{item.education}}</view>
+              </view>
             </view>
             <view class="container-body">
-              <view class="infoTemp lastTemp">
-                    <image class="infoIcon" src="../../images/infoWechat.png" />
-                    <view class="infoDesc">个人优势：{{item.advantage}}</view>
-                  </view>
+              <view class="line">
+                <text class="expectJob">个人优势</text>
+              </view>
+              <view class="infoTemp">
+                <text class="infoDesc">{{item.advantage}}</text>
+              </view>
             </view>
           </view>
         </swiper-item>
@@ -82,25 +86,16 @@
             <swiper previous-margin="100rpx" next-margin="120rpx" class="swiper-page" current="{{scrollIndex}}" bindchange="childSwiper">
               <swiper-item wx:for="{{expes}}" wx:key="expe" wx:for-item="expe" class="swiper-center {{nowIndex === 0 ? 'active' : ''}}">
                 <view class="container">
-                  <view class="workLeft">
-                    <view class="workTemp">
-                      <view class="infoDesc workDesc">
-                        实习时间： {{expe.startDate}}~{{expe.endDate}}
-                      </view>
-                    </view>
-                    <view class="workTemp">
-                      <view class="infoDesc workDesc">
-                      实习公司： {{expe.company}}</view>
-                    </view>
-                    <view class="workTemp">
-                      <view class="infoDesc workDesc">
-                      实习职位：{{expe.job}}</view>
-                    </view>
+                  <view class="line">
+                    <text class="workCompany">{{expe.company}}</text>
                   </view>
-                  <view class="infoTemp descTemp">
-                    <view class="desc">
-                     实习描述: {{expe.desc}}
+                  <view class="workTime">{{expe.startDate}}~{{expe.endDate}}</view>
+                  <view class="workJob">{{expe.job}}</view>
+                  <view class="workDesc">
+                    <view class="line">
+                      <text class="expectJob">工作描述:</text>
                     </view>
+                    <view class="infoDesc">{{expe.desc}}</view>
                   </view>
                 </view>
               </swiper-item>
@@ -117,27 +112,30 @@
                     <image class="itemImg" src="../../images/avatar.jpg" />
                     <!-- 项目缩略图 thumb -->
                     <view class="infoItem">
-                      <text class="itemName">{{pro.name}}</text>
+                      <text class="itemName">{{pro.proname}}</text>
                     </view>
                   </view>
                   <view class="infoTemp">
-                    <image class="infoIcon" src="../../images/infoAge.png" />
-                    <view class="infoDesc">{{pro.begintime}}~{{pro.endtime}}</view>
-                  </view>
-                  <view class="infoTemp">
-                    <image class="infoIcon" src="../../images/infoWechat.png" />
-                    <view class="textDesc">
-                      访问链接：{{pro.lineaddress}}
+                    <view class="line">
+                      <text class="expectJob">{{pro.startDate}}~{{pro.endDate}}</text>
                     </view>
                   </view>
                   <view class="infoTemp">
-                    <image class="infoIcon" src="../../images/infoPhone.png" />
-                    <view class="textDesc">技术栈： {{pro.techstack}}</view>
+                    <view class="textDesc">
+                      <view class="line">访问链接：</view>
+                      {{pro.lineadress}}
+                    </view>
                   </view>
                   <view class="infoTemp">
-                    <image class="infoIcon" src="../../images/infoEmail.png" />
                     <view class="textDesc">
-                      项目描述：{{pro.desc}}
+                      <view class="line">技术栈：</view>
+                      {{pro.techstack}}
+                    </view>
+                  </view>
+                  <view class="infoTemp">
+                    <view class="textDesc">
+                      <view class="line">项目描述：</view>
+                      {{pro.desc}}
                     </view>
                   </view>
                 </view>
