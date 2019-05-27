@@ -41,6 +41,7 @@ App({
             wx.navigateTo({
               url: '/pages/authorize/authorize'
             })
+            return;
           }
            wx.setStorage({
              key: 'userInfo',

@@ -73,7 +73,7 @@ Page({
         success: function (res) {
           //从数据库获取用户信息
           that.queryUsreInfo();
-          console.log("插入小程序登录用户信息成功！");
+          // console.log("插入小程序登录用户信息成功！");
            wx.switchTab({
              url: '/pages/index/index'
            })
@@ -122,9 +122,13 @@ Page({
         data: {}
       },
       success: function (res) {
-        console.log(res.result);
+        // console.log(res.result);
 
-        getApp().globalData.userInfo = res.result;
+        getApp().globalData.userInfo = res.result.result.data[0];
+        wx.setStorage({
+          key: 'userInfo',
+          data: res.result.result.data[0]
+        })
       }
     })
   }
