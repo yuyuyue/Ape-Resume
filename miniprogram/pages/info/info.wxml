@@ -52,8 +52,6 @@
                   </view>
                 </view>
               </view>
-            </view>
-            <view class="container-body">
               <view class="line">
                 <text class="expectJob">学历信息</text>
               </view>
@@ -69,8 +67,6 @@
                 <image class="infoIcon" src="../../images/edu.svg" />
                 <view class="infoDesc">{{item.major}}/{{item.education}}</view>
               </view>
-            </view>
-            <view class="container-body">
               <view class="line">
                 <text class="expectJob">个人优势</text>
               </view>

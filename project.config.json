@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -65,6 +65,12 @@
 					"name": "info",
 					"pathName": "pages/info/info",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "res",
+					"pathName": "pages/resume/resume",
 					"scene": null
 				}
 			]

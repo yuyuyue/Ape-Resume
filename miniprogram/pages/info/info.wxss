@@ -115,7 +115,7 @@ page{
   height: 40rpx;
   top: 30rpx;
   left: 0;
-  background-color: #98d4f5;
+  background-color: #b6d2e1;
   position: absolute;
 }
 /* info */
