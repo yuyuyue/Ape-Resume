@@ -8,6 +8,17 @@ Page({
     startInit: '请选择',
     endInit: '请选择',
   },
+  chooseImage(e) {
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success(res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths
+      }
+    })
+  },
   startDateChange(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
@@ -35,7 +46,7 @@ Page({
       },
       success: res => {
         console.log(res.result.code);
-        
+
         if (!res.result.code) {
           wx.showModal({
             title: '添加成功',

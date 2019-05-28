@@ -1,5 +1,5 @@
 <view class="page">
-  <view class="header">
+  <view class="header" bindtap="chooseImage">
     <image class="userAvatar" src="../../images/avatar.jpg"></image>
   </view>
   <view class="container">

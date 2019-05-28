@@ -143,6 +143,60 @@
             </swiper>
           </view>
         </swiper-item>
+        <!-- 猿力值 -->
+        <swiper-item>
+          <view class="basic-container">
+            <view class="container-body">
+              <view class="apeNum">
+                <text class="num">88</text>
+              </view>
+              <view class="apeTemp">
+                <view class="line">
+                  <view class="apeTitle">GitHub</view>
+                </view>
+                <view class="apeDesc flex">
+                  <view class="apeType">
+                    <view class="apeInfo">Stars 210{{}}</view>
+                    <view class="apeInfo">Forks 1.5k{{}}</view>
+                  </view>
+                  <view class="apeType">
+                    <text class="apeInfo">Followers 11.5k{{}}</text>
+                  </view>
+                </view>
+              </view>
+              <view class="apeTemp">
+                <view class="line">
+                  <view class="apeTitle">LeetCode</view>
+                </view>
+                <view class="flex apeDesc">
+                  <view class="apeType">
+                    <view class="apeInfo">排名 52020{{}}</view>
+                    <view class="apeInfo">做题数 68{{}}</view>
+                  </view>
+                  <view class="apeType">
+                    <view class="apeInfo">竞赛积分 2020{{}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class="apeTemp">
+                <view class="line">
+                  <view class="apeTitle">掘金</view>
+                </view>
+                <view class="apeDesc flex">
+                  <view class="apeType">
+                    <view class="apeInfo">关注者 5276{{}}</view>
+                    <view class="apeInfo">发布文章 72{{}}</view>
+                    <view class="apeInfo">获得点赞 1549{{}}</view>
+                  </view>
+                  <view class="apeType">
+                    <view class="apeInfo">掘力值 2020{{}}</view>
+                    <text class="apeInfo">文章被阅读 53059{{}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
       </swiper>
     </view>
   </view>

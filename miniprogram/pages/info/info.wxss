@@ -181,3 +181,38 @@ page{
   font-size: 30rpx;
   margin-left: 20rpx;
 }
+/* 猿力值 */
+.apeNum{
+  margin: 0 auto;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  font-size: 50rpx;
+  color: #fff;
+  background-color: #31799f;
+  text-align: center;
+  line-height: 120rpx;
+}
+.apeInfo{
+  font-size: 30rpx;
+  width: 200rpx;
+}
+.apeType{
+  flex:1;
+}
+.apeDesc{
+  padding: 10rpx 40rpx;
+}
+.apeTitle{
+  font-size: 30rpx;
+  color: #000;
+  margin-left:20rpx;
+}
+.apeTitle::before{
+  content: '';
+  width: 6rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 0;
+  background-color: #98d4f5;
+}

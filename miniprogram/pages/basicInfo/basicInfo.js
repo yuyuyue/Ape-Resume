@@ -23,6 +23,15 @@ Page({
       "男", "女"
     ],
   },
+  chooseImage(e) {
+    wx.chooseImage({
+      sizeType: ['original', 'compressed'], 
+      sourceType: ['album'],
+      success: res => {
+        const tempFilePaths = res.tempFilePaths
+      }
+    })
+  },
   bindPickerChange(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
@@ -52,7 +61,7 @@ Page({
     data.startDate = this.data.startDate;
     data.endDate = this.data.endDate;
     console.log(data);
-    
+
     wx.cloud.callFunction({
       name: "userdetail",
       data: {
@@ -60,12 +69,12 @@ Page({
         data
       },
       success: res => {
-      console.log(res);
+        console.log(res);
         wx.showToast({
           title: '成功',
           icon: 'success',
           duration: 2000,
-          complete(){
+          complete() {
             wx.navigateTo({
               url: './basicInfo'
             })
@@ -84,24 +93,24 @@ Page({
   onLoad: function (options) {
     let data = {}
     wx.cloud.callFunction({
-       name: "userdetail",
-         data: {
-           opt: 'selectById',
-           data
-         },
-         success: res => {
-           console.log(res);
-           let queryData = res.result.result.data[0];
-           if (res.result.result.data.length) {
-             this.setData({
-               ...queryData,
-               pickInit: '',
-               startInit: '',
-               endInit: ''
-             })
-           }
-           
-         },
+      name: "userdetail",
+      data: {
+        opt: 'selectById',
+        data
+      },
+      success: res => {
+        console.log(res);
+        let queryData = res.result.result.data[0];
+        if (res.result.result.data.length) {
+          this.setData({
+            ...queryData,
+            pickInit: '',
+            startInit: '',
+            endInit: ''
+          })
+        }
+
+      },
     })
   },
 

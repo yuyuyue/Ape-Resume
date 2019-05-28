@@ -1,7 +1,7 @@
 <!-- miniprogram/pages/basicInfo/basicInfo.wxml -->
 <view class="page">
   <form bindsubmit="addBasicInfo">
-    <view class="header">
+    <view class="header" bindtap="chooseImage" >
       <image class="userAvatar" src="../../images/avatar.jpg"></image>
     </view>
     <view class="firstContainer">
