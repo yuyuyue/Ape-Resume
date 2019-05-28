@@ -22,6 +22,9 @@
   margin: 60rpx 85rpx 40rpx;
   border-radius: 50%;
 }
+.nickName{
+  color: #000;
+}
 .itemIcon{
   margin-top: 25rpx;
   width: 80rpx;

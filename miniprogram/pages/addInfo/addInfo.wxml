@@ -1,6 +1,6 @@
 <view class="page">
   <view class="header">
-    <image class="userAvatar" src="../../images/avatar.jpg" />
+    <image class="userAvatar" src="{{headerImg}}" />
     <view class="nickName">一只酱{{item.nikeName}}</view>
   </view>
   <view class="body" >

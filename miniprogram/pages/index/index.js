@@ -72,6 +72,9 @@ Page({
           key: 'userInfo',
           data: userInfo
         })
+        this.setData({
+          userInfo
+        })
       } else {
         wx.navigateTo({
           url: '/pages/authorize/authorize'

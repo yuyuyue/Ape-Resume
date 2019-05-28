@@ -1,8 +1,8 @@
 <!-- miniprogram/pages/basicInfo/basicInfo.wxml -->
 <view class="page">
   <form bindsubmit="addBasicInfo">
-    <view class="header" bindtap="chooseImage" >
-      <image class="userAvatar" src="../../images/avatar.jpg"></image>
+    <view class="header">
+      <image bindtap="uploadImgHandle" class="userAvatar" src="{{headerImg}}"></image>
     </view>
     <view class="firstContainer">
       <view class="infoTemp firstTemp">

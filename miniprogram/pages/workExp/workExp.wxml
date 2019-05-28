@@ -1,4 +1,7 @@
 <view class="page">
+  <view class="header">
+    <image class="userAvatar" src="{{headerImg}}"></image>
+  </view>
   <view class="container">
     <form bindsubmit="addWorkExp">
       <view class="infoTemp firstTemp">
