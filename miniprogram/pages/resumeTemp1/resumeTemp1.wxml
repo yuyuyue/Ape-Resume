@@ -22,6 +22,58 @@
   </view>
   <view class="content">
     <view class="resume-titleBorder">
+      <text class="resume-title">个人信息</text>
+    </view>
+    <view class="temp">
+      <!-- temp写for循环 -->
+      <view class="apeTemp">
+        <view class="resume-keyInfo apeKey">GitHub</view>
+        <view class="apeDesc flex">
+          <view class="apeType">
+            <text class="apeInfo">Stars 210{{}}</text>
+          </view>
+          <view class="apeType">
+            <text class="apeInfo">Forks 1.5k{{}}</text>
+          </view>
+          <view class="apeType">
+            <text class="apeInfo">Followers 11.5k{{}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="apeTemp">
+        <view class="resume-keyInfo apeKey">LeetCode</view>
+        <view class="apeDesc flex">
+          <view class="apeType">
+            <text class="apeInfo">排名 52020{{}}</text>
+          </view>
+          <view class="apeType">
+            <text class="apeInfo">做题数 68{{}}</text>
+          </view>
+          <view class="apeType">
+            <text class="apeInfo">竞赛积分 2020{{}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="apeTemp">
+        <view class="resume-keyInfo apeKey">掘金</view>
+        <view class="apeDesc flex">
+          <view class="apeType">
+            <text class="apeInfo">掘力值 2020{{}}</text>
+            <text class="apeInfo">关注者 5276{{}}</text>
+          </view>
+          <view class="apeType">
+            <text class="apeInfo">发布文章 72{{}}</text>
+            <text class="apeInfo">获得点赞 1549{{}}</text>
+          </view>
+          <view class="apeType">
+            <text class="apeInfo">文章被阅读 53059{{}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="resume-titleBorder">
       <text class="resume-title">工作经验</text>
     </view>
     <view class="temp" wx:for="{{selected.works}}" wx:key="item">

@@ -1,6 +1,9 @@
+.page{
+  height: 100%;
+  padding: 0 0 60rpx 0;
+}
 .flex{
   display: flex;
-  height: 100%;
 }
 .left{
   background-color:#31799f;
@@ -89,4 +92,12 @@
   color: #83a5b8;
   margin-bottom: 10rpx;
   font-size: 16rpx;
+}
+/* 个人信息 */
+.apeType{
+  margin-right: 20rpx;
+}
+.apeInfo{
+  font-size: 18rpx;
+  color: #868686;
 }

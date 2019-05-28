@@ -57,3 +57,21 @@
 .temp{
   margin-bottom: 30rpx;
 }
+.apeTemp{
+  margin-bottom: 20rpx;
+}
+.apeKey{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.apeInfo{
+  display: block;
+}
+.apeDesc{
+  font-size: 20rpx;
+ padding: 0 20rpx;
+  margin-top:20rpx;
+}
+.apeType{
+  margin-right: 30rpx;
+}

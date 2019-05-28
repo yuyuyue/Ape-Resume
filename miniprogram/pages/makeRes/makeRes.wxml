@@ -3,7 +3,7 @@
     <view class="select-header">
       <view class="info">工作经验</view>
       <view class="selectAll" bindtap="selectAll">
-        <image data-statue="selectall" class="selectImg" src="{{selectall ? '../../images/select1.png' : '../../images/select.png'}}" />
+        <image data-statue="selectall" class="selectImg" src="{{selectall ? '../../images/select1.svg' : '../../images/select.svg'}}" />
       </view>
       <text class="chooseAll">全选</text>
     </view>
@@ -14,7 +14,7 @@
         </view>
         <view class="workName">{{item.company}}</view>
         <view class="chooseImg" data-index="{{index}}" data-name="{{item.id}}" bindtap="select">
-          <image data-ide="0" class="choose" src="{{item.checked == true ? '../../images/select1.png' : '../../images/select.png'}}" />
+          <image data-ide="0" class="choose" src="{{item.checked == true ? '../../images/select1.svg' : '../../images/select.svg'}}" />
         </view>
       </view>
     </view>
@@ -23,7 +23,7 @@
     <view class="select-header">
       <view class="info">项目成果</view>
       <view class="selectAll" bindtap="selectItemAll">
-        <image data-statue="selectitemall" class="selectImg" src="{{selectitemall ? '../../images/select1.png' : '../../images/select.png'}}" />
+        <image data-statue="selectitemall" class="selectImg" src="{{selectitemall ? '../../images/select1.svg' : '../../images/select.svg'}}" />
       </view>
       <text class="chooseAll">全选</text>
     </view>
@@ -34,7 +34,7 @@
         </view>
         <view class="workName">{{item.proname}}</view>
         <view class="chooseImg" data-index="{{index}}" data-name="{{item.id}}" bindtap="selectItem">
-          <image data-ide="0" class="choose" src="{{item.checked == true ? '../../images/select1.png' : '../../images/select.png'}}" />
+          <image data-ide="0" class="choose" src="{{item.checked == true ? '../../images/select1.svg' : '../../images/select.svg'}}" />
         </view>
       </view>
     </view>
