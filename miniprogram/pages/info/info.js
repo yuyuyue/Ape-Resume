@@ -67,6 +67,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '正在加载。。。'
+    })
     wx.getStorage({
       key: 'userInfo',
       success: (res) => {
@@ -91,6 +94,7 @@ Page({
           this.setData({
             item:queryData
           })
+          wx.hideLoading()
         }
 
       },
