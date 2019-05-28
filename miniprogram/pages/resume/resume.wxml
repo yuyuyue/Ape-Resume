@@ -1,2 +1,16 @@
-<!--miniprogram/pages/resume/resume.wxml-->
-<text>miniprogram/pages/resume/resume.wxml</text>
+<!-- miniprogram/pages/resume/resume.wxml -->
+<view class="page">
+  <view class="container"></view>
+  <view class="enjoy">分享简历</view>
+  <view class="enjoyType">
+    <view class="temp">
+      <image class="tempIcon" src="../../images/weibo.svg" />
+    </view>
+    <view class="temp">
+      <image class="tempIcon" src="../../images/qq.svg" />
+    </view>
+    <view class="temp">
+      <image class="tempIcon" src="../../images/wechat-.svg" />
+    </view>
+  </view>
+</view>

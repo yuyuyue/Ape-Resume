@@ -1,1 +1,46 @@
-/* miniprogram/pages/resume/resume.wxss */
+.page{
+  background-color: #76a8f0;
+  height: 100%;
+  padding: 50rpx;
+}
+.container{
+  width: 650rpx;
+  height: 800rpx;
+  background-color: #fff;
+  position: relative;
+  margin-bottom: 60rpx;
+}
+.enjoy{
+  color: #b2cef8;
+  font-size: 26rpx;
+  width: 120rpx;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+.enjoy::before,.enjoy::after{
+  content: '';
+  width: 200rpx;
+  height: 1rpx;
+  background-color:#b2cef8;
+  position: absolute;
+  top: 18rpx;
+}
+.enjoy::before{
+  left: -220rpx;
+}
+.enjoy::after{
+  right:-220rpx;
+}
+.enjoyType{
+  margin:50rpx auto;
+  display: flex;
+}
+.temp{
+  flex: 1;
+  text-align: center;
+}
+.tempIcon{
+  width: 55rpx;
+  height: 55rpx;
+}
