@@ -1,14 +1,39 @@
 .page{
   background-color: #76a8f0;
   height: 100%;
-  padding: 50rpx;
+  padding: 40rpx;
 }
 .container{
   width: 650rpx;
-  height: 800rpx;
+  height: 680rpx;
+  margin-top: 140rpx;
   background-color: #fff;
+  border-radius: 15rpx;
   position: relative;
-  margin-bottom: 60rpx;
+  margin-bottom: 85rpx;
+}
+.header{
+  width: 650rpx;
+  position: absolute;
+  top: -80rpx;
+  left: 0;
+  text-align: center;
+}
+.body{
+  width: 650rpx;
+  position: absolute;
+  top: 160rpx;
+  left: 0;
+}
+.code{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+}
+.resName{
+  margin-top: 40rpx;
+  font-size: 32rpx;
+  font-weight: bold;
 }
 .enjoy{
   color: #b2cef8;
@@ -43,4 +68,92 @@
 .tempIcon{
   width: 55rpx;
   height: 55rpx;
+}
+.desc{
+  color: #868989;
+  font-size: 28rpx;
+  margin-top: 50rpx;
+  text-align: center;
+}
+.ape{
+  display: flex;
+  margin-top: 70rpx;
+}
+.apeTemp{
+  text-align: center;
+}
+.apeNum{
+  display: block;
+  font-size: 44rpx;
+  font-weight: bold;
+}
+.apeStr{
+  display: block;
+  font-weight: bold;
+  font-size: 40rpx;
+  margin-bottom:5rpx;
+}
+.apeType{
+  font-size: 24rpx;
+  margin-top: 30rpx;
+  font-weight: bold;
+  color: #868989;
+}
+.apeCenter{
+  flex: 1;
+}
+.apeAfter,.apeBefore{
+  position: relative;
+  width: 180rpx;
+}
+.apeAfter::after,.apeBefore::before{
+  content: '';
+  width: 1rpx;
+  height: 65rpx;
+  background-color: #868686;
+  position: absolute;
+  
+}
+.apeAfter::after{
+  right: 10rpx;
+  top: 30rpx;
+}
+.apeBefore::before{
+  left:10rpx;
+  top: 30rpx;
+}
+.foot{
+  position: absolute;
+  bottom: 70rpx;
+  left: 175rpx;
+}
+.see{
+  width: 300rpx;
+  height: 80rpx;
+  border-radius: 50rpx;
+  background-color: #76a8f0;
+  color: #fff;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  border-bottom: 6rpx solid #6f8bb4;
+  border-right: 4rpx solid #6f8bb4;
+}
+.cascading,.cascading1{
+  background-color: #fff;
+  opacity: 0.7;
+  position: absolute;
+}
+.cascading{
+  border-radius: 50rpx;
+  height: 25rpx;
+  width: 630rpx;
+  bottom: -13rpx;
+  left: 10rpx;
+}
+.cascading1{
+  width: 600rpx;
+  height: 50rpx;
+  bottom: -25rpx;
+  left: 25rpx;
+  border-radius: 20rpx;
 }

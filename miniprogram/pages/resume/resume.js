@@ -5,9 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    pickInit: '请选择简历',
+    selectSex: [
+      "第一份简历", "第二份简历"
+    ],
   },
-
+  bindPickerChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      sexIndex: e.detail.value,
+      sex: this.data.selectSex[e.detail.value],
+      pickInit: ''
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
