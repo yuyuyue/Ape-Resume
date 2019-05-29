@@ -67,9 +67,7 @@ Component({
           url: this.data.url
         },
         success: (res) =>{
-          console.log(res.result.result)
           result = res.result.result
-          console.log(result,'11111')
           if (this.data.opt === 'gitContributions') {
             wx.request({
               url: `https://api.github.com/users/${this.data.inputValue}/repos`,
@@ -85,11 +83,9 @@ Component({
                   star += key.stargazers_count 
                   fork += key.forks
                 }
-                console.log(watch, star, fork)
                 result.push(watch)
                 result.push(star)
                 result.push(fork)
-                console.log('------------',result)
                 let data = {
                   name: this.properties.cardData.name,
                   num: result

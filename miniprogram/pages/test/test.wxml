@@ -10,4 +10,7 @@
   <view wx:for="{{cards}}" wx:key="index">
     <test-card cardData="{{item}}" bindsearched="searched"></test-card>
   </view>
+  <view class="footer">
+    <view class="btn" bindtap="finish">完成</view>
+  </view>
 </view>

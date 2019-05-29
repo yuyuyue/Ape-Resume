@@ -14,7 +14,7 @@ function juejin(url) {
       }
       let $ = cheerio.load(body, { ignoreWhitespace: true, decodeEntities: true })
       var href = $('.link').attr('href')
-      if (href === undefined) {
+      if (!href) {
         resolve('无法获取链接')
       }
       const url = `https://juejin.im${href}`
@@ -32,11 +32,12 @@ function userPage(url) {
       }
       let $ = cheerio.load(body, { ignoreWhitespace: true, decodeEntities: true })
       let spans = $('.count')
+      let itemCounts = $('.item-count')
       let result = []
       spans[3] ? result.push(spans[3].children[0].data.split(',').join('')) : result.push('')
+      itemCounts.eq(0) ? result.push(itemCounts.eq(0).html().split(',').join('')) : result.push('')
       spans[4] ? result.push(spans[4].children[0].data.split(',').join('')) : result.push('')
       spans[5] ? result.push(spans[5].children[0].data.split(',').join('')) : result.push('')
-      let itemCounts = $('.item-count')
       itemCounts.eq(10) ? result.push(itemCounts.eq(10).html().split(',').join('')) : result.push('')
       resolve(result)
     })

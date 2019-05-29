@@ -27,7 +27,7 @@ Page({
             num: '',
             color: 'grey'
           },
-         
+
           {
             name: '收藏',
             iconPath: '../../images/star.svg',
@@ -58,7 +58,13 @@ Page({
             color: 'blue'
           },
           {
-            name: '文章被观看',
+            name: '文章数',
+            iconPath: '../../images/article.svg',
+            num: '',
+            color: 'blue'
+          },
+          {
+            name: '文章被阅读',
             iconPath: '../../images/watch1.svg',
             num: '',
             color: 'blue'
@@ -112,11 +118,12 @@ Page({
           },
         ]
       }
-    ]
+    ],
+    searchData: {}
   },
   searched(event) {
     const { name, num } = event.detail
-    const searchData = []
+    const searchData = {}
     let cards = this.data.cards
     for (let card of cards) {
       const iconLength = card.icon.length
@@ -125,47 +132,49 @@ Page({
           card.icon[i].num = num[i]
         }
       }
-      let data = []
+      let data = {}
       for (let i = 0; i < iconLength; i++) {
-        data.push({
-          name: card.icon[i].name,
-          num:  card.icon[i].num
+        data[card.icon[i].name] = card.icon[i].num
+      }
+      searchData[card.name] = data
+    }
+    this.setData({
+      cards,
+      searchData
+    })
+
+  },
+  finish() {
+    wx.showModal({
+      title: '提示',
+      content: '是否要生成简历',
+      cancelText: '回主页',
+      confirmText: '前往',
+      success (res) {
+        if (res.confirm) {
+          wx.navigateTo({
+            url: '../addInfo/addInfo'
+          })
+        } else if (res.cancel) {
+          wx.navigateBack({
+            delta: 1
+          })
+        }
+      },
+      fail(err) {
+        console.log(err)
+      },
+      complete() {
+        wx.setStorage({
+          key: "cards",
+          data: this.data.cards
+        })
+        wx.setStorage({
+          key: 'searchData',
+          data: this.data.searchData
         })
       }
-      searchData.push({
-        name: card.name,
-        data: data
-      })
-    }
-    console.log('-------------',searchData)
-    this.setData({
-      cards
     })
-    wx.setStorage({
-      key:"cards",
-      data: cards
-    })
-    wx.setStorage({
-      key: 'searchData',
-      data: searchData
-    })
-    wx.getStorage({
-      key: 'searchData',
-      success (res) {
-        console.log('====================',res.data)
-      }
-    })
-  },
-  // 返回首页
-  goIndex() {
-    wx.navigateTo({
-      url: '../index/index',
-      success: (result) => {
-
-      },
-      fail: () => { },
-      complete: () => { }
-    });
   },
   /**
    * 生命周期函数--监听页面加载
@@ -179,12 +188,11 @@ Page({
           cards: res.data
         })
       },
-      fail(){
+      fail() {
         console.log('还没有存储Storage')
       }
     })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

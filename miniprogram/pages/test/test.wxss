@@ -32,3 +32,19 @@
   background-color: blue;
   margin-top: 30rpx;
 }
+.footer{
+  height: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn{
+  width: 190rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  background-color: #006CFF;
+  color: #f1f1f1;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #1296db;
+}
