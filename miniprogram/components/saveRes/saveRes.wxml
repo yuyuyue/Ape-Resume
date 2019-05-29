@@ -1,0 +1,19 @@
+<!-- components/saveRes/saveRes.wxml -->
+<view class="modal" hidden="{{!showDialog}}">
+  <view class="mask"></view>
+  <view class="container">
+    <view class="icon" bindtap="close">
+      <image class="cancel" src="../../images/cancel.svg" />
+    </view>
+    <view class="header">
+      <view class="title">请给简历命名</view>
+    </view>
+    <view class="body">
+      <input type="text" bindinput='carNum' class="content" placeholder="例：我的第一个简历"></input>
+    </view>
+    <view class="footer">
+      <button bindtap="saveBtn" class="btn">保存</button>
+    </view>
+    <view class="text">(给简历命名方便在我的简历中查询简历)</view>
+  </view>
+</view>

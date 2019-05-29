@@ -5,27 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    workList: [
-      // { id: 1, name: 1, company: "爱奇艺", checked: false },
-      // { id: 2, name: 2, company: "阿里巴巴", checked: false },
-      // { id: 3, name: 3, company: "腾讯", checked: false },
-      // { id: 4, name: 4, company: "丁香园", checked: false },
-    ],
+    workList:[],
+    apeList:[],
     selectall: false,
-    workList: [
-      // { id: 1, name: 1, company: "旅行小账本", checked: false },
-      // { id: 2, name: 2, company: "有赞精选", checked: false },
-      // { id: 3, name: 3, company: "gihub", checked: false },
-      // { id: 4, name: 4, company: "二维火点餐", checked: false },
-    ],
     selectitemall: false,
+    selectapeall:false,
     selected: {
-      works: [
-
-      ],
-      items: [
-
-      ]
+      works: [], 
+      items: [],
+      apes:[]
     }
   },
   select: function (e) {
@@ -38,10 +26,12 @@ Page({
     })
     this.setData({
       ['selected.works']: this.data.workList.filter(item => item.checked)
-    })    
-    if (this.data.workList.every(item => item.checked)) {this.setData({
-      selectall: true
-    })}
+    })
+    if (this.data.workList.every(item => item.checked)) {
+      this.setData({
+        selectall: true
+      })
+    }
     else {
       this.setData({
         selectall: false
@@ -84,10 +74,12 @@ Page({
     this.setData({
       ['selected.items']: this.data.itemList.filter(item => item.checked)
     })
-    if (this.data.itemList.every(item => item.checked)) {this.setData({
-      selectitemall: true
-    })}
-    else{
+    if (this.data.itemList.every(item => item.checked)) {
+      this.setData({
+        selectitemall: true
+      })
+    }
+    else {
       this.setData({
         selectitemall: false
       })
@@ -115,11 +107,10 @@ Page({
       }
     }
   },
+  // 三方选择
+  
   // 点击下一步跳转到选择模板页
   chooseTempHandle() {
-    // let works = .work.toString();
-    // let pros = this.data.selected.item.toString();
-    // let selected = encodeURIComponent(JSON.stringify(this.data.selected))
     wx.setStorage({
       key: 'selected',
       data: this.data.selected

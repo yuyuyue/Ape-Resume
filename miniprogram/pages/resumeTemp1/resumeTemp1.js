@@ -5,9 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    searchData:{}
+    searchData:{},
   },
-
+  saveRes(){
+    this.setData({
+      showDialog:true
+    })
+  },
+  
   /**
    * 生命周期函数--监听页面加载
    */

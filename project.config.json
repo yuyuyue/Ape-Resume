@@ -1,17 +1,36 @@
 {
-	"miniprogramRoot": "miniprogram/",
-	"cloudfunctionRoot": "cloudfunctions/",
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.5",
 	"appid": "wx08451edee750006e",
 	"projectname": "Ape-Resume",
-	"libVersion": "2.2.5",
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"cloudfunctionTemplateRoot": "",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"scripts": {},
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
@@ -31,11 +50,7 @@
 			"list": []
 		},
 		"miniprogram": {
-<<<<<<< HEAD
-			"current": 5,
-=======
-			"current": 6,
->>>>>>> fb5f6169024e5af0b46ff2c47f58613d81ce178c
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -74,23 +89,29 @@
 				},
 				{
 					"id": -1,
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-					"name": "info",
-					"pathName": "pages/info/info",
-=======
 					"name": "use",
 					"pathName": "pages/use/use",
->>>>>>> ef2ed2177a721262d76c6ee6ae1adacc3f9461c5
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
->>>>>>> fb5f6169024e5af0b46ff2c47f58613d81ce178c
 					"name": "test",
 					"pathName": "pages/test/test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "makeRes",
+					"pathName": "pages/makeRes/makeRes",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "chooseRes",
+					"pathName": "pages/chooseRes/chooseRes",
 					"scene": null
 				}
 			]

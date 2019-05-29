@@ -97,6 +97,7 @@ page{
   display: flex;
 }
 .container-body{
+  box-shadow: 0 0 12rpx #e6e6e6;
   background-color: #fff;
   width: 690rpx;
   margin: 30rpx auto;

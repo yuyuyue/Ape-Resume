@@ -110,4 +110,6 @@
     </view>
     <text class="info">{{detail.advantage||'暂无数据'}}</text>
   </view>
+  <button class="save" bindtap="saveRes" >保存简历</button>
+  <saveRes showDialog="{{showDialog}}"></saveRes>
 </view>
