@@ -20,14 +20,14 @@
       </view>
      
     </view>
-    <view class="bottom" bindtap="makeRes">
-      <view class="temp">
+    <view class="bottom" >
+      <view class="temp" bindtap="makeRes">
         <view class="iconBg red">
           <image class="itemIcon " src="../../images/make.svg" />
         </view>
         <view class="itemName">简历生成</view>
       </view>
-      <view class="temp">
+      <view class="temp" bindtap="howToUse">
         <view class="iconBg blue">
           <image class="itemIcon" src="../../images/use.svg" />
         </view>

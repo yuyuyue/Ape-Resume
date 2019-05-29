@@ -22,6 +22,11 @@ Page({
       url: '../makeRes/makeRes'
     })
   },
+  howToUse(){
+    wx.navigateTo({
+      url: '../use/use'
+    })
+  },
   handleGetLocalUserInfo() {
     return new Promise((reso, rej) => {
       wx.getSetting({
