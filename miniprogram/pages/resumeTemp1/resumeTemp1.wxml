@@ -30,13 +30,13 @@
         <view class="resume-keyInfo apeKey">GitHub</view>
         <view class="apeDesc flex">
           <view class="apeType">
-            <text class="apeInfo">Stars 210{{}}</text>
+            <text class="apeInfo">Stars {{searchData.Github.Stars || '210'}}</text>
           </view>
           <view class="apeType">
-            <text class="apeInfo">Forks 1.5k{{}}</text>
+            <text class="apeInfo">Forks {{searchData.Github.Forks || '1.5'}}k</text>
           </view>
           <view class="apeType">
-            <text class="apeInfo">Followers 11.5k{{}}</text>
+            <text class="apeInfo">Followers {{searchData.Github.Followers || '11.5'}}k</text>
           </view>
         </view>
       </view>
@@ -44,7 +44,7 @@
         <view class="resume-keyInfo apeKey">LeetCode</view>
         <view class="apeDesc flex">
           <view class="apeType">
-            <text class="apeInfo">排名 52020{{}}</text>
+            <text class="apeInfo">排名 52020{{searchData.juejin}}</text>
           </view>
           <view class="apeType">
             <text class="apeInfo">做题数 68{{}}</text>

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo: {}
   },
   goTest() {
     wx.navigateTo({
@@ -70,13 +70,15 @@ Page({
       }
     })
     this.handleGetLocalUserInfo().then(userInfo => {
-      console.log(userInfo);
+      // console.log(userInfo);
       
       if (userInfo) {
         wx.setStorage({
           key: 'userInfo',
           data: userInfo
         })
+        // console.log(this);
+        
         this.setData({
           userInfo
         })

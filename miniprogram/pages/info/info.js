@@ -11,7 +11,8 @@ Page({
       "猿力值"
     ],
     scrollIndex: 0,
-    nowIndex: 0,
+    workNowIndex: 0,
+    proNowIndex: 0,
     item: {
 
     },
@@ -27,10 +28,16 @@ Page({
       navbarActiveIndex: navbarTapIndex
     })
   },
-  childSwiper(e) {
+  childExpeSwiper(e) {
     // console.log(e.detail.current)
     this.setData({
-      nowIndex: e.detail.current
+      workNowIndex: e.detail.current
+    })
+  },
+  childProSwiper(e) {
+    // console.log(e.detail.current)
+    this.setData({
+      proNowIndex: e.detail.current
     })
   },
   /**
