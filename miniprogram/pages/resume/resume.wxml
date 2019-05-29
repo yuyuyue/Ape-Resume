@@ -3,14 +3,14 @@
   <view class="container">
     <view class="wxFor">
       <view class="header">
-        <image class="code" src="../../images/avatar.jpg" />
+        <image class="code" src="../../images/ape.png" />
         <picker bindchange="bindPickerChange" value="{{index}}" range="{{selectSex}}">
           <view class="resName">{{pickInit}}{{res}}</view>
         </picker>
       </view>
       <view class="body">
         <view class="desc">
-          <text>东华理工大学/本科/软件工程</text>
+          <text>某某大学/某某专业/学历</text>
         </view>
         <view class="ape">
           <view class="apeTemp apeAfter">

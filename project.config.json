@@ -70,8 +70,13 @@
 				},
 				{
 					"id": -1,
+<<<<<<< HEAD
 					"name": "info",
 					"pathName": "pages/info/info",
+=======
+					"name": "use",
+					"pathName": "pages/use/use",
+>>>>>>> ef2ed2177a721262d76c6ee6ae1adacc3f9461c5
 					"query": "",
 					"scene": null
 				},
