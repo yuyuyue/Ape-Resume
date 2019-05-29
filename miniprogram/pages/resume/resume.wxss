@@ -1,12 +1,12 @@
 .page{
   background-color: #76a8f0;
   height: 100%;
-  padding: 40rpx;
+  padding: 50rpx;
 }
 .container{
   width: 650rpx;
   height: 680rpx;
-  margin-top: 140rpx;
+  margin-top: 130rpx;
   background-color: #fff;
   border-radius: 15rpx;
   position: relative;
