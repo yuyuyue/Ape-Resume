@@ -11,7 +11,7 @@ Page({
         bgColor: 'bg-grey',
         color: 'grey',
         bottomColor: 'bottom-grey',
-        tip: '输入git昵称',
+        tip: '输入自定义域名',
         image: '../../images/github.svg',
         search: 'github',
         icon: [
