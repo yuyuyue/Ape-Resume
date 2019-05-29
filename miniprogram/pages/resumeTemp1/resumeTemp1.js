@@ -44,6 +44,8 @@ Page({
         this.setData({
           searchData: res.data
         })
+        console.log('=====',this.data.searchData.Github['关注']);
+        
       }
     })
   },
