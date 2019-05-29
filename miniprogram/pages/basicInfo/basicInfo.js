@@ -22,6 +22,7 @@ Page({
     selectSex: [
       "男", "女"
     ],
+    headerImg: '../../images/avatar.jpg'
   },
   chooseImage(e) {
     wx.chooseImage({
@@ -60,6 +61,7 @@ Page({
     data.sex = this.data.selectSex[this.data.sexIndex]
     data.startDate = this.data.startDate;
     data.endDate = this.data.endDate;
+    data.headerImg = this.data.headerImg;
     console.log(data);
 
     wx.cloud.callFunction({
@@ -87,30 +89,54 @@ Page({
   picked(e) {
     console.log(e.item);
   },
+  uploadImgHandle(){
+    wx.chooseImage({
+      count: 1,
+      success:(res)=>{
+        // tempFilePath可以作为img标签的src属性显示图片
+        const headerImg = res.tempFilePaths;
+        this.setData({
+          headerImg
+        })
+        wx.cloud.callFunction({
+          name: 'userdetail',
+          data:{
+            opt: 'updateImg',
+            data:{
+              headerImg
+            }
+          }
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      
+    })
     let data = {}
     wx.cloud.callFunction({
-      name: "userdetail",
-      data: {
-        opt: 'selectById',
-        data
-      },
-      success: res => {
-        console.log(res);
-        let queryData = res.result.result.data[0];
-        if (res.result.result.data.length) {
-          this.setData({
-            ...queryData,
-            pickInit: '',
-            startInit: '',
-            endInit: ''
-          })
-        }
-
-      },
+       name: "userdetail",
+         data: {
+           opt: 'selectById',
+           data
+         },
+         success: res => {
+           console.log(res);
+           let queryData = res.result.result.data[0];
+           if (res.result.result.data.length) {
+             this.setData({
+               ...queryData,
+               pickInit: '',
+               startInit: '',
+               endInit: ''
+             })
+           }
+           wx.hideLoading()
+         },
     })
   },
 

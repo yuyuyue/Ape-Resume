@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -55,22 +55,15 @@
 				},
 				{
 					"id": -1,
-					"name": "basicInfo",
+					"name": "basic",
 					"pathName": "pages/basicInfo/basicInfo",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "info",
-					"pathName": "pages/info/info",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "res",
-					"pathName": "pages/resume/resume",
+					"name": "addInfo",
+					"pathName": "pages/addInfo/addInfo",
 					"scene": null
 				}
 			]

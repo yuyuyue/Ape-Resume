@@ -42,7 +42,7 @@ async function add(data) {
 
   if (isSaved.data.length > 0) {
     code = 6; //修改成功
-    return await updateByName(data);
+    return await updateById(data);
   } else {
     data.createTime = util.formatTime(new Date());
     return mapper.add({
@@ -71,6 +71,28 @@ function updateByName(data) {
   })
 };
 
+function updateById(data) {
+  data.updateTime = util.formatTime(new Date());
+  return mapper.where({
+    openId: data.openId
+  }).update({
+    // data 传入需要局部更新的数据
+    data
+  })
+};
+
+function updateHeaderById(data) {
+  data.updateTime = util.formatTime(new Date());
+  return mapper.where({
+    openId: data.openId
+  }).update({
+    // data 传入需要局部更新的数据
+    data:{
+      headerImg: data.headerImg[0]
+    }
+  })
+};
+
 // 查
 function findByName(data) {
   return mapper.where({
@@ -78,11 +100,13 @@ function findByName(data) {
     name: data.name
   }).get()
 }
+
 function findById(data) {
   return mapper.where({
     openId: data.openId
   }).get()
 }
+
 function findAll(data) {
   return mapper.where({
     openId: data.openId
@@ -104,8 +128,8 @@ exports.main = async (event, context) => {
   let result, code = 0;
   switch (opt) {
     case 'add':
-      console.log("=====",data);
-      
+      console.log("=====", data);
+
       result = await add(data);
       break;
     case 'deleteByName':
@@ -113,6 +137,13 @@ exports.main = async (event, context) => {
       break;
     case 'updateByName':
       result = await updateByName(data);
+      break;
+    case 'updateById':
+      result = await updateById(data);
+      break;
+    case 'updateImg':
+      console.log("=====", data.headerImg);
+      result = await updateHeaderById(data);
       break;
     case 'selectByName':
       result = await findByName(data)

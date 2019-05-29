@@ -1,8 +1,8 @@
 <!-- miniprogram/pages/index/index.wxml -->
 <view class="page">
   <view class="header">
-    <image class="userAvatar" src="../../images/avatar.jpg" />
-    <view class="nickName">一只酱{{item.nikeName}}</view>
+    <image class="userAvatar" src="{{userInfo.avatarUrl}}" />
+    <view class="nickName">{{userInfo.nickName}}</view>
   </view>
   <view class="body">
     <view class="top">

@@ -7,6 +7,7 @@ Page({
   data: {
     startInit: '请选择',
     endInit: '请选择',
+    headerImg: ''
   },
   chooseImage(e) {
     wx.chooseImage({
@@ -24,6 +25,7 @@ Page({
     this.setData({
       startDate: e.detail.value,
       startInit: '',
+
     })
   },
   endDateChange(e) {
@@ -38,6 +40,7 @@ Page({
     console.log(data);
     data.startDate = this.data.startDate;
     data.endDate = this.data.endDate;
+    data.headerImg = this.data.headerImg;
     wx.cloud.callFunction({
       name: "project",
       data: {
@@ -81,7 +84,18 @@ Page({
       },
     })
   },
-
+  uploadImgHandle() {
+    wx.chooseImage({
+      count: 1,
+      success: (res) => {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const headerImg = res.tempFilePaths;
+        this.setData({
+          headerImg
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

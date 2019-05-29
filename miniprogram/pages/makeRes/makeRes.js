@@ -39,9 +39,14 @@ Page({
     this.setData({
       ['selected.works']: this.data.workList.filter(item => item.checked)
     })    
-    if (this.data.workList.every(item => item.checked)) this.setData({
+    if (this.data.workList.every(item => item.checked)) {this.setData({
       selectall: true
-    })
+    })}
+    else {
+      this.setData({
+        selectall: false
+      })
+    }
 
   },
   //实习经验 全选，取消全选
@@ -79,9 +84,14 @@ Page({
     this.setData({
       ['selected.items']: this.data.itemList.filter(item => item.checked)
     })
-    if (this.data.itemList.every(item => item.checked)) this.setData({
+    if (this.data.itemList.every(item => item.checked)) {this.setData({
       selectitemall: true
-    })
+    })}
+    else{
+      this.setData({
+        selectitemall: false
+      })
+    }
   },
   selectItemAll: function (e) {
     let itemList = this.data.itemList;
