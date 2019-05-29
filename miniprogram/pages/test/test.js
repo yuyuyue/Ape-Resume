@@ -11,7 +11,7 @@ Page({
         bgColor: 'bg-grey',
         color: 'grey',
         bottomColor: 'bottom-grey',
-        tip: '输入git昵称',
+        tip: '输入自定义域名',
         image: '../../images/github.svg',
         search: 'github',
         icon: [
@@ -145,15 +145,16 @@ Page({
 
   },
   finish() {
+    const self = this
     wx.showModal({
       title: '提示',
       content: '是否要生成简历',
-      cancelText: '回主页',
+      cancelText: '继续完善',
       confirmText: '前往',
       success (res) {
         if (res.confirm) {
           wx.navigateTo({
-            url: '../addInfo/addInfo'
+            url: '../makeRes/makeRes'
           })
         } else if (res.cancel) {
           wx.navigateBack({
@@ -164,14 +165,14 @@ Page({
       fail(err) {
         console.log(err)
       },
-      complete() {
+      complete:()=>{
         wx.setStorage({
           key: "cards",
-          data: this.data.cards
+          data: self.data.cards
         })
         wx.setStorage({
           key: 'searchData',
-          data: this.data.searchData
+          data: self.data.searchData
         })
       }
     })

@@ -9,6 +9,7 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
+<<<<<<< HEAD
 		"coverView": true,
 		"autoAudits": false,
 		"checkInvalidKey": true,
@@ -19,6 +20,10 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		}
+=======
+		"autoAudits": false,
+		"checkInvalidKey": true
+>>>>>>> 7a58e483f6035817c6d3b97acdb3a688d7c27dcc
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.5",
@@ -31,8 +36,11 @@
 		"hidedInDevtools": []
 	},
 	"scripts": {},
+<<<<<<< HEAD
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+=======
+>>>>>>> 7a58e483f6035817c6d3b97acdb3a688d7c27dcc
 	"condition": {
 		"search": {
 			"current": -1,
@@ -50,7 +58,11 @@
 			"list": []
 		},
 		"miniprogram": {
+<<<<<<< HEAD
 			"current": 8,
+=======
+			"current": -1,
+>>>>>>> 7a58e483f6035817c6d3b97acdb3a688d7c27dcc
 			"list": [
 				{
 					"id": -1,
@@ -89,6 +101,7 @@
 				},
 				{
 					"id": -1,
+<<<<<<< HEAD
 					"name": "use",
 					"pathName": "pages/use/use",
 					"query": "",
@@ -112,6 +125,11 @@
 					"id": -1,
 					"name": "chooseRes",
 					"pathName": "pages/chooseRes/chooseRes",
+=======
+					"name": "test",
+					"pathName": "pages/test/test",
+					"query": "",
+>>>>>>> 7a58e483f6035817c6d3b97acdb3a688d7c27dcc
 					"scene": null
 				}
 			]
