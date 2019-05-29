@@ -1,0 +1,13 @@
+<!-- miniprogram/pages/test/test.wxml -->
+<view class="bg-light-blue">
+  <view class="babel">
+    <image class="help" src="../../images/help.svg" />
+  </view>
+  <view class="yuanlizhi">
+    <view class="title">猿力值</view>
+    <view class="value"></view>
+  </view>
+  <view wx:for="{{cards}}" wx:key="index">
+    <test-card cardData="{{item}}" bindsearched="searched"></test-card>
+  </view>
+</view>

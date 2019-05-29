@@ -1,0 +1,34 @@
+.bg-light-blue {
+  background-color: #F5FAFE;
+}
+.babel{
+  position: relative;
+}
+.help{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+}
+.yuanlizhi{
+  height: 500rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #515151;
+  flex-direction: column;
+}
+.title{
+  font-size: 24px;
+  text-align: center;
+  line-height: 90rpx;
+  width: 100%;
+}
+.value{
+  width: 250rpx;
+  height: 250rpx;
+  border-radius: 50%;
+  background-color: blue;
+  margin-top: 30rpx;
+}

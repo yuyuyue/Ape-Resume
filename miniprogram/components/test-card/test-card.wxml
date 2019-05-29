@@ -1,0 +1,24 @@
+<view class="test-card">
+  <view class="title {{cardData.bottomColor}}">
+    <view class="point {{cardData.bgColor}}"></view>
+    <text class="text {{cardData.color}}">{{cardData.name}}</text>
+  </view>
+  <view class="card-search">
+    <image class="search-image" src="{{cardData.image}}" />
+    <input type="text" class="search-input" placeholder="{{cardData.tip}}" bindblur="getInput"/>
+    <button class="search-button" type="primary" size="mini" loading="{{true}}" wx:if="{{isSearch}}"></button>
+    <button class="search-button" type="primary" size="mini" bindtap="search" data-search="{{cardData.search}}" wx:else>
+      查询
+    </button>
+  </view>
+  <view class="search-detail {{!toggle ? 'h-0' : 'h-auto'}}">
+    <view class="search-list" wx:for="{{cardData.icon}}" wx:key="index">
+      <image class="search-icon" src="{{item.iconPath}}" />
+      <text class="search-text search-label {{item.color}}">{{item.name}}</text>
+      <View class="search-text search-num fw-b">{{item.num}}</View>
+    </view>
+  </view>
+  <view class="search-result light-blue">
+    <image class="down-icon" bindtap="toggle" src="{{toggleImage}}"/>
+  </view>
+</view>
