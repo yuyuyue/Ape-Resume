@@ -1,5 +1,32 @@
-<!--miniprogram/pages/use/use.wxml-->
+<!-- miniprogram/pages/use/use.wxml -->
 <view class="page">
-<view class="container">
-</view>
+  <view class="container">
+    <view class="header">
+      <text class="useHelp">“猿简历”使用帮助</text>
+    </view>
+    <view class="body">
+      <view class="desc">“猿简历”是一款工具类小程序，服务于互联网行业的程序猿们，用户可以通过添加个人信息、项目信息、工作经验与绑定GitHub、掘金、LeetCode这三个平台来展示自己的Coding能力，生成一份专属程序猿的简历。</view>
+      <view class="function">生成简历流程</view>
+      <view class="desc">点击简历生成，可以进行猿简历在线生成。</view>
+      <view class="desc">生成简历需要按以下四步进行：</view>
+      <view class="step">完善信息→猿力测试→选择信息→选择简历模板</view>
+      <view class="stepDesc">第一步：完善信息</view>
+      <view class="desc">使用“简历生成”需要完善个人信息，请您根据引导完成个人信息的完善。项目与工作经验可添加多个，供您在简历生成时选择您较满意以及想要在简历上展示的项目与工作经验信息。</view>
+      <view class="stepDesc">第二步：猿力测试</view>
+      <view class="desc">首页→猿力测试，根据页面引导，进行GitHub、掘金
+        LeetCode等账号的数据绑定，输入用户名即可。“猿简历”会根据您绑定的账号数据来给您一个猿力值数值。您可以在选择信息中选择是否在简历中展示您的猿力值及三方数据。
+      </view>
+      <view class="stepDesc">第三步：选择信息</view>
+      <view class="desc">当您完善信息后，可点击  首页 → 简历生成，进行个人项目、工作经验与猿力数值的选择。您选择的个人项目、工作经验以及猿力数值将会在简历中展示。</view>
+      <view class="stepDesc">第四步：选择简历模板</view>
+      <view class="desc">当您确认选择的信息后，可以预览“猿简历”中的简历模板，选择您喜欢的简历模板，进行简历生成，并给生成的简历命名。</view>
+      <view class="function">信息查看</view>
+      <view class="desc">当您完善个人信息后，可在我的信息界面选择对应的信息详情进行预览和修改</view>
+      <view class="function">简历分享</view>
+      <view class="desc">当您生成简历后，可在我的简历页面通过选择简历名称来预览生成好的简历，选择分享。</view>
+      <view class="imgContainer">
+        <image class="use" src="../../images/use.jpg" />
+      </view>
+    </view>
+  </view>
 </view>

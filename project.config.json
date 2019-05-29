@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -64,6 +64,20 @@
 					"id": -1,
 					"name": "addInfo",
 					"pathName": "pages/addInfo/addInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "use",
+					"pathName": "pages/use/use",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/test/test",
 					"scene": null
 				}
 			]
