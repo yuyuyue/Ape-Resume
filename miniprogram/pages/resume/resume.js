@@ -9,6 +9,9 @@ Page({
     selectSex: [
       "第一份简历", "第二份简历"
     ],
+    resumedetail: {},
+    nowSelect: '',
+    detail: {}
   },
   bindPickerChange(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -22,7 +25,40 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    wx.cloud.callFunction({
+      name: 'resume',
+      data: {
+        opt: 'selectAll',
+        data: {}
+      }
+    }).then(res=>{
+      console.log(res);
+      
+      // this.setData({
+      //   selectSex: res.result.result.data,
+      //   nowSelect: res.result.result.data[0]
+      // })
+      // return wx.cloud.callFunction({
+      //   name: 'resume',
+      //     data: {
+      //       opt: 'selectByName',
+      //       data: {
+      //         name: this.data.nowSelect
+      //       }
+      //     }
+      // })
+    })
+    // .then(res => {
+
+    // })
+    wx.getStorage({
+      key: 'userdetail',
+      success:res=>{
+        this.setData({
+          detail:res.data
+        })
+      }
+    })
   },
 
   /**

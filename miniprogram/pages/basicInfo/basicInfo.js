@@ -22,11 +22,12 @@ Page({
     selectSex: [
       "男", "女"
     ],
-    headerImg: '../../images/avatar.jpg'
+    headerImg: '../../images/avatar.jpg',
+    save: true
   },
   chooseImage(e) {
     wx.chooseImage({
-      sizeType: ['original', 'compressed'], 
+      sizeType: ['original', 'compressed'],
       sourceType: ['album'],
       success: res => {
         const tempFilePaths = res.tempFilePaths
@@ -58,16 +59,30 @@ Page({
   addBasicInfo(e) {
     // console.log(e);
     const data = e.detail.value;
-    data.sex = this.data.selectSex[this.data.sexIndex]
-    data.startDate = this.data.startDate;
-    data.endDate = this.data.endDate;
-    data.headerImg = this.data.headerImg;
-    console.log(data);
+    let opt="add";
+    if (this.data.save) {
+      this.setData({
+        save: false
+      })
+      data.sex = this.data.selectSex[this.data.sexIndex]
+      data.startDate = this.data.startDate;
+      data.endDate = this.data.endDate;
+      data.headerImg = this.data.headerImg;
+      // console.log(data);
+    } else {
+      opt = "updateById",
 
+      console.log(data);
+      for(let key in data){
+        if(!data[key]){
+          delete data[key]
+        }
+      }
+    }
     wx.cloud.callFunction({
       name: "userdetail",
       data: {
-        opt: 'add',
+        opt,
         data
       },
       success: res => {
@@ -89,10 +104,10 @@ Page({
   picked(e) {
     console.log(e.item);
   },
-  uploadImgHandle(){
+  uploadImgHandle() {
     wx.chooseImage({
       count: 1,
-      success:(res)=>{
+      success: (res) => {
         // tempFilePath可以作为img标签的src属性显示图片
         const headerImg = res.tempFilePaths;
         this.setData({
@@ -100,9 +115,9 @@ Page({
         })
         wx.cloud.callFunction({
           name: 'userdetail',
-          data:{
+          data: {
             opt: 'updateImg',
-            data:{
+            data: {
               headerImg
             }
           }
@@ -115,28 +130,32 @@ Page({
    */
   onLoad: function (options) {
     wx.showLoading({
-      
+
     })
+    
+    // console.log(options.save, options.save.length);
+   
     let data = {}
     wx.cloud.callFunction({
-       name: "userdetail",
-         data: {
-           opt: 'selectById',
-           data
-         },
-         success: res => {
-           console.log(res);
-           let queryData = res.result.result.data[0];
-           if (res.result.result.data.length) {
-             this.setData({
-               ...queryData,
-               pickInit: '',
-               startInit: '',
-               endInit: ''
-             })
-           }
-           wx.hideLoading()
-         },
+      name: "userdetail",
+      data: {
+        opt: 'selectById',
+        data
+      },
+      success: res => {
+        console.log(res);
+        let queryData = res.result.result.data[0];
+        if (res.result.result.data.length) {
+          this.setData({
+            ...queryData,
+            pickInit: '',
+            startInit: '',
+            endInit: '',
+            save:false
+          })
+        }
+        wx.hideLoading()
+      },
     })
   },
 

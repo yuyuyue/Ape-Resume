@@ -94,6 +94,6 @@
         </view>
       </view>
     </view>
-    <button class="next" formType="submit">提交</button>
+    <button class="next" formType="submit">{{save?'保存':'修改'}}</button>
   </form>
 </view>

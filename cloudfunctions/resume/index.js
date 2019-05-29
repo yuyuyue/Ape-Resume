@@ -60,30 +60,32 @@ const userdetail = (data) => {
 
 // 增加
 async function add(data) {
-  const isSaved = await findByName(data);
-
-  if (isSaved.data.length > 0) {
+  const resus = await findAll(data);
+  const isSaved = resus.data.every(item => item != data.name)
+  if (isSaved) {
     code = 1; // 添加失败，名字重复
     return;
   } else {
     await mapper.add({
       name: data.name,
       openId: data.openId,
+      proNames:data.proNames,
+      expeNames:data.expeNames,
       createTime: util.formatTime(new Date())
     })
     // 中间表添加数据
-    resProMapper.add({
-      data: {
-        resu_name: data.name,
-        pro_name: data.proName
-      }
-    })
-    resExpeMapper.add({
-      data: {
-        resu_name: data.name,
-        expe_name: data.expeName
-      }
-    })
+    // resProMapper.add({
+    //   data: {
+    //     resu_name: data.name,
+    //     pro_name: data.proName
+    //   }
+    // })
+    // resExpeMapper.add({
+    //   data: {
+    //     resu_name: data.name,
+    //     expe_name: data.expeName
+    //   }
+    // })
   }
 };
 
@@ -109,64 +111,70 @@ function updateByName(data) {
 
 // 查
 async function findByName(data) {
-  let data1 = {
-    opt: 'selectById',
-    data: {}
-  }
-  let userInfo = userdetail(data1).result;
+  // let data1 = {
+  //   opt: 'selectById',
+  //   data: {}
+  // }
+  // let userInfo = userdetail(data1).result;
   
-  // 个人实习信息
-  let expes = await resExpeMapper.where({
+  // // 个人实习信息
+  // let expes = await resExpeMapper.where({
+  //   openId: data.openId,
+  //   resumeName: data.name
+  // }).get();
+
+  // let expeInfos = []
+  // expes.forEach(item => {
+  //   data1 = {
+  //     opt: 'selectByName',
+  //     data: {
+  //       company: item.expeName
+  //     }
+  //   }
+  //     expeInfos.push(expe(data1).result)
+  // })
+
+  // // 项目信息
+  // let data2
+  //  let pros = await resExpeMapper.where({
+  //    openId: data.openId,
+  //    resumeName: data.name
+  //  }).get();
+  //  let proInfos = []
+  //  pros.forEach(item => {
+  //    data2 = {
+  //      opt: 'selectByName',
+  //      data: {
+  //        proname: item.proName
+  //      }
+  //    }
+  //    proInfos.push(project(data1).result)
+  //  })
+
+   return await mapper.where({
     openId: data.openId,
-    resumeName: data.name
-  }).get();
-
-  let expeInfos = []
-  expes.forEach(item => {
-    data1 = {
-      opt: 'selectByName',
-      data: {
-        company: item.expeName
-      }
-    }
-      expeInfos.push(expe(data1).result)
-  })
-
-  // 项目信息
-  let data2
-   let pros = await resExpeMapper.where({
-     openId: data.openId,
-     resumeName: data.name
-   }).get();
-   let proInfos = []
-   pros.forEach(item => {
-     data2 = {
-       opt: 'selectByName',
-       data: {
-         proname: item.proName
-       }
-     }
-     proInfos.push(project(data1).result)
-   })
-
-   
+    name: data.name
+   }).get()
  
 
-  return {
-    userInfo,
-    proInfos,
-    expeInfos
-  }
+  // return {
+  //   userInfo,
+  //   proInfos,
+  //   expeInfos
+  // }
 }
 
-function findAll(data) {
-  let resumes =  await mapper.where({
-    openId:data.openId
-  }).get()
-  resumes.forEach(item=>{
-    findByName(item)
-  })
+async function findAll(data) {
+  // let resumes =  await mapper.where({
+  //   openId:data.openId
+  // }).get()
+  // resumes.forEach(item=>{
+  //   findByName(item)
+  // })
 
+  return await mapper.where({
+    openId: data.openId
+  }).get()
 }
 
 // 云函数入口函数
@@ -190,10 +198,19 @@ exports.main = async (event, context) => {
       result = await updateByName(data);
       break;
     case 'selectByName':
-      result = findByName(data)
+      result = await findByName(data)
       break;
     case 'selectAll':
-      result = await findAll(data);
+      try {
+         result = await findAll(data);
+         console.log(result);
+      } catch (error) {
+        return {
+          error
+        }
+      }
+     
+      
       break;
 
     default:
