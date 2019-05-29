@@ -1,9 +1,9 @@
 <view class="page">
   <view class="header">
-    <image class="userAvatar" src="{{headerImg}}" />
-    <view class="nickName">一只酱{{item.nikeName}}</view>
+    <image class="userAvatar" src="{{userInfo.avatarUrl}}" />
+    <view class="nickName">{{userInfo.nikeName}}</view>
   </view>
-  <view class="body" >
+  <view class="body">
     <view class="temp" bindtap="addBasicInfo">
       <image class="infoIcon" src="../../images/user.svg" />
       <view class="addInfo">添加个人信息</view>
@@ -15,6 +15,10 @@
     <view class="temp" bindtap="addItem">
       <image class="infoIcon" src="../../images/item.svg" />
       <view class="addInfo">添加项目成果</view>
+    </view>
+    <view class="temp" bindtap="addIhirdparty">
+      <image class="infoIcon" src="../../images/item.svg" />
+      <view class="addInfo">添加第三方数据</view>
     </view>
   </view>
 </view>

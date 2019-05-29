@@ -1,4 +1,4 @@
-/* miniprogram/pages/info/info.wxss */
+z/* miniprogram/pages/info/info.wxss */
 page{
   height: 100%;
   background-color:#F5FAFE;
@@ -50,6 +50,8 @@ page{
 .swiper-center .container {
   width: 494rpx;
   height:680rpx;
+
+
 }
 .navbar{
   display: flex;
@@ -103,11 +105,17 @@ page{
   position: relative;
   padding-top: 20rpx;
   margin-bottom: 10rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 30rpx;
 }
 .expectJob{
   font-size: 30rpx;
   color: #000;
   margin-left:20rpx;
+}
+.desc {
+  height: 245rpx;
 }
 .expectJob::before,.workCompany::before{
   content: '';

@@ -2,11 +2,12 @@
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false
 	},
 	"appid": "wx08451edee750006e",
 	"projectname": "Ape-Resume",
@@ -30,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -64,6 +65,20 @@
 					"id": -1,
 					"name": "addInfo",
 					"pathName": "pages/addInfo/addInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "info",
+					"pathName": "pages/info/info",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/test/test",
 					"scene": null
 				}
 			]

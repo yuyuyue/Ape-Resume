@@ -79,8 +79,8 @@
         <!-- 工作经验 -->
         <swiper-item>
           <view class="scroll-container">
-            <swiper previous-margin="100rpx" next-margin="120rpx" class="swiper-page" current="{{scrollIndex}}" bindchange="childSwiper">
-              <swiper-item wx:for="{{expes}}" wx:key="expe" wx:for-item="expe" class="swiper-center {{nowIndex === 0 ? 'active' : ''}}">
+            <swiper previous-margin="100rpx" next-margin="120rpx" class="swiper-page" current="{{scrollIndex}}" bindchange="childExpeSwiper">
+              <swiper-item wx:for="{{expes}}" wx:key="expe" wx:for-item="expe" wx:for-index="expeIndex" class="swiper-center {{workNowIndex ===  expeIndex ? 'active' : ''}}">
                 <view class="container">
                   <view class="line">
                     <text class="workCompany">{{expe.company}}</text>
@@ -101,8 +101,8 @@
         <!-- 我的项目 -->
         <swiper-item>
           <view class="scroll-container">
-            <swiper previous-margin="100rpx" next-margin="120rpx" class="swiper-page" current="{{scrollIndex}}" bindchange="childSwiper">
-              <swiper-item wx:for="{{projects}}" wx:key="pro" wx:for-item="pro" class="swiper-center {{nowIndex === 0 ? 'active' : ''}}">
+            <swiper previous-margin="100rpx" next-margin="120rpx" class="swiper-page" current="{{scrollIndex}}" bindchange="childProSwiper">
+              <swiper-item wx:for="{{projects}}" wx:key="pro" wx:for-index="proIndex" wx:for-item="pro" class="swiper-center {{proNowIndex ===  proIndex ? 'active' : ''}}">
                 <view class="container">
                   <view class="container-header">
                     <image class="itemImg" src="../../images/avatar.jpg" />
@@ -118,20 +118,20 @@
                   </view>
                   <view class="infoTemp">
                     <view class="textDesc">
-                      <view class="line">访问链接：</view>
-                      {{pro.lineadress}}
+                      <view class="line">访问链接： {{pro.lineadress}}</view>
+                     
                     </view>
                   </view>
                   <view class="infoTemp">
                     <view class="textDesc">
-                      <view class="line">技术栈：</view>
-                      {{pro.techstack}}
+                      <view class="line">技术栈：{{pro.techstack}}</view>
+                      
                     </view>
                   </view>
                   <view class="infoTemp">
                     <view class="textDesc">
-                      <view class="line">项目描述：</view>
-                      {{pro.desc}}
+                      <view class="line desc">项目描述：{{pro.desc}}</view>
+                      
                     </view>
                   </view>
                 </view>

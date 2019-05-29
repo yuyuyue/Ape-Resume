@@ -22,17 +22,22 @@ Page({
       url: '../item/item'
     })
   },
+  addIhirdparty(){
+    wx.navigateTo({
+      url: '../test/test'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     wx.getStorage({
-      key: 'userdetail',
+      key: 'userInfo',
       success:res=>{
         console.log(res);
         
         this.setData({
-          headerImg: res.data.headerImg
+          userInfo: res.data
         })
       }
     })

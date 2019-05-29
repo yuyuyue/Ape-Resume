@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    searchData:{}
   },
 
   /**
@@ -35,6 +35,14 @@ Page({
       success:(res)=> {
         this.setData({
           selected: res.data
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'searchData',
+      success: (res) => {
+        this.setData({
+          searchData: res.data
         })
       }
     })
