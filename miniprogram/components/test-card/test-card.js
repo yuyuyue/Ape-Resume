@@ -75,6 +75,7 @@ Component({
                 'content-type': 'application/json'
               },
               success: (res) => {
+                console.log(res)
                 let watch = 0
                 let star = 0
                 let fork = 0

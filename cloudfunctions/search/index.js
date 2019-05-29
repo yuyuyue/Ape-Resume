@@ -53,7 +53,9 @@ function contributions(url) {
         }
         let $ = cheerio.load(body, { ignoreWhitespace: true, decodeEntities: true })
         let result = []
-        $('h2') ? result.push($('h2').html().trim().charAt(0)) : result.push('')
+        console.log(body)
+        console.log($('h2'))
+        $('h2') ? result.push($('h2').html().trim().split(' ')[0]) : result.push('')
         resolve(result)
       })
     } catch (e) {
