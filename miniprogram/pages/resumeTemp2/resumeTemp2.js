@@ -56,7 +56,7 @@ Page({
       } else {
         wx.showToast({
           title: codeInfo[res.result.code],
-          image: '../../images/失败.png'
+          image: '../../images/fail.svg'
         })
       }
     })
