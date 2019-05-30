@@ -6,7 +6,6 @@
 .container{
   background-color: #fff;
   width: 710rpx;
-  height: 100%;
   box-shadow: 0 0 12rpx #e6e6e6;
   margin-bottom: 60rpx;
 }
