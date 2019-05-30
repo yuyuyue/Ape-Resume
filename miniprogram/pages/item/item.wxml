@@ -2,8 +2,8 @@
   <view class="header">
     <image class="userAvatar" bindtap="uploadImgHandle" src="{{headerImg||'../../images/avatar.jpg'}}"></image>
   </view>
-  <view class="container">
-    <form bindsubmit="addItem">
+  <form bindsubmit="addItem">
+    <view class="container">
       <view class="infoTemp firstTemp">
         <view class="infoTitle">项目名称</view>
         <view class="input marginL">
@@ -44,7 +44,7 @@
           <textarea rows="3" cols="20" maxlength="1000" placeholder="请描述你的项目" name="desc" />
         </view>
       </view>
-    </form>
-  </view>
-   <button class="next" formType="submit">提交</button>
+    </view>
+    <button class="next" bindtap="addItem" formType="submit">提交</button>
+  </form>
 </view>

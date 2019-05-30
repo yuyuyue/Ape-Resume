@@ -16,7 +16,6 @@
     </view>
     <view class="wrapper-container">
       <swiper bindchange="changeHandle" class="swiper-page" current="{{navbarActiveIndex}}">
-       
         <!-- 基本信息 -->
         <swiper-item>
           <view class="basic-container">
@@ -29,6 +28,7 @@
                 </view>
               </view>
               <view class="line">
+                <input wx:if="{{edit}}" type="text" placeholder="{{item.expectjob||'请填写期望职位'}}" class="expectJob" name="expectjob" />
                 <text class="expectJob">{{item.expectjob||'暂无数据'}}</text>
               </view>
               <view class="flex">
@@ -75,6 +75,10 @@
                 <text class="infoDesc">{{item.advantage||'暂无数据'}}</text>
               </view>
             </view>
+            <!-- 在这里在这里 -->
+            <view class="edit">
+              <image class="editImg" src="../../images/edit.svg" />
+            </view>
           </view>
         </swiper-item>
         <!-- 工作经验 -->
@@ -93,6 +97,10 @@
                       <text class="expectJob">工作描述:</text>
                     </view>
                     <view class="infoDesc">{{expe.desc||'暂无数据'}}</view>
+                  </view>
+                  <!-- 在这里在这里 -->
+                  <view class="edit">
+                    <image class="editImg" src="../../images/edit.svg" />
                   </view>
                 </view>
               </swiper-item>
@@ -114,33 +122,36 @@
                   </view>
                   <view class="infoTemp">
                     <view class="line">
-                      <text class="expectJob">{{pro.startDate||'暂无数据'}}~{{pro.endDate||'暂无数据'}}</text>
+                      <view class="expectJob">
+                        {{pro.startDate||'暂无数据'}}~{{pro.endDate||'暂无数据'}}
+                      </view>
                     </view>
                   </view>
                   <view class="infoTemp">
                     <view class="textDesc">
                       <view class="line">访问链接： {{pro.lineadress||'暂无数据'}}</view>
-                     
                     </view>
                   </view>
                   <view class="infoTemp">
                     <view class="textDesc">
                       <view class="line">技术栈：{{pro.techstack||'暂无数据'}}</view>
-                      
                     </view>
                   </view>
                   <view class="infoTemp">
                     <view class="textDesc">
                       <view class="line desc">项目描述：{{pro.desc||'暂无数据'}}</view>
-                      
                     </view>
+                  </view>
+                  <!-- 在这里在这里 -->
+                  <view class="edit">
+                    <image class="editImg" src="../../images/edit.svg" />
                   </view>
                 </view>
               </swiper-item>
             </swiper>
           </view>
         </swiper-item>
-         <!-- 猿力值 -->
+        <!-- 猿力值 -->
         <swiper-item>
           <view class="basic-container">
             <view class="container-body ape-container">
