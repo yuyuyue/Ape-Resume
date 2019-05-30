@@ -16,6 +16,63 @@
     </view>
     <view class="wrapper-container">
       <swiper bindchange="changeHandle" class="swiper-page" current="{{navbarActiveIndex}}">
+        <!-- 猿力值 -->
+        <swiper-item>
+          <view class="basic-container">
+            <view class="container-body ape-container">
+              <view class="apeNum">
+                <image class="apeImg" src="../../images/apeImg.png" />
+                <view class="num">88</view>
+              </view>
+              <view class="apeTemp">
+                <view class="line">
+                  <view class="apeTitle grey">GitHub</view>
+                </view>
+                <view class="apeDesc flex">
+                  <view class="apeType">
+                    <view class="apeInfo">Star 210{{}}</view>
+                    <view class="apeInfo">Fork 1.5k{{}}</view>
+                  </view>
+                  <view class="apeType">
+                    <view class="apeInfo">Watch 11.5k{{}}</view>
+                    <view class="apeInfo">Contribution 11.5k{{}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class="apeTemp">
+                <view class="line">
+                  <view class="apeTitle blue">LeetCode</view>
+                </view>
+                <view class="flex apeDesc">
+                  <view class="apeType">
+                    <view class="apeInfo">竞赛评分 52020{{}}</view>
+                    <view class="apeInfo">竞赛排名 68/54515{{}}</view>
+                  </view>
+                  <view class="apeType">
+                    <view class="apeInfo">完成的竞赛 2020{{}}</view>
+                    <view class="apeInfo">解决的题目 2020{{}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class="apeTemp">
+                <view class="line">
+                  <view class="apeTitle orange">掘金</view>
+                </view>
+                <view class="apeDesc flex">
+                  <view class="apeType">
+                    <view class="apeInfo">掘力值 376{{}}</view>
+                    <view class="apeInfo">关注者 72{{}}</view>
+                    <view class="apeInfo">获得点赞 1549{{}}</view>
+                  </view>
+                  <view class="apeType">
+                    <view class="apeInfo">发表专栏数 12{{}}</view>
+                    <text class="apeInfo">文章被阅读 53059{{}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
         <!-- 基本信息 -->
         <swiper-item>
           <view class="basic-container">
@@ -139,60 +196,7 @@
             </swiper>
           </view>
         </swiper-item>
-        <!-- 猿力值 -->
-        <swiper-item>
-          <view class="basic-container">
-            <view class="container-body">
-              <view class="apeNum">
-                <text class="num">88</text>
-              </view>
-              <view class="apeTemp">
-                <view class="line">
-                  <view class="apeTitle">GitHub</view>
-                </view>
-                <view class="apeDesc flex">
-                  <view class="apeType">
-                    <view class="apeInfo">Stars 210{{}}</view>
-                    <view class="apeInfo">Forks 1.5k{{}}</view>
-                  </view>
-                  <view class="apeType">
-                    <text class="apeInfo">Followers 11.5k{{}}</text>
-                  </view>
-                </view>
-              </view>
-              <view class="apeTemp">
-                <view class="line">
-                  <view class="apeTitle">LeetCode</view>
-                </view>
-                <view class="flex apeDesc">
-                  <view class="apeType">
-                    <view class="apeInfo">排名 52020{{}}</view>
-                    <view class="apeInfo">做题数 68{{}}</view>
-                  </view>
-                  <view class="apeType">
-                    <view class="apeInfo">竞赛积分 2020{{}}</view>
-                  </view>
-                </view>
-              </view>
-              <view class="apeTemp">
-                <view class="line">
-                  <view class="apeTitle">掘金</view>
-                </view>
-                <view class="apeDesc flex">
-                  <view class="apeType">
-                    <view class="apeInfo">关注者 5276{{}}</view>
-                    <view class="apeInfo">发布文章 72{{}}</view>
-                    <view class="apeInfo">获得点赞 1549{{}}</view>
-                  </view>
-                  <view class="apeType">
-                    <view class="apeInfo">掘力值 2020{{}}</view>
-                    <text class="apeInfo">文章被阅读 53059{{}}</text>
-                  </view>
-                </view>
-              </view>
-            </view>
-          </view>
-        </swiper-item>
+        
       </swiper>
     </view>
   </view>
