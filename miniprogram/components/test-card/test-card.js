@@ -16,7 +16,7 @@ Component({
     opt: '',
     url: '',
     toggle: false,
-    toggleImage: '../../images/down-arrow.png'
+    toggleImage: '../../images/down-arrow.svg'
   },
 
   /**
@@ -134,12 +134,12 @@ Component({
       if (toggle) {
         this.setData({
           toggle,
-          toggleImage: '../../images/up-arrow.png'
+          toggleImage: '../../images/up-arrow.svg'
         })
       } else {
         this.setData({
           toggle,
-          toggleImage: '../../images/down-arrow.png'
+          toggleImage: '../../images/down-arrow.svg'
         })
       }
       
