@@ -104,12 +104,12 @@
       <view class="info">{{item.desc||'暂无数据'}}</view>
     </view>
   </view>
-  <view class="content">
+  <view class="content lastContent">
     <view class="resume-titleBorder">
       <text class="resume-title">个人优势</text>
     </view>
     <text class="info">{{detail.advantage||'暂无数据'}}</text>
   </view>
-  <button class="save" wx:if="{{isSave}}" bindtap="saveRes" >保存简历</button>
+  <button class="next" wx:if="{{isSave}}" bindtap="saveRes" >保存简历</button>
   <saveRes bind:save="save" showDialog="{{showDialog}}"></saveRes>
 </view>

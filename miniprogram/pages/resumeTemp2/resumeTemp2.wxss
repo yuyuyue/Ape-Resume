@@ -1,3 +1,4 @@
+@import '../../styles/button/button';
 /* 简历头部 */
 .resume-header{
   padding:40rpx 20rpx 40rpx 60rpx; 
@@ -109,4 +110,7 @@
   font-size: 24rpx;
   color: #b6b6b6;
   display: block;
+}
+.last-item{
+  margin-bottom: 90rpx;
 }
