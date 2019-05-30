@@ -4,13 +4,21 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
+		"coverView": true,
 		"autoAudits": false,
-		"checkInvalidKey": true
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.5",
@@ -42,8 +50,7 @@
 			"list": []
 		},
 		"miniprogram": {
-
-			"current": -1,
+			"current": 7,
 			"list": [
 				{
 					"id": -1,
@@ -91,6 +98,13 @@
 					"id": -1,
 					"name": "我的简历",
 					"pathName": "pages/resume/resume",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "info",
+					"pathName": "pages/info/info",
 					"scene": null
 				}
 			]
