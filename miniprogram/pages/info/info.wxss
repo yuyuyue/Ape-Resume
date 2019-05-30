@@ -85,6 +85,7 @@ page{
 .container{
   background-color: #fff;
   box-shadow:0 6rpx 14rpx 0 rgba(0, 0, 0, 0.08);
+  position: relative;
 }
 .swiper-center{
   margin-top: 140rpx;
@@ -248,7 +249,50 @@ page{
   height: 40rpx;
   position: absolute;
   left: 0;
-  background-color: #98d4f5;
+  background-color: #515151;
 }
-
-/* 修改的样式 */
+.letter{
+  letter-spacing: 20rpx;
+}
+/* 编辑 */
+.edit{
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  text-align: center;
+  border: 6rpx solid #e5e5e5;
+  top:40rpx;
+  right: 40rpx;
+}
+.editImg{
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 10rpx;
+}
+.footer{
+  margin-top: 60rpx;
+  display: flex;
+}
+.confirm,.cancel{
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 10rpx solid #e5e5e5;
+  text-align: center;
+}
+.bottom-icon{
+  margin-top: 25rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.confirm{
+  margin-left: 180rpx;
+  margin-right: 120rpx;
+}
+.cancel-icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 35rpx;
+}

@@ -45,7 +45,7 @@ Page({
    * swiper组件切换事件
    */
   changeHandle(e) {
-    
+
     let name;
     //避免多次请求
     if (this.data.navbarActiveIndex == 1 && !this.data.expes.length) name = "expe";
@@ -71,6 +71,23 @@ Page({
       }
     })
   },
+  expeHandle(e) {
+    wx.navigateTo({
+      url: '../workExp/workExp?work=' + JSON.stringify(this.data.expes[this.data.workNowIndex])
+    })
+  },
+  proHandle(e) {
+    // console.log(111);
+
+    wx.navigateTo({
+      url: '../item/item?project=' + JSON.stringify(this.data.projects[this.data.proNowIndex])
+    })
+  },
+  basicHandle(e) {
+    wx.navigateTo({
+      url: '../basicInfo/basicInfo'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -90,7 +107,7 @@ Page({
     })
     wx.getStorage({
       key: 'searchData',
-      success: res=>{
+      success: res => {
         this.setData({
           searchData: res.data
         })
@@ -108,7 +125,7 @@ Page({
         let queryData = res.result.result.data[0];
         if (res.result.result.data.length) {
           this.setData({
-            item:queryData
+            item: queryData
           })
           wx.hideLoading()
         }

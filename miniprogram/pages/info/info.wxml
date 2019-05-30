@@ -76,7 +76,7 @@
               </view>
             </view>
             <!-- 在这里在这里 -->
-            <view class="edit">
+            <view class="edit" bindtap="basicHandle">
               <image class="editImg" src="../../images/edit.svg" />
             </view>
           </view>
@@ -87,7 +87,7 @@
         <!-- 工作经验 -->
         <swiper-item>
           <view class="scroll-container">
-            <swiper  vertical="{{true}}" previous-margin="100rpx" next-margin="120rpx" class="swiper-page" current="{{scrollIndex}}" bindchange="childExpeSwiper">
+            <swiper vertical="{{true}}" previous-margin="100rpx" next-margin="120rpx" class="swiper-page" current="{{scrollIndex}}" bindchange="childExpeSwiper">
               <swiper-item wx:for="{{expes}}" wx:key="expe" wx:for-item="expe" wx:for-index="expeIndex" class="swiper-center {{workNowIndex ===  expeIndex ? 'active' : ''}}">
                 <view class="container">
                   <view class="line">
@@ -102,7 +102,7 @@
                     <view class="infoDesc">{{expe.desc||'暂无数据'}}</view>
                   </view>
                   <!-- 在这里在这里 -->
-                  <view class="edit">
+                  <view class="edit" bindtap="expeHandle">
                     <image class="editImg" src="../../images/edit.svg" />
                   </view>
                 </view>
@@ -146,7 +146,7 @@
                     </view>
                   </view>
                   <!-- 在这里在这里 -->
-                  <view class="edit">
+                  <view class="edit" bindtap="proHandle">
                     <image class="editImg" src="../../images/edit.svg" />
                   </view>
                 </view>
