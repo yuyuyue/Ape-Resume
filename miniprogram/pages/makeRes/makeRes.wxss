@@ -46,7 +46,7 @@
   width: 45rpx;
   height: 45rpx;
   margin-right: 60rpx;
-  background-color: #2364fc;
+  background-color: #76a8f0;
   border-radius: 6rpx;
   text-align: center;
   line-height: 45rpx;

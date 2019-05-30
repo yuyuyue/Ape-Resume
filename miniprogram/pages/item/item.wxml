@@ -2,8 +2,8 @@
   <view class="header">
     <image class="userAvatar" bindtap="uploadImgHandle" src="{{headerImg||'../../images/avatar.jpg'}}"></image>
   </view>
-  <view class="container">
-    <form bindsubmit="addItem">
+  <form bindsubmit="addItem">
+    <view class="container">
       <view class="infoTemp firstTemp">
         <view class="infoTitle">项目名称</view>
         <view class="input marginL">

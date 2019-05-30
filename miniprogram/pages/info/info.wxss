@@ -101,6 +101,7 @@ page{
   background-color: #fff;
   width: 690rpx;
   margin: 30rpx auto;
+  position: relative;
 }
 .line{
   position: relative;
@@ -122,7 +123,7 @@ page{
   content: '';
   width: 6rpx;
   height: 40rpx;
-  top: 30rpx;
+  top: 20rpx;
   left: 0;
   background-color: #b6d2e1;
   position: absolute;
@@ -192,20 +193,38 @@ page{
   margin-left: 20rpx;
 }
 /* 猿力值 */
+.ape-container{
+  box-sizing: border-box;
+  padding: 30rpx 0 ;
+}
 .apeNum{
-  margin: 0 auto;
+  display: flex;
+}
+.apeImg{
+  margin: 20rpx 80rpx 40rpx 80rpx;
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+  width: 320rpx;
+  height: 89rpx;
+}
+.num{
   width: 120rpx;
   height: 120rpx;
-  border-radius: 50%;
-  font-size: 50rpx;
-  color: #fff;
-  background-color: #31799f;
   text-align: center;
   line-height: 120rpx;
+  background-color: #31799f;
+  border-radius: 50%;
+  border: 5rpx solid #80b3cf;
+  color: #fff;
+  font-size: 60rpx;
+  font-weight: bold;
+  letter-spacing: 4rpx;
+  box-shadow: 0 0 12rpx #e6e6e6;
 }
 .apeInfo{
   font-size: 30rpx;
-  width: 200rpx;
+  margin-bottom: 10rpx;
+  width: 300rpx;
 }
 .apeType{
   flex:1;
@@ -214,9 +233,14 @@ page{
   padding: 10rpx 40rpx;
 }
 .apeTitle{
-  font-size: 30rpx;
+  font-size: 34rpx;
   color: #000;
   margin-left:20rpx;
+  margin-right: 30rpx;
+  padding-bottom: 5rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+  font-weight: bold;
+  color: #515151;
 }
 .apeTitle::before{
   content: '';

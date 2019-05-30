@@ -9,6 +9,7 @@
   border-radius: 6rpx;
   margin: 60rpx auto;
   display: flex;
+  background-color: #fff;
   box-shadow: 0 0 12rpx #e6e6e6;
 }
 .infoIcon{

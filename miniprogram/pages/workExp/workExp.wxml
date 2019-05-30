@@ -1,9 +1,7 @@
 <view class="page">
-  <view class="header">
-    <image class="userAvatar" src="{{headerImg}}"></image>
-  </view>
+  <form bindsubmit="addWorkExp">
   <view class="container">
-    <form bindsubmit="addWorkExp">
+    
       <view class="infoTemp firstTemp">
         <view class="infoTitle">公司名称</view>
         <view class="input marginL">
@@ -38,7 +36,9 @@
           <textarea rows="3" cols="20" maxlength="1000" placeholder="请填写个人优势" name="desc" />
         </view>
       </view>
-      <button class="next" formType="submit">提交</button>
-    </form>
+      
+    
   </view>
+  <button class="next" formType="submit">提交</button>
+  </form>
 </view>

@@ -118,7 +118,9 @@ Page({
         ]
       }
     ],
-    searchData: {}
+    searchData: {},
+    ishelp: false,
+    windowHeight: ''
   },
   searched(event) {
     const { name, num } = event.detail
@@ -176,6 +178,16 @@ Page({
       }
     })
   },
+  help() {
+    this.setData({
+      ishelp: true
+    })
+  },
+  helpClose() {
+    this.setData({
+      ishelp: false
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -191,6 +203,10 @@ Page({
       fail() {
         console.log('还没有存储Storage')
       }
+    })
+    /*获取屏幕高度*/
+    this.setData({
+      windowHeight: wx.getSystemInfoSync().windowHeight
     })
   },
   /**
