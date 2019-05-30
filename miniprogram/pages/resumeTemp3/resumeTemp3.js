@@ -6,7 +6,8 @@ Page({
    */
   data: {
     searchData:{},
-    isSave:true
+    isSave:true,
+    not: false
   },
   saveRes(){
     console.log(123)
@@ -66,6 +67,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (options.not) {
+      this.setData({
+        not: true
+      })
+    }
      if (options.resumeName) {
        this.setData({
          isSave: false

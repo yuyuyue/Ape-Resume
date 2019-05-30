@@ -7,7 +7,8 @@ Page({
   data: {
     searchData:{},
     showDialog: false,
-    isSave: true
+    isSave: true,
+    not: false
   },
   saveRes(){
     this.setData({
@@ -22,6 +23,11 @@ Page({
     if(options.resumeName){
       this.setData({
         isSave: false
+      })
+    }
+    if(options.not){
+      this.setData({
+        not: true
       })
     }
     let key = options.resumeName || 'selected';

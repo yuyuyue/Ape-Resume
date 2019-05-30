@@ -5,16 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    workList:[],
-    apeList:[],
+    workList: [],
+    apeList: [],
     selectall: false,
     selectitemall: false,
-    
+    selectapeall: false,
     selected: {
-      works: [], 
+      works: [],
       items: [],
-     
-    }
+      apes: []
+    },
+    not: false
   },
   select: function (e) {
     let selectValue = e.currentTarget.dataset.name
@@ -31,8 +32,7 @@ Page({
       this.setData({
         selectall: true
       })
-    }
-    else {
+    } else {
       this.setData({
         selectall: false
       })
@@ -78,8 +78,7 @@ Page({
       this.setData({
         selectitemall: true
       })
-    }
-    else {
+    } else {
       this.setData({
         selectitemall: false
       })
@@ -107,64 +106,104 @@ Page({
       }
     }
   },
-  
+  // 三方选择
+
   // 点击下一步跳转到选择模板页
   chooseTempHandle() {
     wx.setStorage({
       key: 'selected',
       data: this.data.selected
     })
-    wx.navigateTo({
-      url: `../chooseRes/chooseRes`
-    })
+    let url = `../chooseRes/chooseRes`;
+    if(this.data.not){
+      url+='?not="true"'
+    }
+   wx.navigateTo({
+     url
+   })
+   
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (options.not) {
+      this.setData({
+        not: true
+      })
+    }
     let data = {};
-    wx.cloud.callFunction({
-      name: 'project',
-      data: {
-        opt: 'selectAll',
-        data
-      },
-      success: res => {
-        console.log(res);
-        let itemList = res.result.result.data;
-        // console.log(itemList);
-        itemList.map((item, index) => {
-          return item.id = index + 1
-        })
-        if (res.result.result.data.length) {
-          this.setData({
-            itemList
-          })
-        }
-
-      }
+    wx.showLoading({
+      title: '加载中'
     })
-    wx.cloud.callFunction({
-      name: 'expe',
-      data: {
-        opt: 'selectAll',
-        data
-      },
-      success: res => {
-        console.log(res);
-        let workList = res.result.result.data;
-        console.log(workList);
-        workList.map((item, index) => {
-          return item.id = index + 1
-        })
-        if (res.result.result.data.length) {
-          this.setData({
-            workList
-          })
-        }
 
+    Promise.all([
+      wx.cloud.callFunction({
+        name: 'project',
+        data: {
+          opt: 'selectAll',
+          data
+        },
+        // success: res => {
+        //   // console.log(res);
+        //   let itemList = res.result.result.data;
+        //   // console.log(itemList);
+        //   itemList.map((item, index) => {
+        //     return item.id = index + 1
+        //   })
+        //   if (res.result.result.data.length) {
+        //     this.setData({
+        //       itemList
+        //     })
+        //   }
+
+        // }
+      }),
+      wx.cloud.callFunction({
+        name: 'expe',
+        data: {
+          opt: 'selectAll',
+          data
+        },
+        // success: res => {
+        //   // console.log(res);
+        //   let workList = res.result.result.data;
+        //   // console.log(workList);
+        //   workList.map((item, index) => {
+        //     return item.id = index + 1
+        //   })
+        //   if (res.result.result.data.length) {
+        //     this.setData({
+        //       workList
+        //     })
+        //   }
+
+        // }
+      })
+    ]).then(values => {
+      let itemList = values[0].result.result.data;
+      // console.log(itemList);
+      itemList.map((item, index) => {
+        return item.id = index + 1
+      })
+      if (values[0].result.result.data.length) {
+        this.setData({
+          itemList
+        })
       }
+      let workList = values[1].result.result.data;
+      // console.log(workList);
+      workList.map((item, index) => {
+        return item.id = index + 1
+      })
+      if (values[1].result.result.data.length) {
+        this.setData({
+          workList
+        })
+      }
+      wx.hideLoading()
     })
+
   },
 
   /**
