@@ -61,18 +61,18 @@ const userdetail = (data) => {
 // 增加
 async function add(data) {
   const resus = await findAll(data);
-  const isSaved = resus.data.every(item => item != data.name)
+  
+   console.log("所有", resus);
+  const isSaved = resus.data.some(item => item == data.name)
+  console.log("=======",isSaved);
+  
   if (isSaved) {
     code = 1; // 添加失败，名字重复
-    return;
+    return false ;
   } else {
-    await mapper.add({
-      name: data.name,
-      openId: data.openId,
-      proNames:data.proNames,
-      expeNames:data.expeNames,
-      createTime: util.formatTime(new Date())
-    })
+     console.log("=======开始添加");
+     data.createTime=util.formatTime(new Date())
+    await mapper.add({data})
     // 中间表添加数据
     // resProMapper.add({
     //   data: {
@@ -189,7 +189,11 @@ exports.main = async (event, context) => {
   let result, code = 0;
   switch (opt) {
     case 'add':
+       console.log("=======开始添加", data);
       result = await add(data);
+      if(!result){
+        code = 1
+      }
       break;
     case 'deleteByName':
       result = await delByName(data);

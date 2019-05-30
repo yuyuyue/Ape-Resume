@@ -4,8 +4,8 @@
     <view class="wxFor">
       <view class="header">
         <image class="code" src="../../images/ape.png" />
-        <picker bindchange="bindPickerChange" value="{{index}}" range="{{selectSex}}">
-          <view class="resName">{{pickInit}}{{res}}</view>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{resnames}}">
+          <view class="resName">{{pickInit}}{{nowSelect}}</view>
         </picker>
       </view>
       <view class="body">
@@ -28,7 +28,7 @@
         </view>
       </view>
       <view class="foot">
-        <button class="see">查看简历</button>
+        <button class="see" bindtap="resumedtlHandle">查看简历</button>
       </view>
     </view>
     <view class="cascading"></view>
