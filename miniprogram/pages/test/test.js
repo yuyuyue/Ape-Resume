@@ -16,27 +16,26 @@ Page({
         search: 'github',
         icon: [
           {
-            name: '提交数',
-            iconPath: '../../images/submit.svg',
-            num: '',
-            color: 'grey'
-          },
-          {
-            name: '关注',
-            iconPath: '../../images/watch.svg',
-            num: '',
-            color: 'grey'
-          },
-
-          {
-            name: '收藏',
+            name: 'Star',
             iconPath: '../../images/star.svg',
             num: '',
             color: 'grey'
           },
           {
-            name: '叉子',
+            name: 'Fork',
             iconPath: '../../images/fork.svg',
+            num: '',
+            color: 'grey'
+          },
+          {
+            name: 'Watch',
+            iconPath: '../../images/watch.svg',
+            num: '',
+            color: 'grey'
+          },
+          {
+            name: 'Contribution',
+            iconPath: '../../images/submit.svg',
             num: '',
             color: 'grey'
           }
@@ -52,24 +51,6 @@ Page({
         search: 'juejin',
         icon: [
           {
-            name: '点赞',
-            iconPath: '../../images/good.svg',
-            num: '',
-            color: 'blue'
-          },
-          {
-            name: '文章数',
-            iconPath: '../../images/article.svg',
-            num: '',
-            color: 'blue'
-          },
-          {
-            name: '文章被阅读',
-            iconPath: '../../images/watch1.svg',
-            num: '',
-            color: 'blue'
-          },
-          {
             name: '掘力值',
             iconPath: '../../images/up.svg',
             num: '',
@@ -80,7 +61,25 @@ Page({
             iconPath: '../../images/fans.svg',
             num: '',
             color: 'blue'
-          }
+          },
+          {
+            name: '获得点赞',
+            iconPath: '../../images/good.svg',
+            num: '',
+            color: 'blue'
+          },
+          {
+            name: '发表专栏数',
+            iconPath: '../../images/article.svg',
+            num: '',
+            color: 'blue'
+          },
+          {
+            name: '文章被阅读',
+            iconPath: '../../images/watch1.svg',
+            num: '',
+            color: 'blue'
+          }  
         ],
       },
       {
@@ -93,13 +92,7 @@ Page({
         search: 'leetcode',
         icon: [
           {
-            name: '竞赛数',
-            iconPath: '../../images/number.svg',
-            num: '',
-            color: 'orange'
-          },
-          {
-            name: '竞赛积分',
+            name: '竞赛评分',
             iconPath: '../../images/point.svg',
             num: '',
             color: 'orange'
@@ -111,7 +104,13 @@ Page({
             color: 'orange'
           },
           {
-            name: '刷题数',
+            name: '完成的竞赛',
+            iconPath: '../../images/number.svg',
+            num: '',
+            color: 'orange'
+          },
+          {
+            name: '解决的题目',
             iconPath: '../../images/problem.svg',
             num: '',
             color: 'orange'

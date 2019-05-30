@@ -39,29 +39,6 @@
       </view>
     </view>
   </view>
-  <!-- 
- <view class="container">
-   <view class="select-header">
-     <view class="info">猿力数值</view>
-     <view class="selectAll" bindtap="selectApeAll">
-       <image data-statue="selectapeall" class="selectImg" src="{{selectapeall ? '../../images/select1.svg' : '../../images/select.svg'}}" />
-     </view>
-     <text class="chooseAll">全选</text>
-   </view>
-   <view class="workList" wx:for="{{apeList}}" wx:key="{{index}}">
-     <view class="workLi">
-       <view class="itemNum">
-         <view class="num">{{item.id}}</view>
-       </view>
-       <view class="workName">{{item.apeType}}</view>
 
-       <view class="chooseImg" data-index="{{index}}" data-name="{{item.id}}" bindtap="selectApe">
-         <image data-ide="0" class="choose" src="{{item.checked == true ? '../../images/select1.svg' : '../../images/select.svg'}}" />
-       </view>
-     </view>
-   </view>
- </view>
-   -->
-  
   <button class="next" bindtap="chooseTempHandle">下一步</button>
 </view>

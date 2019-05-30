@@ -84,9 +84,9 @@ Component({
                   star += key.stargazers_count 
                   fork += key.forks
                 }
-                result.push(watch)
-                result.push(star)
-                result.push(fork)
+                result.unshift(watch)
+                result.unshift(fork)
+                result.unshift(star)
                 let data = {
                   name: this.properties.cardData.name,
                   num: result

@@ -9,11 +9,11 @@ Page({
     apeList:[],
     selectall: false,
     selectitemall: false,
-    selectapeall:false,
+    
     selected: {
       works: [], 
       items: [],
-      apes:[]
+     
     }
   },
   select: function (e) {
@@ -107,7 +107,6 @@ Page({
       }
     }
   },
-  // 三方选择
   
   // 点击下一步跳转到选择模板页
   chooseTempHandle() {
