@@ -18,9 +18,34 @@ Page({
     })
   },
   makeRes() {
-    wx.navigateTo({
-      url: '../makeRes/makeRes'
-    })
+     wx.getStorage({
+       key: 'searchData',
+       success: res => {
+        wx.navigateTo({
+          url: '../makeRes/makeRes'
+        })
+       },
+       fail: () => {
+         wx.showModal({
+           title: '选择成功',
+           content: '暂无第三方数据，是否前往添加',
+           success(res) {
+             if (res.confirm) {
+               wx.navigateTo({
+                 url: `../test/test`
+               })
+             } else if (res.cancel) {
+               wx.navigateTo({
+                 url: `../makeRes/makeRes?not='true'`
+               })
+             }
+           }
+         })
+
+       }
+     })
+
+    
   },
   howToUse() {
     wx.navigateTo({

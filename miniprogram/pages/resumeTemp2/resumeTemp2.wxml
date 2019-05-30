@@ -27,9 +27,9 @@
     </view>
   </view>
   <view class="body">
-    <view class="resume-item">
+    <view class="resume-item"  wx:if="{{!not}}">
       <view class="infoType">
-        <text class="infoTitle">个人信息</text>
+        <text class="infoTitle">第三方数据</text>
       </view>
       <view class="type">
         <view class="infoDesc">

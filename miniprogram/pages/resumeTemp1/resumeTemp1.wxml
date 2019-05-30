@@ -20,9 +20,9 @@
     <text class="info">· 手机：{{detail.phone||'暂无数据'}}</text>
     <text class="info">· 邮箱：{{detail.email||'暂无数据'}}</text>
   </view>
-  <view class="content">
+  <view class="content"  wx:if="{{!not}}">
     <view class="resume-titleBorder">
-      <text class="resume-title">个人信息</text>
+      <text class="resume-title">第三方数据</text>
     </view>
     <view class="temp">
       <!-- temp写for循环 -->
