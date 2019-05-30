@@ -1,4 +1,4 @@
-
+@import '../../styles/button/button';
 .bg-light-blue {
   background-color: #F5FAFE;
 }
@@ -6,19 +6,17 @@
   position: relative;
 }
 .help{
-  width: 40rpx;
-  height: 40rpx;
+  width: 50rpx;
+  height: 50rpx;
   position: absolute;
   top: 30rpx;
   right: 30rpx;
 }
-.yuanlizhi{
-  height: 500rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #515151;
-  flex-direction: column;
+
+.ape {
+  height:400rpx;
+  background-color: #76a8f0;
+  padding-top: 50rpx;
 }
 .title{
   font-size: 24px;
@@ -26,13 +24,7 @@
   line-height: 90rpx;
   width: 100%;
 }
-.value{
-  width: 250rpx;
-  height: 250rpx;
-  border-radius: 50%;
-  background-color: blue;
-  margin-top: 30rpx;
-}
+
 .footer{
   height: 200rpx;
   display: flex;
@@ -47,5 +39,41 @@
   background-color: #76a8f0;
   color: #f1f1f1;
   border-radius: 5px;
-  box-shadow:0px 3px 7px 0px rgba(0, 0, 0, 0.08);
+  box-shadow:0 0 12rpx #e6e6e6;
+}
+.circle{
+  margin:0 auto;
+  width: 350rpx;
+  height: 350rpx;
+  background-color: #b2cef8;
+  border-radius: 50%;
+  box-sizing: border-box;
+  padding-top: 25rpx;
+  padding-left: 25rpx;
+  box-shadow:0 0 12rpx #6f8bb4;
+}
+.circle1{
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 50%;
+  background-color: #76a8f0;
+  box-sizing: border-box;
+  padding-top: 50rpx;
+  /* box-shadow:0 0 12rpx #6f8bb4; */
+}
+.apeName{
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+}
+.apeNum{
+  color: #fff;
+  text-align: center;
+  font-size: 120rpx;
+  font-weight: bold;
+  letter-spacing: 6rpx;
+}
+.next{
+  width: 560rpx;
+  text-align: center;
 }

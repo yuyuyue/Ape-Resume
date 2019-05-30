@@ -3,14 +3,18 @@
   <view class="babel">
     <image class="help" src="../../images/help.svg" />
   </view>
-  <view class="yuanlizhi">
-    <view class="title">猿力值</view>
-    <view class="value"></view>
+  <view class="ape">
+    <view class="circle">
+      <view class="circle1">
+        <view class="apeName">猿力值(分)</view>
+        <view class="apeNum">88</view>
+      </view>
+    </view>
   </view>
   <view wx:for="{{cards}}" wx:key="index">
     <test-card cardData="{{item}}" bindsearched="searched"></test-card>
   </view>
   <view class="footer">
-    <view class="btn" bindtap="finish">完成</view>
+    <view class="next" bindtap="finish">完成</view>
   </view>
 </view>
