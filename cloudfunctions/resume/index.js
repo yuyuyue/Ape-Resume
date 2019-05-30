@@ -63,8 +63,8 @@ async function add(data) {
   const resus = await findAll(data);
   
    console.log("所有", resus);
-  const isSaved = resus.data.some(item => item == data.name)
-  console.log("=======",isSaved);
+  const isSaved = resus.data.some(item => item.name == data.name)
+  console.log("=======", data.name, isSaved);
   
   if (isSaved) {
     code = 1; // 添加失败，名字重复
@@ -72,7 +72,7 @@ async function add(data) {
   } else {
      console.log("=======开始添加");
      data.createTime=util.formatTime(new Date())
-    await mapper.add({data})
+    return await mapper.add({data})
     // 中间表添加数据
     // resProMapper.add({
     //   data: {

@@ -15,9 +15,13 @@ Page({
     })
   },
    save(e) {
+      wx.showLoading({
+        title: '加载中'
+      })
      let codeInfo = {
        '1': '简历重名'
      }
+    
      console.log(e.detail.resumeName);
      let data = {}
      data.name = e.detail.resumeName;
@@ -31,6 +35,7 @@ Page({
          data
        }
      }).then(res => {
+        wx.hideLoading()
        console.log(res);
        if (!res.result.code) {
          wx.showModal({
@@ -39,7 +44,7 @@ Page({
            cancelText: '返回首页',
            success(res) {
              if (res.confirm) {
-               wx.navigateTo({
+               wx.switchTab({
                  url: '../resume/resume?nowSelect=' + data.name
                })
              } else if (res.cancel) {
