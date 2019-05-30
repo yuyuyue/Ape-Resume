@@ -237,6 +237,8 @@ page{
   margin-right: 30rpx;
   padding-bottom: 5rpx;
   border-bottom: 1rpx solid #e6e6e6;
+  font-weight: bold;
+  color: #515151;
 }
 .apeTitle::before{
   content: '';
@@ -244,27 +246,8 @@ page{
   height: 40rpx;
   position: absolute;
   left: 0;
-}
-.grey::before{
   background-color: #515151;
 }
-.blue::before{
-  background-color: #006CFF;
-}
-.orange::before{
-  background-color: #EAA240;
-  
-}
-.grey{
-  color: #515151;
-  font-weight: bold;
-}
-.blue{
-  color: #006CFF;
-  font-weight: bold;
-}
-.orange{
-  color: #EAA240;
+.letter{
   letter-spacing: 20rpx;
-  font-weight: bold;
 }

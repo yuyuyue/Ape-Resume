@@ -4,11 +4,9 @@
     <image class="help" src="../../images/help.svg" bindtap="help"/>
   </view>
   <view class="ape">
-    <view class="circle">
-      <view class="circle1">
+      <view class="circle">
         <view class="apeName">猿力值(分)</view>
         <view class="apeNum">88</view>
-      </view>
     </view>
   </view>
   <view wx:for="{{cards}}" wx:key="index">
