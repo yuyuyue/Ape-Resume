@@ -4,21 +4,21 @@
     <view class="wxFor">
       <view class="header">
         <image class="code" src="../../images/ape.png" />
-        <picker bindchange="bindPickerChange" value="{{index}}" range="{{selectSex}}">
-          <view class="resName">{{pickInit}}{{res}}</view>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{resnames}}">
+          <view class="resName">{{pickInit}}{{nowSelect}}</view>
         </picker>
       </view>
       <view class="body">
         <view class="desc">
-          <text>某某大学/某某专业/学历</text>
+          <text>{{detail.schoolname||'暂无数据'}}/{{detail.major||'暂无数据'}}/{{detail.education||'暂无数据'}}</text>
         </view>
         <view class="ape">
           <view class="apeTemp apeAfter">
-            <text class="apeNum">20</text>
+            <text class="apeNum">{{detail.age||'暂无数据'}}</text>
             <text class="apeType">年龄</text>
           </view>
           <view class="apeTemp apeCenter">
-            <text class="apeStr">前端工程师</text>
+            <text class="apeStr">{{detail.expectjob||'暂无数据'}}</text>
             <text class="apeType">投递岗位</text>
           </view>
           <view class="apeTemp apeBefore">
@@ -28,7 +28,7 @@
         </view>
       </view>
       <view class="foot">
-        <button class="see">查看简历</button>
+        <button class="see" bindtap="resumedtlHandle">查看简历</button>
       </view>
     </view>
     <view class="cascading"></view>

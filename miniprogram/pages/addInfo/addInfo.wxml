@@ -17,7 +17,7 @@
       <view class="addInfo">添加项目成果</view>
     </view>
     <view class="temp" bindtap="addIhirdparty">
-      <image class="infoIcon" src="../../images/item.svg" />
+      <image class="infoIcon" src="../../images/achievement.svg" />
       <view class="addInfo">添加第三方数据</view>
     </view>
   </view>

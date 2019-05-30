@@ -39,13 +39,13 @@
           <view class="itemInfo">GitHub</view>
           <view class="flex infoDesc">
             <view class="apeType">
-              <text class="apeInfo">Stars 210{{}}</text>
+              <text class="apeInfo">Stars {{searchData.Github['收藏'] || '暂无数据'}}</text>
             </view>
             <view class="apeType">
-              <text class="apeInfo">Forks 1.5k{{}}</text>
+              <text class="apeInfo">Forks {{searchData.Github['叉子'] || '暂无数据'}}</text>
             </view>
             <view class="apeType">
-              <text class="apeInfo">Followers 11.5k{{}}</text>
+              <text class="apeInfo">Followers {{searchData.Github['关注'] || '暂无数据'}}</text>
             </view>
           </view>
         </view>
@@ -53,13 +53,13 @@
           <view class="itemInfo">LeetCode</view>
           <view class="flex infoDesc">
             <view class="apeType">
-              <text class="apeInfo">排名 52020{{}}</text>
+              <text class="apeInfo">竞赛排名 {{searchData['Leetcode']['竞赛排名'] || '暂无数据'}}</text>
             </view>
             <view class="apeType">
-              <text class="apeInfo">做题数 68{{}}</text>
+              <text class="apeInfo">刷题数 {{searchData['Leetcode']['刷题数'] || '暂无数据'}}</text>
             </view>
             <view class="apeType">
-              <text class="apeInfo">竞赛积分 2020{{}}</text>
+              <text class="apeInfo">竞赛积分 {{searchData['Leetcode']['竞赛积分'] || '暂无数据'}}</text>
             </view>
           </view>
         </view>
@@ -67,15 +67,15 @@
           <view class="itemInfo">掘金</view>
           <view class="flex infoDesc">
             <view class="apeType">
-              <text class="apeInfo">掘力值 2020{{}}</text>
-              <text class="apeInfo">关注者 5276{{}}</text>
+              <text class="apeInfo">掘力值    {{searchData['掘金']['掘力值'] || '暂无数据'}}</text>
+              <text class="apeInfo">关注者   {{searchData['掘金']['关注者'] || '暂无数据'}}</text>
             </view>
             <view class="apeType">
-              <text class="apeInfo">发布文章 72{{}}</text>
-              <text class="apeInfo">获得点赞 1549{{}}</text>
+              <text class="apeInfo">发布文章  {{searchData['掘金']['文章数'] || '暂无数据'}}</text>
+              <text class="apeInfo">获得点赞  {{searchData['掘金']['点赞'] || '暂无数据'}}</text>
             </view>
             <view class="apeType">
-              <text class="apeInfo">文章被阅读 53059{{}}</text>
+              <text class="apeInfo">文章被阅读  {{searchData['掘金']['文章被观看'] || '暂无数据'}}</text>
             </view>
           </view>
         </view>
@@ -101,3 +101,5 @@
     </view>
   </view>
 </view>
+<button class="save"    wx:if="{{isSave}}" bindtap="saveRes">保存简历</button>
+<saveRes bind:save="save" showDialog="{{showDialog}}"></saveRes>

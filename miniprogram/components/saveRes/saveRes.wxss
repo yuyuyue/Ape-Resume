@@ -1,0 +1,57 @@
+/* components/saveRes/saveRes.wxss */
+.container{
+  width: 630rpx;
+  height: 760rpx;
+  background-color: #76a8f0;
+  box-shadow: 0 0 12rpx #e6e6e6;
+  position: fixed;
+  top: 180rpx;
+  left: 60rpx;
+  border-radius: 20rpx;
+}
+.icon{
+  float: right;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+}
+.cancel{
+  width: 44rpx;
+  height: 44rpx;
+}
+.header{
+  text-align: center;
+  margin-top: 120rpx;
+}
+.title{
+  color: #fff;
+  font-size: 38rpx;
+}
+.body{
+  width: 560rpx;
+  margin: 140rpx auto 80rpx;
+}
+.content{
+  width: 560rpx;
+  height: 110rpx;
+  border-radius: 50rpx;
+  background-color: #fff;
+  text-align: center;
+  font-size: 38rpx;
+}
+.btn{
+  width: 400rpx;
+  height: 110rpx;
+  border-radius: 50rpx;
+  line-height: 110rpx;
+  color: #99bff8;
+  font-size: 38rpx;
+  border-bottom: 6rpx solid #6f8bb4;
+  border-right: 6rpx solid #6f8bb4;
+  background-color: #26569c;
+}
+.text{
+  margin-top: 80rpx;
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+}

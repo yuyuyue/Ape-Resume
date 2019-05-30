@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -42,6 +42,7 @@
 			"list": []
 		},
 		"miniprogram": {
+
 			"current": -1,
 			"list": [
 				{
@@ -84,6 +85,12 @@
 					"name": "test",
 					"pathName": "pages/test/test",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的简历",
+					"pathName": "pages/resume/resume",
 					"scene": null
 				}
 			]
