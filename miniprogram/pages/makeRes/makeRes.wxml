@@ -19,7 +19,7 @@
       </view>
     </view>
   </view>
-  <view class="container">
+  <view class="container lastContainer">
     <view class="select-header">
       <view class="info">项目成果</view>
       <view class="selectAll" bindtap="selectItemAll">
@@ -63,5 +63,5 @@
  </view>
    -->
   
-  <button bindtap="chooseTempHandle">下一步</button>
+  <button class="next" bindtap="chooseTempHandle">下一步</button>
 </view>

@@ -1,6 +1,6 @@
 /* miniprogram/pages/resume/resume.wxss */
+@import '../../styles/button/button';
 .page{
-  padding: 0 0 60rpx 0;
   background-color: #fff;
 }
 .flex{
@@ -75,4 +75,7 @@
 }
 .apeType{
   margin-right: 30rpx;
+}
+.lastContent{
+  margin-bottom: 90rpx;
 }

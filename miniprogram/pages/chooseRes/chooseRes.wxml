@@ -13,5 +13,5 @@
       </view>
     </scroll-view>
   </view>
-  <button bindtap="mkresumeHandle">预览简历</button>
+  <button class="next" bindtap="mkresumeHandle">预览简历</button>
 </view>

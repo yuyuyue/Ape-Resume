@@ -115,7 +115,7 @@
         </view>
       </view>
     </view>
-    <view class="resume-item">
+    <view class="resume-item last-item">
       <view class="infoType">
         <text class="infoTitle">教育背景</text>
       </view>
@@ -137,6 +137,6 @@
       </view>
     </view>
   </view>
-  <button class="save" wx:if="{{isSave}}" bindtap="saveRes">保存简历</button>
+  <button class="next" wx:if="{{isSave}}" bindtap="saveRes">保存简历</button>
   <saveRes bind:save="save" showDialog="{{showDialog}}"></saveRes>
 </view>
