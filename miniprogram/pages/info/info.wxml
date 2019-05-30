@@ -76,10 +76,13 @@
             </view>
           </view>
         </swiper-item>
+        <!-- <swiper-item wx:if="{{update}}">
+          <baseInfo></baseInfo>
+        </swiper-item> -->
         <!-- 工作经验 -->
         <swiper-item>
           <view class="scroll-container">
-            <swiper previous-margin="100rpx" next-margin="120rpx" class="swiper-page" current="{{scrollIndex}}" bindchange="childExpeSwiper">
+            <swiper  vertical="{{true}}" previous-margin="100rpx" next-margin="120rpx" class="swiper-page" current="{{scrollIndex}}" bindchange="childExpeSwiper">
               <swiper-item wx:for="{{expes}}" wx:key="expe" wx:for-item="expe" wx:for-index="expeIndex" class="swiper-center {{workNowIndex ===  expeIndex ? 'active' : ''}}">
                 <view class="container">
                   <view class="line">
@@ -152,11 +155,11 @@
                 </view>
                 <view class="apeDesc flex">
                   <view class="apeType">
-                    <view class="apeInfo">Stars 210{{}}</view>
-                    <view class="apeInfo">Forks 1.5k{{}}</view>
+                    <view class="apeInfo">Stars {{searchData.Github['收藏'] || '暂无数据'}}</view>
+                    <view class="apeInfo">Forks {{searchData.Github['叉子'] || '暂无数据'}}</view>
                   </view>
                   <view class="apeType">
-                    <text class="apeInfo">Followers 11.5k{{}}</text>
+                    <text class="apeInfo">Followers {{searchData.Github['关注'] || '暂无数据'}}</text>
                   </view>
                 </view>
               </view>
@@ -166,11 +169,11 @@
                 </view>
                 <view class="flex apeDesc">
                   <view class="apeType">
-                    <view class="apeInfo">排名 52020{{}}</view>
-                    <view class="apeInfo">做题数 68{{}}</view>
+                    <view class="apeInfo">竞赛排名 {{searchData['Leetcode']['竞赛排名'] || '暂无数据'}}</view>
+                    <view class="apeInfo">刷题数 {{searchData['Leetcode']['刷题数'] || '暂无数据'}}</view>
                   </view>
                   <view class="apeType">
-                    <view class="apeInfo">竞赛积分 2020{{}}</view>
+                    <view class="apeInfo">竞赛积分 {{searchData['Leetcode']['竞赛积分'] || '暂无数据'}}</view>
                   </view>
                 </view>
               </view>
@@ -180,13 +183,13 @@
                 </view>
                 <view class="apeDesc flex">
                   <view class="apeType">
-                    <view class="apeInfo">关注者 5276{{}}</view>
-                    <view class="apeInfo">发布文章 72{{}}</view>
-                    <view class="apeInfo">获得点赞 1549{{}}</view>
+                    <view class="apeInfo">关注者   {{searchData['掘金']['关注者'] || '暂无数据'}}</view>
+                    <view class="apeInfo">发布文章  {{searchData['掘金']['发表专栏数'] || '暂无数据'}}</view>
+                    <view class="apeInfo">获得点赞  {{searchData['掘金']['获得点赞'] || '暂无数据'}}</view>
                   </view>
                   <view class="apeType">
-                    <view class="apeInfo">掘力值 2020{{}}</view>
-                    <text class="apeInfo">文章被阅读 53059{{}}</text>
+                    <view class="apeInfo">掘力值    {{searchData['掘金']['掘力值'] || '暂无数据'}}</view>
+                    <text class="apeInfo">文章被阅读  {{searchData['掘金']['文章被阅读'] || '暂无数据'}}</text>
                   </view>
                 </view>
               </view>

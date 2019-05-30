@@ -29,7 +29,7 @@
       <view class="infoTemp">
         <view class="infoTitle">技术栈</view>
         <view class="input marginL">
-          <input class="inputText" placeholder="请填写从事职位" focus="{{focus}}" name="techstack" />
+          <input class="inputText" placeholder="请填写从事职位" focus="{{focus}}" value="{{project}}" name="techstack" />
         </view>
       </view>
       <view class="infoTemp">
@@ -46,5 +46,5 @@
       </view>
     </form>
   </view>
-   <button class="next" formType="submit">提交</button>
+   <button class="next" formType="submit">{{save?'保存':'修改'}}</button>
 </view>

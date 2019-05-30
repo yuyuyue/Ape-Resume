@@ -7,7 +7,9 @@ Page({
   data: {
     startInit: '请选择',
     endInit: '请选择',
-    headerImg: ''
+    headerImg: '',
+    save: true,
+    project: {}
   },
   chooseImage(e) {
     wx.chooseImage({
@@ -100,7 +102,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if(options.proName){
+      wx.cloud.callFunction({
+        name: 'project',
+        data: {
+          opt: 'selectByName',
+          data: {
+            proName: options.proName
+          }
+        }
+      }).then(res=>{
+        this.setData({
+          project: res.result.result.data[0]
+        })
+      })
+    }
   },
 
   /**

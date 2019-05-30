@@ -63,11 +63,11 @@
             <text class="apeInfo">关注者   {{searchData['掘金']['关注者'] || '暂无数据'}}</text>
           </view>
           <view class="apeDesc">
-            <text class="apeInfo">发布文章  {{searchData['掘金']['文章数'] || '暂无数据'}}</text>
-            <text class="apeInfo">获得点赞  {{searchData['掘金']['点赞'] || '暂无数据'}}</text>
+            <text class="apeInfo">发布文章  {{searchData['掘金']['发表专栏数'] || '暂无数据'}}</text>
+            <text class="apeInfo">获得点赞  {{searchData['掘金']['获得点赞'] || '暂无数据'}}</text>
           </view>
           <view class="apeDesc">
-            <text class="apeInfo">文章被阅读  {{searchData['掘金']['文章被观看'] || '暂无数据'}}</text>
+            <text class="apeInfo">文章被阅读  {{searchData['掘金']['文章被阅读'] || '暂无数据'}}</text>
           </view>
         </view>
       </view>

@@ -20,7 +20,8 @@ Page({
 
     },
     projects: [],
-    expes: []
+    expes: [],
+    update: true
   },
   onNavBarTap: function (event) {
     let navbarTapIndex = event.currentTarget.dataset.navbarIndex
@@ -85,6 +86,14 @@ Page({
           basicInfo: res.data
         })
 
+      }
+    })
+    wx.getStorage({
+      key: 'searchData',
+      success: res=>{
+        this.setData({
+          searchData: res.data
+        })
       }
     })
     let data = {}

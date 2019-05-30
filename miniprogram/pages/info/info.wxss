@@ -139,6 +139,7 @@ page{
 }
 .infoItem{
   font-size: 26rpx;
+  /* display:flex; */
 }
 .center{
   display: flex;  
@@ -157,7 +158,7 @@ page{
 .icon{
   width: 30rpx;
   height: 30rpx;
-  margin-top: 10rpx;
+  margin-top: 15rpx;
   margin-left: 13rpx;
 }
 .infoIcon{
@@ -225,3 +226,5 @@ page{
   left: 0;
   background-color: #98d4f5;
 }
+
+/* 修改的样式 */
