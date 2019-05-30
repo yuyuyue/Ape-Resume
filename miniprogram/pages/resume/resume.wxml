@@ -3,7 +3,7 @@
   <view class="container">
     <view class="wxFor">
       <view class="header">
-        <image class="code" src="../../images/ape.png" />
+        <image class="code" src="{{wxacodeImgUrl}}" />
         <picker bindchange="bindPickerChange" value="{{index}}" range="{{resnames}}">
           <view class="resName">{{pickInit}}{{nowSelect}}</view>
         </picker>
@@ -37,13 +37,16 @@
   <view class="enjoy">分享简历</view>
   <view class="enjoyType">
     <view class="temp">
-      <image class="tempIcon" src="../../images/weibo.svg" />
-    </view>
-    <view class="temp">
-      <image class="tempIcon" src="../../images/qq.svg" />
-    </view>
-    <view class="temp">
+      <button class="temp-btn" open-type="share"></button>
       <image class="tempIcon" src="../../images/wechat-.svg" />
     </view>
+    <view class="temp">
+      <button class="temp-btn" bindtap="wxacodeShare"></button>
+      <image class="tempIcon" src="../../images/qq.svg" />
+    </view>
   </view>
+</view>
+<view class="mask" wx:if="{{isShareImg}}" >
+  <canvas class="canvas" canvas-id="drawWxacode"></canvas>
+  <button class="canvas-btn" bindtap="canvasSave">保存并分享</button>
 </view>

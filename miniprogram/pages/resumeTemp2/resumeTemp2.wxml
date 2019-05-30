@@ -27,40 +27,46 @@
     </view>
   </view>
   <view class="body">
-    <view class="resume-item"  wx:if="{{!not}}">
+    <view class="resume-item">
       <view class="infoType">
         <text class="infoTitle">第三方数据</text>
       </view>
       <view class="type">
-        <view class="infoDesc">
+        <view class="infoDesc" wx:if="{{selected.apes.Github}}">
           <image class="apeIcon" src="../../images/github.svg" />
           <view class="apeDesc">
-            <text class="apeInfo">Stars {{searchData.Github['收藏'] || '暂无数据'}}</text>
+            <text class="apeInfo">Stars {{selected.apes.Github.Star}}</text>
           </view>
           <view class="apeDesc">
-            <text class="apeInfo">Forks {{searchData.Github['叉子'] || '暂无数据'}}</text>
+            <text class="apeInfo">Forks {{selected.apes.Github.Fork}}</text>
           </view>
           <view class="apeDesc">
-            <text class="apeInfo">Followers {{searchData.Github['关注'] || '暂无数据'}}</text>
+            <text class="apeInfo">Watch {{selected.apes.Github.Watch}}</text>
+          </view>
+           <view class="apeDesc">
+            <text class="apeInfo">Contributions {{selected.apes.Github.Contribution}}</text>
           </view>
         </view>
-        <view class="infoDesc">
+        <view class="infoDesc" wx:if="{{selected.apes.Leetcode}}">
           <image class="apeIcon" src="../../images/LeetCode.svg" />
           <view class="apeDesc">
-            <text class="apeInfo">竞赛排名 {{searchData['Leetcode']['竞赛排名'] || '暂无数据'}}</text>
+            <text class="apeInfo" wx:if="{{selected.apes.Leetcode['竞赛评分']}}">竞赛评分 {{selected.apes.Leetcode['竞赛评分']}}</text>
           </view>
           <view class="apeDesc">
-            <text class="apeInfo">刷题数 {{searchData['Leetcode']['刷题数'] || '暂无数据'}}</text>
+            <text class="apeInfo">竞赛排名 {{selected.apes.Leetcode['竞赛排名'] }}</text>
           </view>
           <view class="apeDesc">
-            <text class="apeInfo">竞赛积分 {{searchData['Leetcode']['竞赛积分'] || '暂无数据'}}</text>
+            <text class="apeInfo">完成的竞赛 {{selected.apes.Leetcode['完成的竞赛'] }}</text>
+          </view>
+          <view class="apeDesc">
+            <text class="apeInfo">解决的题目 {{selected.apes.Leetcode['解决的题目'] }}</text>
           </view>
         </view>
-        <view class="infoDesc">
+        <view class="infoDesc" wx:if="{{selected.apes['掘金']}}">
           <image class="apeIcon" src="../../images/juejin.svg" />
           <view class="apeDesc">
-            <text class="apeInfo">掘力值    {{searchData['掘金']['掘力值'] || '暂无数据'}}</text>
-            <text class="apeInfo">关注者   {{searchData['掘金']['关注者'] || '暂无数据'}}</text>
+            <text class="apeInfo">掘力值    {{selected.apes['掘金']['掘力值']}}</text>
+            <text class="apeInfo">关注者   {{selected.apes['掘金']['关注者']}}</text>
           </view>
           <view class="apeDesc">
             <text class="apeInfo">发布文章  {{searchData['掘金']['发表专栏数'] || '暂无数据'}}</text>

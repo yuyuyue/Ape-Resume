@@ -135,9 +135,13 @@ Page({
       }
       let data = {}
       for (let i = 0; i < iconLength; i++) {
-        data[card.icon[i].name] = card.icon[i].num
+        if (card.icon[i].num != '' && card.icon[i].num != '0' && card.icon[i].num != 0) {
+          data[card.icon[i].name] = card.icon[i].num
+        }
       }
-      searchData[card.name] = data
+      if (Object.keys(data).length > 0) {
+        searchData[card.name] = data
+      }
     }
     this.setData({
       cards,
@@ -150,7 +154,7 @@ Page({
     wx.showModal({
       title: '提示',
       content: '是否要生成简历',
-      cancelText: '继续完善',
+      cancelText: '返回主页',
       confirmText: '前往',
       success (res) {
         if (res.confirm) {
@@ -168,7 +172,7 @@ Page({
       },
       complete:()=>{
         wx.setStorage({
-          key: "cards",
+          key: 'cards',
           data: self.data.cards
         })
         wx.setStorage({
@@ -208,6 +212,7 @@ Page({
     this.setData({
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
+   
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

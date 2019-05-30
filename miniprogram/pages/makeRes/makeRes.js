@@ -6,6 +6,7 @@ Page({
    */
   data: {
     workList: [],
+    itemList: [],
     apeList: [],
     selectall: false,
     selectitemall: false,
@@ -15,7 +16,7 @@ Page({
       items: [],
       apes: []
     },
-    not: false
+    searchData: {},//第三方的缓存数据
   },
   select: function (e) {
     let selectValue = e.currentTarget.dataset.name
@@ -107,17 +108,73 @@ Page({
     }
   },
   // 三方选择
+  selectApes(e) {
+    let selectValue = e.currentTarget.dataset.name
+    let index = e.currentTarget.dataset.index;
 
+    let newli = 'apeList[' + index + '].checked';
+    this.setData({
+      [newli]: !this.data.apeList[index].checked
+    })
+    this.setData({
+      ['selected.apes']: this.data.apeList.filter(item => item.checked)
+    })
+    if (this.data.apeList.every(item => item.checked)) {
+      this.setData({
+        selectapeall: true
+      })
+    } else {
+      this.setData({
+        selectapeall: false
+      })
+    }
+  },
+  selectApesAll(e) {
+    let apeList = this.data.apeList;
+    let selectapeall = this.data.selectapeall;
+    if (selectapeall == false) {
+      for (let i = 0; i < apeList.length; i++) {
+        let newli = 'apeList[' + i + '].checked';
+        this.setData({
+          [newli]: true,
+          selectapeall: true,
+          ['selected.apes']: this.data.apeList
+        })
+      }
+    } else {
+      for (let i = 0; i < apeList.length; i++) {
+        let newli = 'apeList[' + i + '].checked';
+        this.setData({
+          [newli]: false,
+          selectapeall: false
+        })
+      }
+    }
+  },
   // 点击下一步跳转到选择模板页
   chooseTempHandle() {
+    const data = this.data.selected.apes
+    const searchData = this.data.searchData
+    let selected = this.data.selected
+    let apes = {} 
+    data.map((item) => {
+      const name = item.name
+      if (searchData[name]) {
+        apes[name] = searchData[name]
+      }
+    })
+    selected.apes = apes
+    this.setData({
+      selected
+    })
     wx.setStorage({
       key: 'selected',
       data: this.data.selected
     })
     let url = `../chooseRes/chooseRes`;
-    if(this.data.not){
-      url+='?not="true"'
-    }
+    // if(this.data.not){
+    //   url+='?not="true"'
+    // }
    wx.navigateTo({
      url
    })
@@ -127,6 +184,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const self = this
     if (options.not) {
       this.setData({
         not: true
@@ -179,14 +237,15 @@ Page({
         //   }
 
         // }
-      })
+      }),
+     
     ]).then(values => {
       let itemList = values[0].result.result.data;
       // console.log(itemList);
       itemList.map((item, index) => {
         return item.id = index + 1
       })
-      if (values[0].result.result.data.length) {
+      if (itemList.length) {
         this.setData({
           itemList
         })
@@ -196,13 +255,38 @@ Page({
       workList.map((item, index) => {
         return item.id = index + 1
       })
-      if (values[1].result.result.data.length) {
+      // console.log(workList)
+      if (workList.length) {
         this.setData({
           workList
         })
       }
-      wx.hideLoading()
+      wx.getStorage({
+        key: 'searchData',
+        success: (res) => {
+          self.setData({
+            searchData: res.data
+          })
+          const names = Object.keys(res.data)
+          const apeList = names.map((item, index) => {
+            return {
+              id: index + 1,
+              name: item
+            }
+          })
+          // console.log(apeList)
+          if (apeList.length) {
+            self.setData({
+              apeList
+            })
+          }
+        },
+        fail: (err) => {
+          console.log(err)
+        }
+      })
     })
+    wx.hideLoading()
 
   },
 
