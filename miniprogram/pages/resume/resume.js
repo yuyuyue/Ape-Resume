@@ -28,63 +28,43 @@ Page({
   },
   // 跳转到简历详情页
   resumedtlHandle() {
-    wx.request({
-      url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx08451edee750006e&secret=4e454e614157d0e7df4b2d926453bc6c',
-      method: 'Post',
-      success(res) {
-        console.log(res.data.access_token)
-        let opt = {
-          "access_token": res.data.access_token,
-          "page":"pages/index/index"
-        }
-        wx.request({
-          method: 'POST',
-          url: `https://api.weixin.qq.com/wxa/getwxacode?access_token=${res.data.access_token}`,
-          data: JSON.stringify(opt),
-          success(result) {
-            console.log(result)
+    let works = [],items = [];
+    this.data.resumes[this.data.nowIndex].expeNames.forEach(item => {
+      wx.cloud.callFunction({
+        name: 'expe',
+        data: {
+          opt: 'selectByName',
+          data: {
+             company: item
           }
-        })
-      }
+        }
+      }).then(res=>{
+        works.push(res.result.result.data[0])
+      })
     })
-    // const access_token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx08451edee750006e&secret=4e454e614157d0e7df4b2d926453bc6c'
-    // let works = [],items = [];
-    // this.data.resumes[this.data.nowIndex].expeNames.forEach(item => {
-    //   wx.cloud.callFunction({
-    //     name: 'expe',
-    //     data: {
-    //       opt: 'selectByName',
-    //       data: {
-    //          company: item
-    //       }
-    //     }
-    //   }).then(res=>{
-    //     works.push(res.result.result.data[0])
-    //   })
-    // })
-    // this.data.resumes[this.data.nowIndex].proNames.forEach(item => {
-    //   wx.cloud.callFunction({
-    //     name: 'project',
-    //     data: {
-    //       opt: 'selectByName',
-    //      data: {
-    //        proname: item
-    //     }
-    //     }
-    //   }).then(res => {
-    //     items.push(res.result.result.data[0])
-    //      wx.setStorage({
-    //        key: this.data.nowSelect,
-    //        data: {
-    //          works,
-    //          items
-    //        }
-    //      })
-    //   })
-    // })
-    // wx.navigateTo({
-    //   url: `../resumeTemp${this.data.tempIndex}/resumeTemp${this.data.tempIndex}?resumeName=${this.data.nowSelect}`
-    // })
+    this.data.resumes[this.data.nowIndex].proNames.forEach(item => {
+      wx.cloud.callFunction({
+        name: 'project',
+        data: {
+          opt: 'selectByName',
+         data: {
+           proname: item
+        }
+        }
+      }).then(res => {
+        items.push(res.result.result.data[0])
+         wx.setStorage({
+           key: this.data.nowSelect,
+           data: {
+             works,
+             items
+           }
+         })
+      })
+    })
+    wx.navigateTo({
+      url: `../resumeTemp${this.data.tempIndex}/resumeTemp${this.data.tempIndex}?resumeName=${this.data.nowSelect}`
+    })
   },
   
   /**
