@@ -1,7 +1,7 @@
 <!-- miniprogram/pages/test/test.wxml -->
-<view class="bg-light-blue">
+<scroll-view class="bg-light-blue" scroll-y="{{ishelp ? 'true' : 'false'}}" style="height:{{windowHeight}}px"W>
   <view class="babel">
-    <image class="help" src="../../images/help.svg" />
+    <image class="help" src="../../images/help.svg" bindtap="help"/>
   </view>
   <view class="ape">
     <view class="circle">
@@ -17,4 +17,49 @@
   <view class="footer">
     <view class="next" bindtap="finish">完成</view>
   </view>
-</view>
+  <view class="help-page" wx:if="{{ishelp}}">
+    <view class="help-title fw-b">查询说明</view>
+    <scroll-view  class="help-scroll" scroll-y>
+       <view class="help-text">
+         <view class="help-text-tip">
+           <text class="fw-b">| </text>
+           Github
+         </view>
+         <view class="help-text-method">
+          - 输入github个人主页的url的自定义部分。如:（https://github.com/yuyuyue) 中的yuyuyue
+         </view>
+         <view class="help-text-method">
+          - 示例图片(红色部分)
+         </view>
+         <image class="help-image"  src="../../images/git-tip.png"/>
+       </view>
+       <view class="help-text">
+         <view class="help-text-tip">
+           <text class="fw-b">| </text>
+           掘金
+         </view>
+         <view class="help-text-method">
+          - 输入掘金的用户名
+         </view>
+         <view class="help-text-method">
+          - 示例图片(红色部分)
+         </view>
+         <image class="help-image"  src="../../images/juejin-tip.png"/>
+       </view>
+       <view class="help-text">
+         <view class="help-text-tip">
+           <text class="fw-b">| </text>
+           Leetcode
+         </view>
+         <view class="help-text-method">
+          - 输入Leetcode个人主页的url的自定义部分。如：（https://leetcode-cn.com/yan-bo-yi/） 中的yan-bo-yi
+         </view>
+         <view class="help-text-method">
+          - 示例图片(红色部分)
+         </view>
+         <image class="help-image"  src="../../images/leetcode-tip.png"/>
+       </view>
+    </scroll-view>
+    <view class="help-close" bindtap="helpClose">关闭</view>
+  </view>
+</scroll-view>
