@@ -6,7 +6,8 @@ Page({
    */
   data: {
     searchData: {},
-    isSave: true
+    isSave: true,
+    not:false
   },
   saveRes() {
     console.log(123)
@@ -15,6 +16,9 @@ Page({
     })
   },
   save(e) {
+     wx.showLoading({
+       title: '加载中'
+     })
     let codeInfo = {
       '1': '简历重名'
     }
@@ -31,6 +35,7 @@ Page({
         data
       }
     }).then(res => {
+       wx.hideLoading()
       console.log(res);
       if (!res.result.code) {
         wx.showModal({
@@ -39,7 +44,7 @@ Page({
           cancelText: '返回首页',
           success(res) {
             if (res.confirm) {
-              wx.navigateTo({
+              wx.switchTab({
                 url: '../resume/resume?nowSelect=' + data.name
               })
             } else if (res.cancel) {
@@ -52,7 +57,7 @@ Page({
       } else {
         wx.showToast({
           title: codeInfo[res.result.code],
-          image: '../../images/失败.png'
+          image: '../../images/fail.svg'
         })
       }
     })
@@ -64,6 +69,11 @@ Page({
     if (options.resumeName) {
       this.setData({
         isSave: false
+      })
+    }
+    if (options.not) {
+      this.setData({
+        not: true
       })
     }
     let key = options.resumeName || 'selected';

@@ -10,7 +10,8 @@ Page({
       "../../images/boy.png",
       "../../images/GitHub.png"
     ],
-    current: 0
+    current: 0,
+    not: false
   },
 
   switchHandle(e) {
@@ -57,8 +58,12 @@ Page({
 
       },
     })
+    let url = `../resumeTemp${this.data.current + 1}/resumeTemp${this.data.current+1}`
+    if(this.data.not){
+      url+='?not="true"'
+    }
     wx.navigateTo({
-      url: `../resumeTemp${this.data.current + 1}/resumeTemp` + (this.data.current + 1)
+      url
     })
   },
   /**
@@ -70,7 +75,11 @@ Page({
     // for (let key in options.selected){
     // console.log(key);
     // // console.log(options.selected[key]);
-
+    if(options.not){
+      this.setData({
+        not: true
+      })
+    }
 
     // }
     // wx.cloud.callFunction({

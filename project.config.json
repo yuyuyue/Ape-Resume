@@ -50,7 +50,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
@@ -95,8 +95,8 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "我的简历",
+					"id": 6,
+					"name": "resume",
 					"pathName": "pages/resume/resume",
 					"query": "",
 					"scene": null
@@ -105,6 +105,27 @@
 					"id": -1,
 					"name": "info",
 					"pathName": "pages/info/info",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "basicInfo",
+					"pathName": "pages/basicInfo/basicInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "item",
+					"pathName": "pages/item/item",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/test/test",
 					"scene": null
 				}
 			]

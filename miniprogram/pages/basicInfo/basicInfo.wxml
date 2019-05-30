@@ -44,7 +44,7 @@
         </view>
       </view>
     </view>
-    <view class="container">
+    <view class="secondContainer">
       <view class="infoTemp Temp">
         <text class="infoTitle ">学校名称</text>
         <view class="input marginL">
@@ -80,7 +80,7 @@
         </view>
       </view>
     </view>
-    <view class="container">
+    <view class="lastContainer">
       <view class="infoTemp Temp">
         <text class="infoTitle">投递岗位</text>
         <view class="input marginL">

@@ -18,32 +18,60 @@ Page({
     })
   },
   makeRes() {
-    wx.navigateTo({
-      url: '../makeRes/makeRes'
-    })
+     wx.getStorage({
+       key: 'searchData',
+       success: res => {
+        wx.navigateTo({
+          url: '../makeRes/makeRes'
+        })
+       },
+       fail: () => {
+         wx.showModal({
+           title: '选择成功',
+           content: '暂无第三方数据，是否前往添加',
+           success(res) {
+             if (res.confirm) {
+               wx.navigateTo({
+                 url: `../test/test`
+               })
+             } else if (res.cancel) {
+               wx.navigateTo({
+                 url: `../makeRes/makeRes?not='true'`
+               })
+             }
+           }
+         })
+
+       }
+     })
+
+    
   },
-  howToUse(){
+  howToUse() {
     wx.navigateTo({
       url: '../use/use'
     })
   },
   handleGetLocalUserInfo() {
+    // wx.showLoading({
+    //   title: '加载中。。'
+    // })
     return new Promise((reso, rej) => {
       wx.getSetting({
         success: res => {
-          console.log("set",res);
-          
+          // console.log("set", res);
+
           if (res.authSetting['scope.userInfo']) {
             wx.getUserInfo({
               success: res => {
                 const userInfo = res.userInfo;
                 reso(userInfo)
               },
-              fail: err=>{
+              fail: err => {
 
               }
             })
-          }else{
+          } else {
             wx.navigateTo({
               url: '/pages/authorize/authorize'
             })
@@ -56,39 +84,37 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.cloud.callFunction({
-      name: 'userdetail',
-      data: {
-        opt: 'selectById',
-        data: {}
-      },
-      success: res => {
-        wx.setStorage({
-          key: 'userdetail',
-          data: res.result.result.data[0]
-        })
-      }
-    })
-    this.handleGetLocalUserInfo().then(userInfo => {
-      // console.log(userInfo);
-      
-      if (userInfo) {
-        wx.setStorage({
-          key: 'userInfo',
-          data: userInfo
-        })
-        // console.log(this);
-        
-        this.setData({
-          userInfo
-        })
-      } else {
-        wx.navigateTo({
-          url: '/pages/authorize/authorize'
-        })
-      }
+    // console.log('++++++',options);
+    // this.handleGetLocalUserInfo().then(userInfo => {
+    //   console.log(userInfo);
 
-    })
+    //   // if (userInfo) {
+    //   //   wx.setStorage({
+    //   //     key: 'userInfo',
+    //   //     data: userInfo
+    //   //   })
+    //   //   // console.log(this);
+
+    //   //   this.setData({
+    //   //     userInfo
+    //   //   })
+    //   //   wx.hideLoading()
+    //   // } else 
+    //   if (!userInfo) {
+    //     // wx.hideLoading()
+    //     wx.navigateTo({
+    //       url: '/pages/authorize/authorize'
+    //     })
+    //   }else {
+    //     this.setData({
+    //       userInfo
+    //     })
+    //   }
+
+    // })
+
+
+
   },
 
   /**
@@ -102,7 +128,65 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+     this.handleGetLocalUserInfo().then(userInfo => {
+      //  console.log(userInfo);
 
+       // if (userInfo) {
+       //   wx.setStorage({
+       //     key: 'userInfo',
+       //     data: userInfo
+       //   })
+       //   // console.log(this);
+
+       //   this.setData({
+       //     userInfo
+       //   })
+       //   wx.hideLoading()
+       // } else 
+       if (!userInfo) {
+         // wx.hideLoading()
+         wx.navigateTo({
+           url: '/pages/authorize/authorize'
+         })
+       } else {
+         this.setData({
+           userInfo
+         })
+       }
+
+     })
+
+    // wx.getStorage({
+    //   key: 'userInfo',
+    //   success: res => {
+    //     // console.log('====', res);
+
+    //     if (res.data) {
+    //       // console.log(res.data);
+    //       wx.cloud.callFunction({
+    //         name: 'userdetail',
+    //         data: {
+    //           opt: 'selectById',
+    //           data: {}
+    //         },
+    //         success: res => {
+    //           wx.setStorage({
+    //             key: 'userdetail',
+    //             data: res.result.result.data[0]
+    //           })
+    //         }
+    //       })
+    //       this.setData({
+    //         userInfo: res.data
+    //       })
+    //     }
+
+    //   },
+    //   fail: err => {
+    //     console.log('1111');
+
+    //   }
+    // })
   },
 
   /**

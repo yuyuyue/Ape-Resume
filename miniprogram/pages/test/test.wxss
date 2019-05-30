@@ -1,3 +1,4 @@
+@import '../../styles/button/button';
 .bg-light-blue {
   background-color: #F5FAFE;
 }

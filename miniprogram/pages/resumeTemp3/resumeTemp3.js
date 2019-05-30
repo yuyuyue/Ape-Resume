@@ -6,7 +6,8 @@ Page({
    */
   data: {
     searchData:{},
-    isSave:true
+    isSave:true,
+    not: false
   },
   saveRes(){
     console.log(123)
@@ -15,9 +16,13 @@ Page({
     })
   },
    save(e) {
+      wx.showLoading({
+        title: '加载中'
+      })
      let codeInfo = {
        '1': '简历重名'
      }
+    
      console.log(e.detail.resumeName);
      let data = {}
      data.name = e.detail.resumeName;
@@ -31,6 +36,7 @@ Page({
          data
        }
      }).then(res => {
+        wx.hideLoading()
        console.log(res);
        if (!res.result.code) {
          wx.showModal({
@@ -39,7 +45,7 @@ Page({
            cancelText: '返回首页',
            success(res) {
              if (res.confirm) {
-               wx.navigateTo({
+               wx.switchTab({
                  url: '../resume/resume?nowSelect=' + data.name
                })
              } else if (res.cancel) {
@@ -52,7 +58,7 @@ Page({
        } else {
          wx.showToast({
            title: codeInfo[res.result.code],
-           image: '../../images/失败.png'
+           image: '../../images/fail.svg.png'
          })
        }
      })
@@ -61,6 +67,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (options.not) {
+      this.setData({
+        not: true
+      })
+    }
      if (options.resumeName) {
        this.setData({
          isSave: false

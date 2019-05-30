@@ -16,7 +16,7 @@ Component({
     opt: '',
     url: '',
     toggle: false,
-    toggleImage: '../../images/down-arrow.png'
+    toggleImage: '../../images/down-arrow.svg'
   },
 
   /**
@@ -84,9 +84,9 @@ Component({
                   star += key.stargazers_count 
                   fork += key.forks
                 }
-                result.push(watch)
-                result.push(star)
-                result.push(fork)
+                result.unshift(watch)
+                result.unshift(fork)
+                result.unshift(star)
                 let data = {
                   name: this.properties.cardData.name,
                   num: result
@@ -134,12 +134,12 @@ Component({
       if (toggle) {
         this.setData({
           toggle,
-          toggleImage: '../../images/up-arrow.png'
+          toggleImage: '../../images/up-arrow.svg'
         })
       } else {
         this.setData({
           toggle,
-          toggleImage: '../../images/down-arrow.png'
+          toggleImage: '../../images/down-arrow.svg'
         })
       }
       
