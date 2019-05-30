@@ -1,10 +1,13 @@
 /* 用户信息 */
 @import "../../styles/userAvatar/userAvatar";
+.body{
+  margin-top: 140rpx;
+}
 .temp{
   width:560rpx;
   height: 180rpx;
   border-radius: 6rpx;
-  margin: 30rpx auto;
+  margin: 60rpx auto;
   display: flex;
   box-shadow: 0 0 12rpx #e6e6e6;
 }

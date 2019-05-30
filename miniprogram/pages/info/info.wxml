@@ -23,32 +23,32 @@
               <view class="container-header">
                 <image class="itemImg" src="{{basicInfo.avatarUrl}}" />
                 <view class="infoItem">
-                  <text class="itemName">{{item.name}}</text>
+                  <text class="itemName">{{item.name||userInfo.nickName}}</text>
                   <image class="icon" src="../../images/{{item.sex=='男'?'boy':'girl'}}.svg" />
                 </view>
               </view>
               <view class="line">
-                <text class="expectJob">{{item.expectjob}}</text>
+                <text class="expectJob">{{item.expectjob||'暂无数据'}}</text>
               </view>
               <view class="flex">
                 <view>
                   <view class="infoTemp">
                     <image class="infoIcon" src="../../images/age.svg" />
-                    <view class="infoDesc">{{item.age}}岁</view>
+                    <view class="infoDesc">{{item.age||'0'}}岁</view>
                   </view>
                   <view class="infoTemp">
                     <image class="infoIcon" src="../../images/wechat.svg" />
-                    <view class="infoDesc">{{item.wechat}}</view>
+                    <view class="infoDesc">{{item.wechat||'暂无数据'}}</view>
                   </view>
                 </view>
                 <view>
                   <view class="infoTemp">
                     <image class="infoIcon" src="../../images/phone.svg" />
-                    <view class="infoDesc">{{item.phone}}</view>
+                    <view class="infoDesc">{{item.phone||'暂无数据'}}</view>
                   </view>
                   <view class="infoTemp ">
                     <image class="infoIcon" src="../../images/email.svg" />
-                    <view class="infoDesc">{{item.email}}</view>
+                    <view class="infoDesc">{{item.email||'暂无数据'}}</view>
                   </view>
                 </view>
               </view>
@@ -57,21 +57,21 @@
               </view>
               <view class="infoTemp">
                 <image class="infoIcon" src="../../images/school.svg" />
-                <view class="infoDesc">{{item.schoolname}}</view>
+                <view class="infoDesc">{{item.schoolname||'暂无数据'}}</view>
               </view>
               <view class="infoTemp">
                 <image class="infoIcon" src="../../images/time.svg" />
-                <view class="infoDesc">{{item.startDate}}~{{item.endDate}}</view>
+                <view class="infoDesc">{{item.startDate||'暂无数据'}}~{{item.endDate||'暂无数据'}}</view>
               </view>
               <view class="infoTemp ">
                 <image class="infoIcon" src="../../images/edu.svg" />
-                <view class="infoDesc">{{item.major}}/{{item.education}}</view>
+                <view class="infoDesc">{{item.major||'暂无数据'}}/{{item.education||'暂无数据'}}</view>
               </view>
               <view class="line">
                 <text class="expectJob">个人优势</text>
               </view>
               <view class="infoTemp">
-                <text class="infoDesc">{{item.advantage}}</text>
+                <text class="infoDesc">{{item.advantage||'暂无数据'}}</text>
               </view>
             </view>
           </view>
@@ -83,15 +83,15 @@
               <swiper-item wx:for="{{expes}}" wx:key="expe" wx:for-item="expe" wx:for-index="expeIndex" class="swiper-center {{workNowIndex ===  expeIndex ? 'active' : ''}}">
                 <view class="container">
                   <view class="line">
-                    <text class="workCompany">{{expe.company}}</text>
+                    <text class="workCompany">{{expe.company||'暂无数据'}}</text>
                   </view>
-                  <view class="workTime">{{expe.startDate}}~{{expe.endDate}}</view>
-                  <view class="workJob">{{expe.job}}</view>
+                  <view class="workTime">{{expe.startDate||'暂无数据'}}~{{expe.endDate||'暂无数据'}}</view>
+                  <view class="workJob">{{expe.job||'暂无数据'}}</view>
                   <view class="workDesc">
                     <view class="line">
                       <text class="expectJob">工作描述:</text>
                     </view>
-                    <view class="infoDesc">{{expe.desc}}</view>
+                    <view class="infoDesc">{{expe.desc||'暂无数据'}}</view>
                   </view>
                 </view>
               </swiper-item>
@@ -108,29 +108,29 @@
                     <image class="itemImg" src="../../images/avatar.jpg" />
                     <!-- 项目缩略图 thumb -->
                     <view class="infoItem">
-                      <text class="itemName">{{pro.proname}}</text>
+                      <text class="itemName">{{pro.proname||'暂无数据'}}</text>
                     </view>
                   </view>
                   <view class="infoTemp">
                     <view class="line">
-                      <text class="expectJob">{{pro.startDate}}~{{pro.endDate}}</text>
+                      <text class="expectJob">{{pro.startDate||'暂无数据'}}~{{pro.endDate||'暂无数据'}}</text>
                     </view>
                   </view>
                   <view class="infoTemp">
                     <view class="textDesc">
-                      <view class="line">访问链接： {{pro.lineadress}}</view>
+                      <view class="line">访问链接： {{pro.lineadress||'暂无数据'}}</view>
                      
                     </view>
                   </view>
                   <view class="infoTemp">
                     <view class="textDesc">
-                      <view class="line">技术栈：{{pro.techstack}}</view>
+                      <view class="line">技术栈：{{pro.techstack||'暂无数据'}}</view>
                       
                     </view>
                   </view>
                   <view class="infoTemp">
                     <view class="textDesc">
-                      <view class="line desc">项目描述：{{pro.desc}}</view>
+                      <view class="line desc">项目描述：{{pro.desc||'暂无数据'}}</view>
                       
                     </view>
                   </view>
