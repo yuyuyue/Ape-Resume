@@ -1,0 +1,17 @@
+@import "../../styles/info/info";
+.placeholder {
+    color: #000;
+}
+.firstContainer,.secondContainer,.lastContainer{
+  width: 690rpx;
+  margin: 0 auto;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 6rpx 14rpx 0px rgba(0, 0, 0, 0.08);
+  margin-bottom: 60rpx;
+}
+.lastContainer{
+  margin-bottom: 90rpx;
+}
+.page {
+  overflow-y:scroll;
+}

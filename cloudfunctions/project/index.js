@@ -43,6 +43,7 @@ async function add(data) {
   
   if (isSaved.data.length > 0) {
     code = 6;//重名
+    return ;
     // return await update(data);
   } else {
     data.createTime = util.formatTime(new Date());
@@ -65,7 +66,16 @@ function updateByName(data) {
   data.updateTime = util.formatTime(new Date());
   return mapper.where({
     openId:data.openId,
-    name: data.name
+    proname: data.proname
+  }).update({
+    // data 传入需要局部更新的数据
+    data
+  })
+};
+function updateById(data) {
+  data.updateTime = util.formatTime(new Date());
+  return mapper.where({
+    openId:data.openId
   }).update({
     // data 传入需要局部更新的数据
     data
@@ -108,7 +118,7 @@ exports.main = async (event, context) => {
       result = await delByName(data);
       break;
     case 'updateByName':
-      result = await update(data);
+      result = await updateByName(data);
       break;
     case 'selectByName':
       result = await findByName(data)
@@ -116,6 +126,9 @@ exports.main = async (event, context) => {
     case 'selectAll':
       result = await findAll(data);
       break;
+    case 'updateById': 
+      result = await updateById(data);
+      break;  
 
     default:
       ;

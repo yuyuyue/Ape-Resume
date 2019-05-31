@@ -5,7 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    searchData:{},
     showDialog: false,
     isSave: true,
     not: false
@@ -20,16 +19,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     if(options.resumeName){
       this.setData({
         isSave: false
       })
     }
-    if(options.not){
-      this.setData({
-        not: true
-      })
-    }
+    // if(options.not){
+    //   this.setData({
+    //     not: true
+    //   })
+    // }
     let key = options.resumeName || 'selected';
     // console.log(key);
     
@@ -61,16 +61,7 @@ Page({
         
       }
     })
-    wx.getStorage({
-      key: 'searchData',
-      success: (res) => {
-        this.setData({
-          searchData: res.data
-        })
-        // console.log('=====',this.data.searchData.Github['关注']);
-        
-      }
-    })
+  
   },
   save(e){
      wx.showLoading({

@@ -50,7 +50,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 11,
+			"current": 13,
 			"list": [
 				{
 					"id": -1,
@@ -131,8 +131,23 @@
 				},
 				{
 					"id": -1,
-					"name": "makeRes",
+					"name": "item",
+					"pathName": "pages/item/item",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "basicInfo",
+					"pathName": "pages/basicInfo/basicInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "makeresume",
 					"pathName": "pages/makeRes/makeRes",
+					"query": "",
 					"scene": null
 				}
 			]

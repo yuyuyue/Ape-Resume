@@ -47,7 +47,7 @@ Component({
         }
         case 'leetcode': {
           this.setData({
-            url: `https://leetcode-cn.com/${this.data.inputValue}/`,
+            url: `https://leetcode-cn.com/u/${this.data.inputValue}`,
             opt: 'leetcode'
           })
           break

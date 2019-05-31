@@ -109,7 +109,7 @@ exports.main = async (event, context) => {
       result = await delByName(data);
       break;
     case 'updateByName':
-      result = await update(data);
+      result = await updateByName(data);
       break;
     case 'selectByName':
       result = await findByName(data)

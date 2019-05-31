@@ -7,14 +7,14 @@
       <view class="infoTemp firstTemp">
         <view class="infoTitle">项目名称</view>
         <view class="input marginL">
-          <input class="inputText" placeholder="请填写项目名称" focus="{{focus}}" name="proname" />
+          <input class="inputText" disabled="{{!save}}" placeholder="请填写项目名称" value="{{project.proname}}" focus="{{focus}}" name="proname" />
         </view>
       </view>
       <view class="infoTemp">
         <text class="infoTitle">开始时间</text>
         <view class="input marginL">
           <picker mode="date" value="{{startDate}}" start="1990-09" end="2018-09" fields="month" bindchange="startDateChange">
-            <view class="picker">{{startInit}} {{startDate}}</view>
+            <view class="picker">{{project.startDate||startInit}} {{startDate}}</view>
           </picker>
         </view>
       </view>
@@ -22,29 +22,29 @@
         <text class="infoTitle">结束时间</text>
         <view class="input marginL">
           <picker mode="date" value="{{endDate}}" start="1994-06" end="2025-06" fields="month" bindchange="endDateChange">
-            <view class="picker">{{endInit}} {{endDate}}</view>
+            <view class="picker">{{project.endDate||endInit}} {{endDate}}</view>
           </picker>
         </view>
       </view>
       <view class="infoTemp">
         <view class="infoTitle">技术栈</view>
         <view class="input marginL">
-          <input class="inputText" placeholder="请填写从事职位" focus="{{focus}}" name="techstack" />
+          <input class="inputText" placeholder="请填写所用技术栈" focus="{{focus}}" value="{{project.techstack}}" name="techstack" />
         </view>
       </view>
       <view class="infoTemp">
         <view class="infoTitle">项目链接</view>
         <view class="input marginL">
-          <input class="inputText" placeholder="请填写项目链接" focus="{{focus}}" name="lineadress" />
+          <input class="inputText" placeholder="请填写项目链接" focus="{{focus}}" value="{{project.lineadress}}" name="lineadress" />
         </view>
       </view>
       <view class="infoTemp lastTemp">
         <text class="infoTitle">项目描述</text>
         <view class="longText marginL">
-          <textarea rows="3" cols="20" maxlength="1000" placeholder="请描述你的项目" name="desc" />
+          <textarea rows="3" cols="20" maxlength="1000" placeholder="请描述你的项目" value="{{project.desc}}" name="desc" />
         </view>
       </view>
     </view>
-    <button class="next" bindtap="addItem" formType="submit">提交</button>
+    <button class="next" formType="submit">{{save?'保存':'修改'}}</button>
   </form>
 </view>
