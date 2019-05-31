@@ -1,62 +1,107 @@
 <view class="page">
   <view class="container">
     <view class="select-header">
-      <view class="info">工作经验</view>
-      <view class="selectAll" bindtap="selectAll">
+      <view class="{{workList.length > 0 ? 'info' : 'infoTac'}}">工作经验</view>
+      <view class="selectAll" bindtap="selectAll" wx:if="{{workList.length > 0}}">
         <image data-statue="selectall" class="selectImg" src="{{selectall ? '../../images/select1.svg' : '../../images/select.svg'}}" />
       </view>
-      <text class="chooseAll">全选</text>
+      <text class="chooseAll" wx:if="{{workList.length > 0}}">全选</text>
     </view>
-    <view class="workList" wx:for="{{workList}}" wx:key="{{index}}">
-      <view class="workLi">
-        <view class="itemNum">
-          <view class="num">{{item.id}}</view>
-        </view>
-        <view class="workName">{{item.company}}</view>
-        <view class="chooseImg" data-index="{{index}}" data-name="{{item.id}}" bindtap="select">
-          <image data-ide="0" class="choose" src="{{item.checked == true ? '../../images/select1.svg' : '../../images/select.svg'}}" />
-        </view>
-      </view>
+    <view class="workList">
+      <block wx:if="{{workList === ''}}">
+        <button class="loading" loading="{{true}}"></button>
+      </block>
+      <block wx:else>
+        <block wx:if="{{workList.length > 0}}">
+          <block wx:for="{{workList}}" wx:key="{{index}}">
+            <view class="workLi">
+              <view class="itemNum">
+                <view class="num">{{item.id}}</view>
+              </view>
+              <view class="workName">{{item.company}}</view>
+              <view class="chooseImg" data-index="{{index}}" data-name="{{item.id}}" bindtap="select">
+                <image data-ide="0" class="choose" src="{{item.checked == true ? '../../images/select1.svg' : '../../images/select.svg'}}" />
+              </view>
+            </view>  
+          </block>
+        </block>
+        <block wx:else>
+          <view class="workLi">
+            <view class="tip-item">还没有工作经验，快去添加吧~</view>
+            <view class="tip-btn" bindtap="goToWork">去添加</view>
+          </view>
+        </block>
+      </block>
     </view>
   </view>
   <view class="container">
     <view class="select-header">
-      <view class="info">项目成果</view>
-      <view class="selectAll" bindtap="selectItemAll">
+      <view class="{{itemList.length > 0 ? 'info' : 'infoTac'}}">项目成果</view>
+      <view class="selectAll" bindtap="selectItemAll" wx:if="{{itemList.length > 0}}">
         <image data-statue="selectitemall" class="selectImg" src="{{selectitemall ? '../../images/select1.svg' : '../../images/select.svg'}}" />
       </view>
-      <text class="chooseAll">全选</text>
+      <text class="chooseAll" wx:if="{{itemList.length > 0}}">全选</text>
     </view>
-    <view class="workList" wx:for="{{itemList}}" wx:key="{{index}}">
-      <view class="workLi">
-        <view class="itemNum">
-          <view class="num">{{item.id}}</view>
-        </view>
-        <view class="workName">{{item.proname}}</view>
-        <view class="chooseImg" data-index="{{index}}" data-name="{{item.id}}" bindtap="selectItem">
-          <image data-ide="0" class="choose" src="{{item.checked == true ? '../../images/select1.svg' : '../../images/select.svg'}}" />
-        </view>
-      </view>
+    <view class="workList">
+      <block wx:if="{{itemList === ''}}">
+        <button class="loading" loading="{{true}}"></button>
+      </block>
+      <block wx:else>
+        <block wx:if="{{itemList.length > 0}}">
+          <block wx:for="{{itemList}}" wx:key="{{index}}">
+            <view class="workLi">
+              <view class="itemNum">
+                <view class="num">{{item.id}}</view>
+              </view>
+              <view class="workName">{{item.proname}}</view>
+              <view class="chooseImg" data-index="{{index}}" data-name="{{item.id}}" bindtap="selectItem">
+                <image data-ide="0" class="choose" src="{{item.checked == true ? '../../images/select1.svg' : '../../images/select.svg'}}" />
+              </view>
+            </view>  
+          </block>
+        </block>
+        <block wx:else>
+          <view class="workLi">
+            <view class="tip-item">还没有项目成果，快去添加吧~</view>
+            <view class="tip-btn" bindtap="goToItem">去添加</view>
+          </view>
+        </block>
+      </block>
     </view>
   </view>
-  <view class="container lastContainer">
+<view class="container">
     <view class="select-header">
-      <view class="info">第三方数据</view>
-      <view class="selectAll" bindtap="selectApesAll">
+      <view class="{{apeList.length > 0 ? 'info' : 'infoTac'}}" >三方数据</view>
+      <view class="selectAll" bindtap="selectApesAll"  wx:if="{{apeList.length > 0}}">
         <image data-statue="selectapeall" class="selectImg" src="{{selectapeall ? '../../images/select1.svg' : '../../images/select.svg'}}" />
       </view>
-      <text class="chooseAll">全选</text>
+      <text class="chooseAll"  wx:if="{{apeList.length > 0}}">全选</text>
     </view>
-    <view class="workList" wx:for="{{apeList}}" wx:key="{{index}}">
-      <view class="workLi">
-        <view class="itemNum">
-          <view class="num">{{item.id}}</view>
-        </view>
-        <view class="workName">{{item.name}}</view>
-        <view class="chooseImg" data-index="{{index}}" data-name="{{item.id}}" bindtap="selectApes">
-          <image data-ide="0" class="choose" src="{{item.checked == true ? '../../images/select1.svg' : '../../images/select.svg'}}" />
-        </view>
-      </view>
+    <view class="workList">
+      <block wx:if="{{apeList === ''}}">
+        <button class="loading" loading="{{true}}"></button>
+      </block>
+      <block wx:else>
+        <block wx:if="{{apeList.length > 0}}">
+          <block wx:for="{{apeList}}" wx:key="{{index}}">
+            <view class="workLi">
+              <view class="itemNum">
+                <view class="num">{{item.id}}</view>
+              </view>
+              <view class="workName">{{item.name}}</view>
+              <view class="chooseImg" data-index="{{index}}" data-name="{{item.id}}" bindtap="selectApes">
+                <image data-ide="0" class="choose" src="{{item.checked == true ? '../../images/select1.svg' : '../../images/select.svg'}}" />
+              </view>
+            </view>  
+          </block>
+        </block>
+        <block wx:else>
+          <view class="workLi">
+            <view class="tip-item">- 还没有第三方数据，快去添加吧~</view>
+            <view class="tip-btn" bindtap="goToApes">去添加</view>
+          </view>
+        </block>
+      </block>
     </view>
   </view>
   <button class="next" bindtap="chooseTempHandle">下一步</button>

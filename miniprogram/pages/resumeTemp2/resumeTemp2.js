@@ -6,7 +6,7 @@ Page({
    */
   data: {
     isSave: true,
-    not:false
+    not: false
   },
   saveRes() {
     console.log(123)
@@ -15,9 +15,9 @@ Page({
     })
   },
   save(e) {
-     wx.showLoading({
-       title: '加载中'
-     })
+    wx.showLoading({
+      title: '加载中'
+    })
     let codeInfo = {
       '1': '简历重名'
     }
@@ -27,6 +27,7 @@ Page({
     data.tempIndex = 1;
     data.proNames = this.data.selected.items.map(item => item.proname)
     data.expeNames = this.data.selected.works.map(item => item.company)
+
     wx.cloud.callFunction({
       name: 'resume',
       data: {
@@ -34,7 +35,7 @@ Page({
         data
       }
     }).then(res => {
-       wx.hideLoading()
+      wx.hideLoading()
       console.log(res);
       if (!res.result.code) {
         wx.showModal({
@@ -76,14 +77,29 @@ Page({
       })
     }
     let key = options.resumeName || 'selected';
-    wx.getStorage({
-      key: 'userdetail',
+    wx.getStorageSync({
+      key,
       success: (res) => {
-        console.log(res);
-
         this.setData({
-          detail: res.data
+          selected: res.data
         })
+        wx.getStorage({
+          key: 'userdetail',
+          success: (res) => {
+            console.log(res);
+            let apes = {};
+            let selected = this.data.selected;
+            selected.apes.forEach(item => {
+              apes[item.name] = res.data.searchData[item.name]
+            })
+            selected.apes = apes;
+            this.setData({
+              detail: res.data,
+              selected
+            })
+          }
+        })
+
       }
     })
     wx.getStorage({
@@ -94,15 +110,8 @@ Page({
         })
       }
     })
-    wx.getStorage({
-      key,
-      success: (res) => {
-        this.setData({
-          selected: res.data
-        })
-      }
-    })
-  
+
+
   },
 
   /**

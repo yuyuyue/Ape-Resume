@@ -6,16 +6,18 @@ cloud.init()
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  const access_token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx08451edee750006e&secret=4e454e614157d0e7df4b2d926453bc6c'
-  const result = await axios({
-    method: 'GET',
-    url: access_token_url,
-    headers: {
-      accept: 'application/json',
-    }
-  })
-  const access_token = result.data.access_token
-  console.log(access_token)
+  let {access_token} = event
+  if (!access_token) {
+    const access_token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx08451edee750006e&secret=4e454e614157d0e7df4b2d926453bc6c'
+    const result = await axios({
+      method: 'GET',
+      url: access_token_url,
+      headers: {
+        accept: 'application/json',
+      }
+    })
+    access_token = result.data.access_token
+  }
   const wxcode_url = `https://api.weixin.qq.com/wxa/getwxacode?access_token=${access_token}`
   const result_wx = await axios({
     method: 'POST',
@@ -42,5 +44,8 @@ exports.main = async (event, context) => {
   // console.log(base64Image);
   // var decodedImage = new Buffer(base64Image, 'base64');
   // console.log(Buffer.compare(origin_buffer, decodedImage))
-  return wxcode_buffer
+  return {
+    wxacode: wxcode_buffer,
+    access_token
+  }
 }

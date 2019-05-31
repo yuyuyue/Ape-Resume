@@ -156,8 +156,17 @@ Page({
       content: '是否要生成简历',
       cancelText: '返回主页',
       confirmText: '前往',
-      success (res) {
+      success : (res)=> {
         if (res.confirm) {
+          wx.cloud.callFunction({
+            name: 'userdetail',
+            data: {
+              opt: 'updateById',
+              data: {
+                searchData : this.data.searchData
+              }
+            }
+          })
           wx.navigateTo({
             url: '../makeRes/makeRes'
           })
