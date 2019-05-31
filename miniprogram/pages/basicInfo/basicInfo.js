@@ -94,7 +94,7 @@ Page({
           duration: 2000,
           complete() {
             wx.navigateTo({
-              url: './basicInfo'
+              url: '/pages/addInfo/addInfo'
             })
           }
         })

@@ -7,7 +7,8 @@ Page({
   data: {
     showDialog: false,
     isSave: true,
-    not: false
+    not: false,
+    apes: []
   },
   saveRes() {
     this.setData({
@@ -19,7 +20,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    wx.showLoading({
+      title: '加载中。。。'
+    })
+    // console.log(options)
     if (options.resumeName) {
       this.setData({
         isSave: false
@@ -32,9 +36,12 @@ Page({
     // }
     let key = options.resumeName || 'selected';
     // console.log(key);
-    wx.getStorageSync({
+    wx.getStorage({
       key,
       success: (res) => {
+
+        console.log(res.data);
+
         this.setData({
           selected: res.data
         })
@@ -44,14 +51,49 @@ Page({
             console.log(res);
             let apes = {};
             let selected = this.data.selected;
-            selected.apes.forEach(item => {
-              apes[item.name] = res.data.searchData[item.name]
-            })
-            selected.apes = apes;
-            this.setData({
-              detail: res.data,
-              selected
-            })
+            if (!this.data.isSave) {
+              wx.cloud.callFunction({
+                name: 'resume',
+                data: {
+                  opt: 'selectByName',
+                  data: {
+                    name: options.resumeName
+                  }
+                }
+              }).then(res1 => {
+                selected.apes = res1.result.result.data[0].apes;
+                selected.apes.forEach(item => {
+                  apes[item.name] = res.data.searchData[item.name]
+                })
+                this.setData({
+                  apes: selected.apes
+                })
+                selected.apes = apes;
+                this.setData({
+                  detail: res.data,
+                  selected
+
+                })
+                 wx.hideLoading()
+              })
+              // selected.apes = 
+            } else {
+              selected.apes.forEach(item => {
+                apes[item.name] = res.data.searchData[item.name]
+              })
+              this.setData({
+                apes: selected.apes
+              })
+              selected.apes = apes;
+              this.setData({
+                detail: res.data,
+                selected
+
+              })
+               wx.hideLoading()
+            }
+             
+
           }
         })
 
@@ -83,6 +125,8 @@ Page({
     data.tempIndex = 1;
     data.proNames = this.data.selected.items.map(item => item.proname)
     data.expeNames = this.data.selected.works.map(item => item.company)
+    data.apes = this.data.apes
+    console.log(data.apes);
 
     wx.cloud.callFunction({
       name: 'resume',
@@ -116,6 +160,7 @@ Page({
           image: '../../images/fail.svg'
         })
       }
+    
     })
   },
   /**

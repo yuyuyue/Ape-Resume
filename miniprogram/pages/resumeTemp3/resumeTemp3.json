@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "saveRes":"../../components/saveRes/saveRes"
-  }
+  },
+  "navigationBarTitleText": "简历模板"
 }

@@ -155,7 +155,7 @@
           </view>
         </swiper-item>
         <!-- 猿力值 -->
-        <swiper-item>
+               <swiper-item>
           <view class="basic-container">
             <view class="container-body ape-container">
               <view class="apeNum">
@@ -164,51 +164,54 @@
               </view>
               <view class="apeTemp">
                 <view class="line">
-                  <view class="apeTitle">GitHub</view>
+                  <view class="apeTitle grey">GitHub</view>
                 </view>
                 <view class="apeDesc flex">
                   <view class="apeType">
-                    <view class="apeInfo">Stars {{searchData.Github['收藏'] || '暂无数据'}}</view>
-                    <view class="apeInfo">Forks {{searchData.Github['叉子'] || '暂无数据'}}</view>
+                    <view class="apeInfo">Star {{searchData.Github['Star'] || '暂无数据'}}</view>
+                    <view class="apeInfo">Fork {{searchData.Github['Fork'] || '暂无数据'}}</view>
                   </view>
                   <view class="apeType">
-                    <text class="apeInfo">Followers {{searchData.Github['关注'] || '暂无数据'}}</text>
+                    <view class="apeInfo">Watch {{searchData.Github['Watch'] || '暂无数据'}}</view>
+                    <view class="apeInfo">Contribution {{searchData.Github['Contribution'] || '暂无数据'}}</view>
                   </view>
                 </view>
               </view>
               <view class="apeTemp">
                 <view class="line">
-                  <view class="apeTitle">LeetCode</view>
+                  <view class="apeTitle blue">LeetCode</view>
                 </view>
                 <view class="flex apeDesc">
                   <view class="apeType">
-                    <view class="apeInfo">竞赛排名 {{searchData['Leetcode']['竞赛排名'] || '暂无数据'}}</view>
-                    <view class="apeInfo">刷题数 {{searchData['Leetcode']['刷题数'] || '暂无数据'}}</view>
+                    <view class="apeInfo">竞赛评分 52020{{}}</view>
+                    <view class="apeInfo">竞赛排名 68/54515{{}}</view>
                   </view>
                   <view class="apeType">
-                    <view class="apeInfo">竞赛积分 {{searchData['Leetcode']['竞赛积分'] || '暂无数据'}}</view>
+                    <view class="apeInfo">完成的竞赛 2020{{}}</view>
+                    <view class="apeInfo">解决的题目 2020{{}}</view>
                   </view>
                 </view>
               </view>
               <view class="apeTemp">
                 <view class="line">
-                  <view class="apeTitle letter">掘金</view>
+                  <view class="apeTitle orange">掘金</view>
                 </view>
                 <view class="apeDesc flex">
                   <view class="apeType">
-                    <view class="apeInfo">关注者   {{searchData['掘金']['关注者'] || '暂无数据'}}</view>
-                    <view class="apeInfo">发布文章  {{searchData['掘金']['发表专栏数'] || '暂无数据'}}</view>
-                    <view class="apeInfo">获得点赞  {{searchData['掘金']['获得点赞'] || '暂无数据'}}</view>
+                    <view class="apeInfo">掘力值 {{searchData['掘金']['掘力值'] || '暂无数据'}}</view>
+                    <view class="apeInfo">关注者 {{searchData['掘金']['关注者'] || '暂无数据'}}</view>
+                    <view class="apeInfo">获得点赞 {{searchData['掘金']['获得点赞'] || '暂无数据'}}</view>
                   </view>
                   <view class="apeType">
-                    <view class="apeInfo">掘力值    {{searchData['掘金']['掘力值'] || '暂无数据'}}</view>
-                    <text class="apeInfo">文章被阅读  {{searchData['掘金']['文章被阅读'] || '暂无数据'}}</text>
+                    <view class="apeInfo">发表专栏数 {{searchData['掘金']['发表专栏数'] || '暂无数据'}}</view>
+                    <text class="apeInfo">文章被阅读 {{searchData['掘金']['文章被阅读'] || '暂无数据'}}</text>
                   </view>
                 </view>
               </view>
             </view>
           </view>
         </swiper-item>
+        
       </swiper>
     </view>
   </view>
