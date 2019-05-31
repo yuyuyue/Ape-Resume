@@ -14,7 +14,7 @@ Page({
     tempIndex: 0, //模板页索引
     detail: {},
     resumes: [], //所有简历信息集合
-    token: '', //小程序的token
+    token: {}, //小程序的token
     wxacodeImgUrl: '', //小程序码的url
     isShareImg: false, //是否生成分享图片
     shareImgSrc: '',
@@ -29,13 +29,119 @@ Page({
   },
   drawImage() {
     const ctx = wx.createCanvasContext('drawWxacode')
+    const wxacode = this.data.wxacodeImgUrl
+    ctx.setFillStyle('#76A7F0')
+    ctx.fillRect(0, 0, 250, 367)
+    ctx.setFillStyle('#B2CEF8')
+    ctx.fillRect(10, 10, 230, 347)
+    
+    // 文字
+    ctx.setFontSize(20)
     ctx.setFillStyle('#ffffff')
-    ctx.fillRect(0, 0, 325, 450);
-    ctx.setFontSize(28)
-    // ctx.setFillStyle('#6F6F6F')
-    // ctx.fillText('妖妖灵', 110, 200)
+    ctx.fillText('让你的简历脱颖而出', 32, 62)
+    ctx.setFontSize(40)
+    ctx.fillText('猿简历', 67, 140)
+    ctx.setFontSize(18)
+    ctx.fillText('扫一扫生成你的最强简历', 26, 320)
 
-    ctx.drawImage(this.data.wxacodeImgUrl, 0, 0, 100, 100)
+    // 三角形
+    ctx.setStrokeStyle('#ffffff')
+    ctx.beginPath()
+    ctx.moveTo(29, 7)
+    ctx.lineTo(58, 2)
+    ctx.lineTo(48, 25)
+    ctx.lineTo(29, 7)
+    ctx.closePath()
+    ctx.stroke()
+    ctx.setFillStyle('#8E8CD8')
+    ctx.beginPath()
+    ctx.moveTo(33, 14)
+    ctx.lineTo(55, 14)
+    ctx.lineTo(48, 2)
+    ctx.lineTo(33, 14)
+    ctx.closePath()
+    ctx.fill()
+
+
+    // 圆形
+    ctx.setStrokeStyle('#ffffff')
+    ctx.setLineWidth(2)
+    ctx.beginPath()
+    ctx.arc(200, 15, 10, 0, 2 * Math.PI)
+    ctx.closePath()
+    ctx.stroke()
+
+    ctx.setFillStyle('#ffe2b0')
+    ctx.beginPath()
+    ctx.arc(210, 85, 7, 0, 2 * Math.PI)
+    ctx.closePath()
+    ctx.fill()
+
+    ctx.setStrokeStyle('#ffffff')
+    ctx.setLineWidth(2)
+    ctx.beginPath()
+    ctx.arc(215, 90, 10, 0, 2 * Math.PI)
+    ctx.closePath()
+    ctx.stroke()
+
+    ctx.setStrokeStyle('#ffffff')
+    ctx.setLineWidth(2)
+    ctx.beginPath()
+    ctx.arc(30, 105, 12, 0, 2 * Math.PI)
+    ctx.closePath()
+    ctx.stroke()
+
+    ctx.setStrokeStyle('#ffffff')
+    ctx.setLineWidth(2)
+    ctx.beginPath()
+    ctx.arc(55, 85, 5, 0, 2 * Math.PI)
+    ctx.closePath()
+    ctx.stroke()
+
+    ctx.setFillStyle('#ffe2b0')
+    ctx.beginPath()
+    ctx.arc(55, 85, 4, 0, 2 * Math.PI)
+    ctx.closePath()
+    ctx.fill()
+
+    ctx.setFillStyle('#8E8CD8')
+    ctx.beginPath()
+    ctx.arc(40, 280, 6, 0, 2 * Math.PI)
+    ctx.closePath()
+    ctx.fill()
+
+    ctx.setStrokeStyle('#ffffff')
+    ctx.setLineWidth(2)
+    ctx.beginPath()
+    ctx.arc(55, 340, 7, 0, 2 * Math.PI)
+    ctx.closePath()
+    ctx.stroke()
+
+    ctx.setFillStyle('#8E8CD8')
+    ctx.beginPath()
+    ctx.arc(230, 240, 6, 0, 2 * Math.PI)
+    ctx.closePath()
+    ctx.fill()
+
+    ctx.setStrokeStyle('#ffffff')
+    ctx.setLineWidth(2)
+    ctx.beginPath()
+    ctx.arc(217, 230, 11, 0, 2 * Math.PI)
+    ctx.closePath()
+    ctx.stroke()
+    // 方形
+    ctx.setFillStyle('#e0e0e0')
+    ctx.fillRect(87, 185, 70, 70)
+    
+    ctx.setFillStyle('#76A7F0')
+    ctx.fillRect(92, 190, 70, 70)
+
+    ctx.setFillStyle('#ffe2b0')
+    ctx.fillRect(60, 185, 12, 12)
+    
+
+    // 图片
+    ctx.drawImage(wxacode ,92, 190, 65, 65)
     ctx.draw()
   },
   canvasToImg() {
@@ -161,33 +267,16 @@ Page({
         data: {}
       }
     }).then(res => {
-      this.setData({
+      self.setData({
         resnames: res.result.result.data.map(item => item.name),
         resumes: res.result.result.data
       })
-      //  if (options.nowSelect) {
-      //    this.setData({
-      //      nowSelect: options.nowSelect
-      //    })
-      //  }
-
-      // return wx.cloud.callFunction({
-      //   name: 'resume',
-      //     data: {
-      //       opt: 'selectByName',
-      //       data: {
-      //         name: this.data.nowSelect
-      //       }
-      //     }
-      // })
     })
-    // .then(res => {
 
-    // })
     wx.getStorage({
       key: 'userdetail',
       success: res => {
-        this.setData({
+        self.setData({
           detail: res.data
         })
       }
@@ -195,15 +284,27 @@ Page({
     wx.getStorage({
       key: 'access_token',
       success: res => {
-        this.setData({
+        self.setData({
           token: res.data
         })
+      },
+      fail: err => {
+        console.log(err)
       }
     })
-    const access_token = this
-    if (self.data.wxacodeImgUrl == '') {
+    let access_token = ''
+    let date = ''
+    if (Object.keys(self.data.token).length > 0) {
+      access_token = self.data.token.access_token
+      date = self.data.token.date
+    }
+    const newDate = + new Date()
+    if (access_token && newDate - date > 2 * 60 * 60 * 1000 || !access_token) {
       wx.cloud.callFunction({
         name: 'accesstoken',
+        data: {
+          access_token
+        }
       })
       .then((res) => {
         console.log(res)
@@ -217,7 +318,7 @@ Page({
           key:"access_token",
           data: {
             access_token,
-            date: ''
+            date: + new Date()
           }
         })
         self.setData({

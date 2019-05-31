@@ -8,10 +8,10 @@ cloud.init()
 
 class Utils {
   /**
-   * 格式化日期
+   * 格式化日期a
    * @param {*} date 
    */
-  formatTime(date) {
+  formatTime(date) {yue
     var year = date.getFullYear()
     var month = date.getMonth() + 1
     var day = date.getDate()

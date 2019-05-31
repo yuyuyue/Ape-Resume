@@ -176,10 +176,10 @@
 }
 .canvas{
   position: fixed;
-  top: 50rpx;
-  left: 50rpx;
-  width: 650rpx;
-  height: 900rpx;
+  top: 90rpx;
+  left: 125rpx;
+  width: 500rpx;
+  height: 734rpx;
   z-index: 1000;
 }
 .canvas-btn {

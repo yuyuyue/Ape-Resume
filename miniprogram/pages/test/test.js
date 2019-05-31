@@ -123,6 +123,7 @@ Page({
     windowHeight: ''
   },
   searched(event) {
+    console.log(this.data.cards)
     const { name, num } = event.detail
     const searchData = {}
     let cards = this.data.cards
