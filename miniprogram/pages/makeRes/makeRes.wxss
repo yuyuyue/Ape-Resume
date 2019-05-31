@@ -12,6 +12,7 @@
 }
 .select-header,.workLi{
   display: flex;
+  justify-content: center;
 }
 .select-header{
   height: 110rpx;
@@ -23,6 +24,13 @@
   font-size: 32rpx;
   line-height: 110rpx;
   margin-right: 140rpx;
+}
+.infoTac{
+  margin-left: 0;
+  margin-right: 0;
+  font-size: 32rpx;
+  line-height: 110rpx;
+  text-align: center;
 }
 .selectImg{
   width: 40rpx;
@@ -64,4 +72,30 @@
 }
 .lastContainer{
   margin-bottom: 90rpx;
+}
+.loading{
+  height: 80rpx;
+  background-color: #fff;
+  position: relative;
+  top: -35rpx;
+}
+button[class="loading"]::after {
+  border: none
+}
+.tip-item{
+  flex: 1;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 50rpx;
+  font-size: 14px;
+}
+.tip-btn{
+  width: 120rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 14px;
+  border-radius: 15px;
+  background-color: #76a8f0;
+  color: #fff
 }

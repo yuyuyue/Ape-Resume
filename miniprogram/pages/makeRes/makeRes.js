@@ -5,9 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    workList: [],
-    itemList: [],
-    apeList: [],
+    workList: '',
+    itemList: '',
+    apeList: '',
     selectall: false,
     selectitemall: false,
     selectapeall: false,
@@ -164,21 +164,62 @@ Page({
       }
     })
     selected.apes = apes
-    this.setData({
-      selected
-    })
+    let msg = '尚未添加'
+    let confirm = false
+    if (selected.items.length == 0) {
+      confirm = true
+      msg += '项目成果，'
+    }
+    if (selected.works.length == 0) {
+      confirm = true
+      msg += '工作经历，'
+    }
+    if (selected.apes.length == 0) {
+      confirm = true
+      msg += '三方数据，'
+    }
+    msg += '是否继续生成'
+    if (confirm) {
+      wx.showModal({
+        title: '生成简历',
+        content: msg,
+        confirmText: '继续',
+        cancelText: '取消',
+        confirmColor: '#76a8f0',
+        success (res) {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: `../chooseRes/chooseRes`
+            })
+          } else if (res.cancel) {
+            console.log('')
+          }
+        }
+      })
+    } else {
+      wx.navigateTo({
+        url: `../chooseRes/chooseRes`
+      })
+    }
     wx.setStorage({
       key: 'selected',
       data: this.data.selected
     })
-    let url = `../chooseRes/chooseRes`;
-    // if(this.data.not){
-    //   url+='?not="true"'
-    // }
-   wx.navigateTo({
-     url
-   })
-   
+  },
+  goToWork() {
+    wx.navigateTo({
+      url: `../workExp/workExp`
+    })
+  },
+  goToItem() {
+    wx.navigateTo({
+      url: `../item/item`
+    })
+  },
+  goToApes() {
+    wx.navigateTo({
+      url: `../test/test`
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -249,6 +290,10 @@ Page({
         this.setData({
           itemList
         })
+      } else {
+        this.setData({
+          itemList: []
+        })
       }
       let workList = values[1].result.result.data;
       // console.log(workList);
@@ -259,6 +304,10 @@ Page({
       if (workList.length) {
         this.setData({
           workList
+        })
+      } else {
+        this.setData({
+          workList: []
         })
       }
       wx.getStorage({
@@ -278,6 +327,10 @@ Page({
           if (apeList.length) {
             self.setData({
               apeList
+            })
+          } else {
+            self.setData({
+              apeList: []
             })
           }
         },

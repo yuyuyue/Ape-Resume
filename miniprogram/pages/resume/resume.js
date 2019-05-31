@@ -34,8 +34,9 @@ Page({
     ctx.setFillStyle('#ffffff')
     ctx.fillRect(0, 0, 325, 450);
     ctx.setFontSize(28)
-    ctx.setFillStyle('#6F6F6F')
-    ctx.fillText('妖妖灵', 110, 200)
+    // ctx.setFillStyle('#6F6F6F')
+    // ctx.fillText('妖妖灵', 110, 200)
+
     ctx.drawImage(this.data.wxacodeImgUrl, 0, 0, 100, 100)
     ctx.draw()
   },
@@ -193,20 +194,41 @@ Page({
         })
       }
     })
+    wx.getStorage({
+      key: 'access_token',
+      success: res => {
+        this.setData({
+          token: res.data
+        })
+      }
+    })
+    const access_token = this
     if (self.data.wxacodeImgUrl == '') {
       wx.cloud.callFunction({
         name: 'accesstoken',
       })
-        .then((res) => {
-          console.log(res)
-          const base64 = wx.arrayBufferToBase64(res.result)
-          self.setData({
-            wxacodeImgUrl: `data:image/png;base64,${base64}`
-          })
+      .then((res) => {
+        console.log(res)
+        const base64 = wx.arrayBufferToBase64(res.result.wxacode)
+        const access_token = res.result.access_token
+        wx.setStorage({
+          key:"wxacodeImgUrl",
+          data: `data:image/png;base64,${base64}`
         })
-        .catch((err) => {
-          console.log(err)
+        wx.setStorage({
+          key:"access_token",
+          data: {
+            access_token,
+            date: 
+          }
         })
+        self.setData({
+          wxacodeImgUrl: `data:image/png;base64,${base64}`
+        })
+      })
+      .catch((err) => {
+        console.log(err)
+      })
     }
   },
 

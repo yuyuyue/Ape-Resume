@@ -36,7 +36,6 @@
   width: 250rpx;
   height: 250rpx;
   border-radius: 50%;
-  background-color: blue;
   margin-top: 30rpx;
 }
 
@@ -94,7 +93,7 @@
   line-height: 100rpx;
   text-align: center;
   color: #ffffff;
-  background-color: #00A3FF;
+  background-color: #76a8f0;
   border-radius: 5px;
 }
 
