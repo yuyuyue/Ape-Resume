@@ -16,7 +16,7 @@
       <view class="infoTemp">
         <text class="infoTitle">开始时间</text>
         <view class="input marginL">
-          <picker mode="date" value="{{startDate}}" start="1990-09" end="2018-09" fields="month" bindchange="startDateChange">
+          <picker mode="date" value="{{startDate}}" start="1990-09" end="2019-05" fields="month" bindchange="startDateChange">
             <view class="picker">{{work.startDate||startInit}} {{startDate}}</view>
           </picker>
         </view>
@@ -24,7 +24,7 @@
       <view class="infoTemp">
         <text class="infoTitle">结束时间</text>
         <view class="input marginL">
-          <picker mode="date" value="{{endDate}}" start="1994-06" end="2025-06" fields="month" bindchange="endDateChange">
+          <picker mode="date" value="{{endDate}}" start="1994-06" end="2019-05" fields="month" bindchange="endDateChange">
             <view class="picker">{{work.endDate||endInit}} {{endDate}}</view>
           </picker>
         </view>
@@ -32,7 +32,7 @@
       <view class="infoTemp lastTemp">
         <text class="infoTitle">工作描述</text>
         <view class="longText marginL">
-          <textarea rows="3" cols="20" maxlength="1000" value="{{work.desc}}" placeholder="请填写个人优势" name="desc" />
+          <textarea rows="3" cols="20" maxlength="1000" value="{{work.desc}}" placeholder="请填写项目描述" name="desc" />
         </view>
       </view>
     </view>
