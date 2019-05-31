@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "baseInfo":"../../components/baseInfo/basicInfo"
-  }
+  },
+  "navigationBarTitleText": "我的信息"
 }
