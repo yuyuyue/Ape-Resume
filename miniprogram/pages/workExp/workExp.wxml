@@ -32,7 +32,7 @@
       <view class="infoTemp lastTemp">
         <text class="infoTitle">工作描述</text>
         <view class="longText marginL">
-          <textarea rows="3" cols="20" maxlength="1000" value="{{work.desc}}" placeholder="请填写项目描述" name="desc" />
+          <textarea rows="3" cols="20" maxlength="1000" value="{{work.desc}}" placeholder="请填写工作描述" name="desc" />
         </view>
       </view>
     </view>
