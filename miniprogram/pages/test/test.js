@@ -88,7 +88,7 @@ Page({
         color: 'orange',
         bottomColor: 'bottom-orange',
         tip: '输入自定义域名',
-        image: '../../images/leetcode.svg',
+        image: '../../images/leetcode.jpg',
         search: 'leetcode',
         icon: [
           {

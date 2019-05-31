@@ -68,6 +68,10 @@ textarea{
   width: 460rpx;
   height: 220rpx;
 }
+.userAvatar{
+  border: 4rpx solid  #b2cef8;
+  box-shadow: 0 0 12rpx #e6e6e6;
+}
 .next{
   width:680rpx;
   height: 98rpx;

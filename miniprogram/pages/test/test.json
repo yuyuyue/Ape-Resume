@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "test-card": "../../components/test-card/test-card"
-  }
+  },
+  "navigationBarTitleText": "猿力测试"
 }
