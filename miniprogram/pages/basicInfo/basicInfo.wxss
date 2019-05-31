@@ -2,6 +2,7 @@
 .placeholder {
     color: #000;
 }
+
 .firstContainer,.secondContainer,.lastContainer{
   width: 690rpx;
   margin: 0 auto;
