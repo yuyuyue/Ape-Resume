@@ -68,6 +68,7 @@ Page({
       data.startDate = this.data.startDate;
       data.endDate = this.data.endDate;
       data.headerImg = this.data.headerImg;
+      data.searchData = {};
       // console.log(data);
     } else {
       opt = "updateById",

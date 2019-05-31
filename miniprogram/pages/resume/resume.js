@@ -7,9 +7,7 @@ Page({
    */
   data: {
     pickInit: '请选择简历',
-    resnames: [
-      "第一份简历", "第二份简历"
-    ], //简历名集合
+    resnames: [], //简历名集合
     resumedetail: {},
     nowSelect: '', // 当前pick文字内容,
     nowIndex: 0,
@@ -219,7 +217,7 @@ Page({
           key:"access_token",
           data: {
             access_token,
-            date: 
+            date: ''
           }
         })
         self.setData({

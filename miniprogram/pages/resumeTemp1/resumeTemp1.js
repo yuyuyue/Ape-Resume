@@ -9,18 +9,18 @@ Page({
     isSave: true,
     not: false
   },
-  saveRes(){
+  saveRes() {
     this.setData({
-      showDialog:true
+      showDialog: true
     })
   },
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     console.log(options)
-    if(options.resumeName){
+    if (options.resumeName) {
       this.setData({
         isSave: false
       })
@@ -32,77 +32,85 @@ Page({
     // }
     let key = options.resumeName || 'selected';
     // console.log(key);
-    
-    wx.getStorage({
-      key: 'userdetail',
-      success:(res)=>{
-        console.log(res);
-        
+    wx.getStorageSync({
+      key,
+      success: (res) => {
         this.setData({
-          detail: res.data
+          selected: res.data
         })
+        wx.getStorage({
+          key: 'userdetail',
+          success: (res) => {
+            console.log(res);
+            let apes = {};
+            let selected = this.data.selected;
+            selected.apes.forEach(item => {
+              apes[item.name] = res.data.searchData[item.name]
+            })
+            selected.apes = apes;
+            this.setData({
+              detail: res.data,
+              selected
+            })
+          }
+        })
+
       }
     })
+
+
     wx.getStorage({
       key: 'userInfo',
-      success:(res)=> {
+      success: (res) => {
         this.setData({
           info: res.data
         })
       }
     })
-    wx.getStorage({
-      key,
-      success:(res)=> {
-        this.setData({
-          selected: res.data
-        })
-        // console.log(res);
-        
-      }
-    })
-  
+
+
   },
-  save(e){
-     wx.showLoading({
-       title: '加载中'
-     })
-    let codeInfo  = {
-      '1':'简历重名'
+  save(e) {
+    wx.showLoading({
+      title: '加载中'
+    })
+    let codeInfo = {
+      '1': '简历重名'
     }
     console.log(e.detail.resumeName);
-    let data={}
+    let data = {}
     data.name = e.detail.resumeName;
     data.tempIndex = 1;
     data.proNames = this.data.selected.items.map(item => item.proname)
     data.expeNames = this.data.selected.works.map(item => item.company)
+
     wx.cloud.callFunction({
-      name:'resume',
-      data:{
-        opt:'add',
+      name: 'resume',
+      data: {
+        opt: 'add',
         data
       }
-    }).then(res=>{
+    }).then(res => {
       wx.hideLoading()
       console.log(res);
-      if(!res.result.code){
+      if (!res.result.code) {
         wx.showModal({
           title: '保存成功',
           content: '是否前往分享',
-          cancelText:'返回首页',
+          cancelText: '返回首页',
           success(res) {
             if (res.confirm) {
-             wx.switchTab({
-               url: '../resume/resume?nowSelect=' + data.name
-             })
+              wx.switchTab({
+                url: '../resume/resume?nowSelect=' + data.name
+              })
             } else if (res.cancel) {
               wx.switchTab({
-                url:'../index/index'
+                url: '../index/index'
               })
             }
           }
         })
-      }else{
+      } else {
         wx.showToast({
           title: codeInfo[res.result.code],
           image: '../../images/fail.svg'
@@ -114,7 +122,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function (options) {
-   
+
 
   },
 

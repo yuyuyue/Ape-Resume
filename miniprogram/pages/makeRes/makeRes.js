@@ -152,18 +152,18 @@ Page({
     }
   },
   // 点击下一步跳转到选择模板页
-  chooseTempHandle() {
-    const data = this.data.selected.apes
-    const searchData = this.data.searchData
+  chooseTempHandle() { 
+    // const data = this.data.selected.apes
+    // const searchData = this.data.searchData
     let selected = this.data.selected
-    let apes = {} 
-    data.map((item) => {
-      const name = item.name
-      if (searchData[name]) {
-        apes[name] = searchData[name]
-      }
-    })
-    selected.apes = apes
+    // let apes = {} 
+    // data.map((item) => {
+    //   const name = item.name
+    //   if (searchData[name]) {
+    //     apes[name] = searchData[name]
+    //   }
+    // })
+    // selected.apes = apes
     let msg = '尚未添加'
     let confirm = false
     if (selected.items.length == 0) {
@@ -264,6 +264,7 @@ Page({
           opt: 'selectAll',
           data
         },
+      
         // success: res => {
         //   // console.log(res);
         //   let workList = res.result.result.data;
@@ -279,6 +280,7 @@ Page({
 
         // }
       }),
+    
      
     ]).then(values => {
       let itemList = values[0].result.result.data;
