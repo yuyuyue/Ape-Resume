@@ -13,7 +13,8 @@
     "pages/resumeTemp3/resumeTemp3",
     "pages/addInfo/addInfo",
     "pages/chooseRes/chooseRes",
-    "pages/use/use"
+    "pages/use/use",
+    "pages/authorize/authorize"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

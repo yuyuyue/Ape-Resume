@@ -169,7 +169,7 @@
                 <view class="apeDesc flex">
                   <view class="apeType">
                     <view class="apeInfo">Star {{searchData.Github['Star'] || '暂无数据'}}</view>
-                    <view class="apeInfo">Fork {{searchData.Github['Fork'] || '暂无数据'}}</view>
+                    <view class="apeInfo">Fork {{searchData.Github['Fork'] || '0'}}</view>
                   </view>
                   <view class="apeType">
                     <view class="apeInfo">Watch {{searchData.Github['Watch'] || '暂无数据'}}</view>
