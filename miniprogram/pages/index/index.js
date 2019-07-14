@@ -32,27 +32,25 @@ Page({
     //   title: '加载中。。'
     // })
     return new Promise((reso, rej) => {
-      wx.getSetting({
-        success: res => {
-          // console.log("set", res);
-
-          if (res.authSetting['scope.userInfo']) {
-            wx.getUserInfo({
-              success: res => {
-                const userInfo = res.userInfo;
-                reso(userInfo)
-              },
-              fail: err => {
-
-              }
-            })
-          } else {
-            wx.navigateTo({
-              url: '/pages/authorize/authorize'
-            })
-          }
-        }
-      })
+     // 获取用户的当前设置。返回值中只会出现小程序已经向用户请求过的权限。
+     wx.getSetting({
+       success:(res)=>{
+         if (res.authSetting['scope.userInfo']) {
+           // 如果已经授权，可以直接调用 getUserInfo获取用户信息
+           wx.getUserInfo({
+             success: res=> {
+              //  console.log(res.userInfo)
+              reso(res.userInfo)
+             }
+           })
+         } else {
+           // 如果未授权，则跳转到授权页面
+           wx.navigateTo({
+             url: '/pages/authorize/authorize',
+           })
+         }
+       }
+     })
     })
   },
   /**
