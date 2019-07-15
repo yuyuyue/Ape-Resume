@@ -21,7 +21,7 @@
           <view class="basic-container">
             <view class="container-body">
               <view class="container-header">
-                <image class="itemImg" src="{{basicInfo.avatarUrl}}" />
+                <image class="itemImg" src="{{item.headerImg||basicInfo.avatarUrl}}" />
                 <view class="infoItem">
                   <text class="itemName">{{item.name||userInfo.nickName}}</text>
                   <image class="icon" src="../../images/{{item.sex=='男'?'boy':'girl'}}.svg" />
@@ -117,7 +117,7 @@
               <swiper-item wx:for="{{projects}}" wx:key="pro" wx:for-index="proIndex" wx:for-item="pro" class="swiper-center {{proNowIndex ===  proIndex ? 'active' : ''}}">
                 <view class="container">
                   <view class="container-header">
-                    <image class="itemImg" src="../../images/avatar.jpg" />
+                    <image class="itemImg" src="{{pro.headerImg||'../../images/avatar.jpg'}}" />
                     <!-- 项目缩略图 thumb -->
                     <view class="infoItem">
                       <text class="itemName">{{pro.proname||'暂无数据'}}</text>

@@ -5,7 +5,7 @@
       <view class="resume-title">{{detail.name||'暂无数据'}}</view>
     </view>
     <view class="info">
-      · {{detail.sex||'暂无数据'}} / {{detail.age||'暂无数据'}}岁 / {{detail.startDate||'暂无数据'}}届
+      · {{detail.sex||'暂无数据'}} / {{detail.age||'暂无数据'}}岁 / {{detail.endDate||'暂无数据'}}届
     </view>
     <view class="info">
       · {{detail.education||'暂无数据'}} / {{detail.schoolname||'暂无数据'}} / {{detail.major||'暂无数据'}}
@@ -20,13 +20,13 @@
     <text class="info">· 手机：{{detail.phone||'暂无数据'}}</text>
     <text class="info">· 邮箱：{{detail.email||'暂无数据'}}</text>
   </view>
-  <view class="content" wx:if="{{selected.apes}}">
+  <view class="content" wx:if="{{selected.apes.length>0}}">
     <view class="resume-titleBorder">
       <text class="resume-title">第三方数据</text>
     </view>
     <view class="temp">
       <!-- temp写for循环 -->
-      <view class="apeTemp" wx:if="{{selected.apes.Github}}">
+      <view class="apeTemp" wx:if="{{selected.apes.Github.length>0}}">
         <view class="resume-keyInfo apeKey">GitHub</view>
         <view class="apeDesc flex">
           <view class="apeType">
@@ -43,7 +43,7 @@
           </view>
         </view>
       </view>
-      <view class="apeTemp" wx:if="{{selected.apes.Leetcode}}">
+      <view class="apeTemp" wx:if="{{selected.apes.Leetcode.length>0}}">
         <view class="resume-keyInfo apeKey">LeetCode</view>
         <view class="apeDesc flex">
           <view class="apeType">
@@ -60,7 +60,7 @@
           </view>
         </view>
       </view>
-      <view class="apeTemp" wx:if="{{selected.apes['掘金']}}">
+      <view class="apeTemp" wx:if="{{selected.apes['掘金'].length>0}}">
         <view class="resume-keyInfo apeKey">掘金</view>
         <view class="apeDesc flex">
           <view class="apeType">
@@ -78,7 +78,7 @@
       </view>
     </view>
   </view>
-  <view class="content">
+  <view class="content" wx:if="{{selected.works.length>0}}">
     <view class="resume-titleBorder">
       <text class="resume-title">工作经验</text>
     </view>
@@ -91,7 +91,7 @@
       <view class="info">{{item.desc||'暂无数据'}}</view>
     </view>
   </view>
-  <view class="content">
+  <view class="content" wx:if="{{selected.items.length>0}}">
     <view class="resume-titleBorder">
       <text class="resume-title">项目成果</text>
     </view>
@@ -99,8 +99,8 @@
       <view>
         <view class="itemName">{{item.proname||'暂无数据'}}</view>
       </view>
-      <view class="resume-keyInfo-no">
-        <image class="itemImg" src="../../images/ape.png" />
+      <view class="resume-keyInfo-no" >
+        <image wx:if="{{item.headerImg}}" class="itemImg" src="{{item.headerImg}}"/>
         <view>
           <text class="keyInfo">{{item.startDate||'暂无数据'}}~{{item.endDate||'暂无数据'}}</text>
           <text class="keyInfo">技术栈：{{item.techstack||'暂无数据'}}</text>

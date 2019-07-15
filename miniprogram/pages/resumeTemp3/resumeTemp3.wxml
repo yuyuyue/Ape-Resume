@@ -2,8 +2,8 @@
 <view class="page flex">
   <view class="left">
     <view class="container">
-      <view class="userImg">
-        <image class="photo" src="{{info.avatarUrl}}" />
+      <view wx:if="{{detail.headerImg}}" class="userImg">
+        <image class="photo" src="{{detail.headerImg}}" />
       </view>
       <view class="infoTemp">
         <view class="infoType">个人信息</view>
@@ -29,11 +29,11 @@
       <view class="flex">
         <view class="userName">{{detail.name||'暂无数据'}}</view>
         <view class="expectJob">
-          <text class="expect">求职意向</text>
+          <text class="expect">求职意向/</text>
           <text class="job">{{detail.expectjob||'暂无数据'}}</text>
         </view>
       </view>
-      <view class="itemTemp" wx:if="{{selected.apes}}">
+      <view class="itemTemp" wx:if="{{selected.apes.length>0}}">
         <view class="itemTitle">第三方信息</view>
         <view class="item">
           <view class="itemInfo">GitHub</view>
@@ -86,7 +86,7 @@
           </view>
         </view>
       </view>
-      <view class="itemTemp">
+      <view class="itemTemp" wx:if="{{selected.works.length>0}}">
         <view class="itemTitle">工作经验</view>
         <view class="item" wx:for="{{selected.works}}" wx:key="item">
           <text class="itemInfo">{{item.startDate||'暂无数据'}} ~ {{item.endDate||'暂无数据'}}</text>
@@ -95,7 +95,7 @@
           <view class="itemDesc">{{item.desc||'暂无数据'}}</view>
         </view>
       </view>
-      <view class="itemTemp">
+      <view class="itemTemp" wx:if="{{selected.items.length>0}}">
         <view class="itemTitle">项目成果</view>
         <view class="item" wx:for="{{selected.items}}" wx:key="item">
           <text class="itemInfo">{{item.proname||'暂无数据'}}</text>

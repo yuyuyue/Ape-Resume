@@ -7,10 +7,10 @@
   display: flex;
 }
 .content{
- padding: 40rpx 80rpx;
+ padding: 20rpx 80rpx;
 }
 .resume-titleBorder{
-  height:80rpx;
+  height:60rpx;
   border-bottom: 2rpx solid #dddada;
 }
 .resume-title{

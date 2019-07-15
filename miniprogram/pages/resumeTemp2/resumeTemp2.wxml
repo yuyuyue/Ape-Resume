@@ -1,7 +1,7 @@
 <view class="page">
   <view class="resume-header">
     <view class="userInfo">
-      <image class="photo" src="{{info.avatarUrl}}" />
+      <image class="photo" src="{{detail.headerImg}}" />
       <view>
         <view class="userName">{{detail.name||'暂无数据'}}</view>
         <view class="expectJob">投递岗位：{{detail.expectjob||'暂无数据'}}</view>
@@ -27,7 +27,7 @@
     </view>
   </view>
   <view class="body">
-    <view class="resume-item">
+    <view class="resume-item" wx:if="{{selected.apes.length>0}}">
       <view class="infoType">
         <text class="infoTitle">第三方数据</text>
       </view>
@@ -78,7 +78,7 @@
         </view>
       </view>
     </view>
-    <view class="resume-item">
+    <view class="resume-item" wx:if="{{selected.works.length>0}}">
       <view class="infoType">
         <text class="infoTitle">工作经验</text>
       </view>
@@ -99,7 +99,7 @@
         </view>
       </view>
     </view>
-    <view class="resume-item">
+    <view class="resume-item" wx:if="{{selected.items.length>0}}">
       <view class="infoType">
         <text class="infoTitle">项目成果</text>
       </view>
@@ -107,7 +107,7 @@
         <view wx:for="{{selected.items}}" wx:key="item">
           <view class="infoDesc">
             <view>
-              <image class="itemImg" src="../../images/ape.png" />
+              <image wx:if="{{item.headerImg}}" class="itemImg" src="{{item.headerImg}}" />
               <text class="time">{{item.startDate||'暂无数据'}}</text>
               <text class="time">~</text>
               <text class="time">{{item.endDate||'暂无数据'}}</text>
