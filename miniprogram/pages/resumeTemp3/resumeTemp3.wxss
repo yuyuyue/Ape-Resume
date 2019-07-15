@@ -11,7 +11,7 @@
   max-width: 270rpx;
 }
 .container{
-  padding: 0 15rpx;
+  padding: 160rpx 15rpx 0;
 }
 .userImg{
   width: 100%;

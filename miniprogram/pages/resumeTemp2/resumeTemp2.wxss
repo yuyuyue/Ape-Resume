@@ -69,8 +69,8 @@
 }
 .time{
   font-size: 20rpx;
-  color: #7e7e7e;
   text-align: right;
+  color: #7e7e7e;
   display: block;
 }
 .desc,.apeDesc{
@@ -114,3 +114,4 @@
 .last-item{
   margin-bottom: 90rpx;
 }
+

@@ -27,6 +27,8 @@ page{
   border: 1px solid #7c7c7c;
 }
 .tempImg {
+  width: 710rpx;
+  height: 900rpx;
   transition: 1s all ease;
 }
 .showTemp{

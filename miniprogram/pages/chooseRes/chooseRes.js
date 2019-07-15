@@ -6,9 +6,9 @@ Page({
    */
   data: {
     resumeTemps: [
-      "../../images/email.png",
-      "../../images/boy.png",
-      "../../images/GitHub.png"
+      "../../images/temp1.JPG",
+      "../../images/temp2.jpg",
+      "../../images/temp3.jpg"
     ],
     current: 0,
     // not: false

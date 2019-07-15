@@ -81,9 +81,6 @@
             </view>
           </view>
         </swiper-item>
-        <!-- <swiper-item wx:if="{{update}}">
-          <baseInfo></baseInfo>
-        </swiper-item> -->
         <!-- 工作经验 -->
         <swiper-item>
           <view class="scroll-container">
@@ -132,7 +129,7 @@
                   </view>
                   <view class="infoTemp">
                     <view class="textDesc">
-                      <view class="line">访问链接： {{pro.lineadress||'暂无数据'}}</view>
+                      <view class="line">访问链接：{{pro.lineadress||'暂无数据'}}</view>
                     </view>
                   </view>
                   <view class="infoTemp">
