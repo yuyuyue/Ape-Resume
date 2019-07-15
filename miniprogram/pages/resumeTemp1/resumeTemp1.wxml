@@ -100,7 +100,7 @@
         <view class="itemName">{{item.proname||'暂无数据'}}</view>
       </view>
       <view class="resume-keyInfo-no" >
-        <image wx:if="{{item.headerImg}}" class="itemImg" src="{{item.headerImg}}"/>
+        <image wx:if="{{item.headerImg.length>0}}" class="itemImg" src="{{item.headerImg}}"/>
         <view>
           <text class="keyInfo">{{item.startDate||'暂无数据'}}~{{item.endDate||'暂无数据'}}</text>
           <text class="keyInfo">技术栈：{{item.techstack||'暂无数据'}}</text>

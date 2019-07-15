@@ -2,8 +2,8 @@
 <view class="page flex">
   <view class="left">
     <view class="container">
-      <view wx:if="{{detail.headerImg}}" class="userImg">
-        <image class="photo" src="{{detail.headerImg}}" />
+      <view  class="userImg">
+        <image wx:if="{{detail.headerImg.length>0}}" class="photo" src="{{detail.headerImg}}" />
       </view>
       <view class="infoTemp">
         <view class="infoType">个人信息</view>

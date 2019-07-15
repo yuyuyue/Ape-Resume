@@ -20,7 +20,6 @@
 .photo{
   width: 90rpx;
   height: 120rpx;
-  margin: 55rpx 0 80rpx;
 }
 .infoType{
   font-size: 22rpx;

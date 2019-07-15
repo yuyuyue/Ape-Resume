@@ -1,7 +1,7 @@
 <view class="page">
   <view class="resume-header">
     <view class="userInfo" >
-      <image wx:if="{{detail.headerImg}}" class="photo" src="{{detail.headerImg}}" />
+      <image wx:if="{{detail.headerImg.length>0}}" class="photo" src="{{detail.headerImg}}" />
       <view>
         <view class="userName">{{detail.name||'暂无数据'}}</view>
         <view class="expectJob">投递岗位：{{detail.expectjob||'暂无数据'}}</view>

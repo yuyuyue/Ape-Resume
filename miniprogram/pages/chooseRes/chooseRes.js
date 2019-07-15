@@ -6,7 +6,7 @@ Page({
    */
   data: {
     resumeTemps: [
-      "../../images/temp1.JPG",
+      "../../images/temp1.jpg",
       "../../images/temp2.jpg",
       "../../images/temp3.jpg"
     ],
